@@ -1,0 +1,3 @@
+﻿construction_throughput_mult = {
+    building_construction_point_converter_throughput_add = 1
+}

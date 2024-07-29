@@ -1,0 +1,7 @@
+﻿construction = {
+	texture = "gfx/interface/icons/building_icons/construction_camp.dds"
+	cost = 105
+	category = industrial
+	tradeable = no
+	prestige_factor = 5
+}

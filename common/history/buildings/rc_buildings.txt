@@ -1,0 +1,16 @@
+﻿BUILDINGS={
+    every_country = {
+        if = {
+			limit = {
+				has_technology_researched = "urbanization"
+			}
+            capital = {
+                create_building = {
+                    building = "building_construction_point_converter"
+                    level = 1
+                    reserves = 1
+                }
+            }
+        }
+    }
+}

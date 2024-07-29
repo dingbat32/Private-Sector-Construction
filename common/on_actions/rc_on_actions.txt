@@ -1,0 +1,58 @@
+﻿set_construction = {
+	effect = {
+		every_country = {
+			trigger_event = {
+				on_action = set_construction_country
+			}
+		}
+	}
+}
+
+set_construction_country = {
+	effect = {
+		every_scope_state = {
+			if = {
+				limit = {
+					has_building = building_construction_point_converter
+				}
+				if = {
+					limit = {
+						is_capital = no
+					}
+					remove_building = building_construction_point_converter
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_technology_researched = urbanization
+			}
+			capital = {
+				if = {
+					limit = {
+						NOT = {
+							has_building = building_construction_point_converter
+						}
+					}
+					create_building = {
+						building = "building_construction_point_converter"
+						level = 1
+						reserves = 1
+					}
+				}
+				b:building_construction_point_converter = {
+					if = {
+						limit = {
+							has_modifier = construction_throughput_mult
+						}
+						remove_modifier = construction_throughput_mult
+					}
+					add_modifier = {
+						name = construction_throughput_mult
+						multiplier = construction_demand
+					}
+				}
+			}
+		}
+	}
+}

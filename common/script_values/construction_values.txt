@@ -1,0 +1,25 @@
+﻿construction_demand = {
+	if = {
+		limit = {
+			owner = {
+				has_law = law_type:law_command_economy
+			}
+		}
+		value = income
+		multiply = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
+	}
+	else = {
+		value = investment_pool_gross_income
+		divide = modifier:country_private_construction_allocation_mult
+	}
+	divide = { # divide by cost of construction point
+		value =	105 #base cost of construction good
+		multiply = 10 #number of construction goods per point
+		multiply = {
+			capital.sg:construction = {
+				add = 1
+				add = state_goods_pricier
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "name" : "Realistic Construction",
+  "id" : "",
+  "version" : "0.1",
+  "supported_game_version" : "",
+  "short_description" : "Allows private sector construction and market driven construction",
+  "tags" : [],
+  "relationships" : [],                 
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  },
+  "picture": "thumbnail.png"
+}

@@ -1,0 +1,8 @@
+﻿debug.18 = {
+	type = country_event
+	hidden = yes
+	orphan = yes
+	immediate = {
+		activate_law = law_type:law_command_economy
+	}
+}
