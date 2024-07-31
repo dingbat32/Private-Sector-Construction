@@ -10,8 +10,34 @@
 	}
 	else = {
 		value = investment_pool_gross_income
+		#halve the total construction if there is less than a month's investment pool saved
+		if = {
+			limit = {
+				investment_pool < {
+					value = investment_pool_gross_income
+					multiply = 4
+				}
+			}
+			divide = 2
+		}
+		else_if = {
+			limit = {
+				investment_pool < {
+					value = investment_pool_gross_income
+					multiply = 8
+				}
+			}
+			# linearly scale from 0.5 production at 4 * income
+			# to full production at 8 * income
+			multiply = {
+				value = investment_pool
+				divide = investment_pool_gross_income
+				divide = 8
+			}
+		}
 		divide = modifier:country_private_construction_allocation_mult
 	}
+
 	divide = { # divide by cost of construction point
 		value =	105 #base cost of construction good
 		multiply = 10 #number of construction goods per point
