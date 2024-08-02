@@ -33,9 +33,6 @@ on_monthly_pulse = {
 			}
 		}
 	}
-	on_actions = {
-		set_construction
-	}
 }
 
 on_yearly_pulse = { }
@@ -525,6 +522,9 @@ on_monthly_pulse_country = {
 			    }
 			}
 			set_variable = cant_touch_this_achievement_possible
+		}
+		trigger_event = {
+			on_action = set_construction_country
 		}
 	}
 	on_actions = { # delay ensures events won't fire simultaneously
