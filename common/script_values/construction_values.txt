@@ -9,43 +9,76 @@
 		multiply = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
 	}
 	else = {
-		value = investment_pool_gross_income
-		#halve the total construction if there is less than a month's investment pool saved
-		if = {
-			limit = {
-				investment_pool < {
-					value = investment_pool_gross_income
-					multiply = 4
-				}
-			}
-			divide = 2
-		}
-		else_if = {
-			limit = {
-				investment_pool < {
-					value = investment_pool_gross_income
-					multiply = 8
-				}
-			}
-			# linearly scale from 0.5 production at 4 * income
-			# to full production at 8 * income
-			multiply = {
-				value = investment_pool
-				divide = investment_pool_gross_income
-				divide = 8
-			}
+		owner = {
+			value = investment_pool_gross_income
 		}
 		divide = modifier:country_private_construction_allocation_mult
 	}
+	divide = construction_point_price
+	subtract = 1
+}
+#price of each construction point is 10 goods
+construction_point_price = {
+	value = construction_good_price
+	multiply = 10
+}
 
-	divide = { # divide by cost of construction point
-		value =	105 #base cost of construction good
-		multiply = 10 #number of construction goods per point
+construction_good_price = {
+	value = 105 #base price of construction good
+	if = {
+		#make sure that construction has been calculated once before to avoid assuming construction cost is -75%
+		limit = {
+			game_date > 1836.1.5
+		}
 		multiply = {
-			capital.sg:construction = {
-				add = 1
-				add = state_goods_pricier
+			value = 1
+			add = construction_price_multiplier
+		}
+	}
+}
+
+#calculate construction price multiplier based on formula: https://vic3.paradoxwikis.com/Market#Market_price
+construction_price_multiplier = {
+	value = 0.75
+	multiply = {
+		value = {
+			value = construction_buy_orders_max
+			market.mg:construction = {
+				subtract = market_goods_sell_orders
 			}
+			divide = {
+				value = construction_buy_orders_max
+				market.mg:construction = {
+					max = market_goods_sell_orders
+				}
+				min = 1
+			}
+		}
+		#clamp between 1 and -1
+		max = 1
+		min = -1
+	}
+}
+
+#calculates how many construction goods would be bought if all construction were in use
+#used to stabilise construction point total with and without government construction active
+construction_buy_orders_max = {
+	market.mg:construction = {
+		value = market_goods_buy_orders
+	}
+	subtract = construction_good_usage_prev
+	add = construction_demand_prev
+}
+
+construction_demand_prev = {
+	value = modifier:building_construction_point_converter_throughput_add
+	multiply = 10
+}
+
+construction_good_usage_prev = {
+	capital = {
+		sg:construction = {
+			value = state_goods_consumption
 		}
 	}
 }
