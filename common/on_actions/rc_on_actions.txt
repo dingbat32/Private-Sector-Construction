@@ -1,4 +1,4 @@
-﻿set_construction = {
+﻿set_construction_start = {
 	effect = {
 		every_country = {
 			trigger_event = {
