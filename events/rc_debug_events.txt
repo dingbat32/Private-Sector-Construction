@@ -56,7 +56,7 @@ debug.23 = {
 	orphan = yes
 	immediate = {
 		trigger_event = {
-			on_action = set_construction
+			on_action = set_construction_start
 		}
 	}
 }
