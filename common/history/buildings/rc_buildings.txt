@@ -4,7 +4,7 @@
 			limit = {
 				has_technology_researched = "urbanization"
 			}
-            capital = {
+            every_scope_state = {
                 create_building = {
                     building = "building_construction_point_converter"
                     level = 1

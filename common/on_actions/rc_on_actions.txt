@@ -10,24 +10,12 @@
 
 set_construction_country = {
 	effect = {
-		every_scope_state = {
-			if = {
-				limit = {
-					has_building = building_construction_point_converter
-				}
-				if = {
-					limit = {
-						is_capital = no
-					}
-					remove_building = building_construction_point_converter
-				}
-			}
-		}
+
 		if = {
-			limit = {
+			limit = { 
 				has_technology_researched = urbanization
 			}
-			capital = {
+			every_scope_state = {
 				if = {
 					limit = {
 						NOT = {
@@ -40,6 +28,38 @@ set_construction_country = {
 						reserves = 1
 					}
 				}
+			}
+			set_local_variable = {
+				name = total_construction_demand
+				value = construction_demand
+			}
+			set_local_variable = {
+				name = remaining_construction_demand
+				value = local_var:total_construction_demand
+			}
+			ordered_scope_state = {
+				limit = {
+
+				}
+				order_by = construction_ordering
+				min = 0
+				max = {
+					owner = {
+						value = num_states
+					}
+				}
+
+
+				set_local_variable = {
+					name = state_construction
+					value = state_construction_allocation
+				}
+				
+				change_local_variable = {
+					name = remaining_construction_demand
+					subtract = local_var:state_construction
+				}
+				
 				b:building_construction_point_converter = {
 					if = {
 						limit = {
@@ -49,7 +69,10 @@ set_construction_country = {
 					}
 					add_modifier = {
 						name = construction_throughput_mult
-						multiplier = construction_demand
+						multiplier = {
+							value = local_var:state_construction
+							subtract = 1
+						}
 					}
 				}
 			}

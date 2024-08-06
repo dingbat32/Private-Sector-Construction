@@ -1,25 +1,25 @@
 ﻿construction_demand = {
 	if = {
 		limit = {
-			owner = {
-				has_law = law_type:law_command_economy
-			}
+			has_law = law_type:law_command_economy
 		}
 		value = income
 		multiply = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
 	}
 	else = {
-		owner = {
-			value = investment_pool_gross_income
-		}
+		value = investment_pool_gross_income
 		divide = modifier:country_private_construction_allocation_mult
 	}
 	divide = construction_point_price
-	#set maximum usage to double the supply
+	
+	#set maximum usage to just over double the supply
 	max = {
-		value = 
+		value = national_construction_production
+		multiply = 2
+		multiply = 1.1
+		divide = 10
+		min = 5
 	}
-	subtract = 1
 }
 #price of each construction point is 10 goods
 construction_point_price = {
@@ -41,20 +41,16 @@ construction_good_price = {
 	}
 }
 
-#calculate construction price multiplier based on formula: https://vic3.paradoxwikis.com/Market#Market_price
+#calculate estimated national construction price multiplier based on formula: https://vic3.paradoxwikis.com/Market#Market_price
 construction_price_multiplier = {
 	value = 0.75
 	multiply = {
 		value = {
-			value = construction_buy_orders_max
-			market.mg:construction = {
-				subtract = market_goods_sell_orders
-			}
+			value = construction_demand_prev
+			subtract = national_construction_production
 			divide = {
-				value = construction_buy_orders_max
-				market.mg:construction = {
-					max = market_goods_sell_orders
-				}
+				value = construction_demand_prev
+				max = national_construction_production
 				min = 1
 			}
 		}
@@ -64,25 +60,55 @@ construction_price_multiplier = {
 	}
 }
 
-#calculates how many construction goods would be bought if all construction were in use
-#used to stabilise construction point total with and without government construction active
-construction_buy_orders_max = {
-	market.mg:construction = {
-		value = market_goods_buy_orders
-	}
-	subtract = construction_good_usage_prev
-	add = construction_demand_prev
-}
-
 construction_demand_prev = {
-	value = modifier:building_construction_point_converter_throughput_add
-	multiply = 10
+	every_scope_state = {
+		b:building_construction_point_converter = {
+			add = modifier:building_construction_point_converter_throughput_add
+		}
+	}
 }
 
-construction_good_usage_prev = {
-	capital = {
+national_construction_production = {
+	every_scope_state = {
 		sg:construction = {
-			value = state_goods_consumption
+			add = state_goods_production 
+		}
+	}
+}
+
+national_construction_consumption = {
+	every_scope_state = {
+		sg:construction = {
+			add = state_goods_consumption 
+		}
+	}
+}
+
+state_construction_allocation = {
+	value = local_var:total_construction_demand
+	owner = {
+		divide = {
+			value = national_construction_production
+			divide = 10
+			min = 0.1
+		}
+	}
+	max = 2.05 # demand only a limited amount more than is possible in this state
+	sg:construction = {
+		multiply = state_goods_production
+		divide = 10
+	}
+	min = 3
+	max = local_var:remaining_construction_demand
+}
+construction_ordering = {
+	sg:construction = {
+		value = state_goods_production
+	}
+	add = {
+		value = gdp
+		owner = {
+			divide = gdp
 		}
 	}
 }

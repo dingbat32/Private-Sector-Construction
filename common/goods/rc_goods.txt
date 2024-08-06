@@ -2,6 +2,6 @@
 	texture = "gfx/interface/icons/building_icons/construction_camp.dds"
 	cost = 70
 	category = industrial
-	tradeable = no
+	local = yes
 	prestige_factor = 5
 }
