@@ -15,6 +15,10 @@
 		divide = modifier:country_private_construction_allocation_mult
 	}
 	divide = construction_point_price
+	#set maximum usage to double the supply
+	max = {
+		value = 
+	}
 	subtract = 1
 }
 #price of each construction point is 10 goods
@@ -24,7 +28,7 @@ construction_point_price = {
 }
 
 construction_good_price = {
-	value = 105 #base price of construction good
+	value = 70 #base price of construction good
 	if = {
 		#make sure that construction has been calculated once before to avoid assuming construction cost is -75%
 		limit = {
