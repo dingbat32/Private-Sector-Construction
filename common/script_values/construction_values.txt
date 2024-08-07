@@ -46,10 +46,10 @@ construction_price_multiplier = {
 	value = 0.75
 	multiply = {
 		value = {
-			value = construction_demand_prev
+			value = national_construction_consumption
 			subtract = national_construction_production
 			divide = {
-				value = construction_demand_prev
+				value = national_construction_consumption
 				max = national_construction_production
 				min = 1
 			}
