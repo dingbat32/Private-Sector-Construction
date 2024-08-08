@@ -10,7 +10,7 @@
 			goods_input_wood_add = 75 # x20 = 1500
 
 			#output goods
-			goods_output_construction_add = 25 # output increased by 25% to account for MAPI effects (might change later)
+			goods_output_construction_add = 20
 		}
 
 		level_scaled = {
@@ -46,7 +46,7 @@ pm_iron_frame_buildings = {
 			goods_input_tools_add = 10 # x40 = 400
 
 			#output goods
-			goods_output_construction_add = 63
+			goods_output_construction_add = 50
 		}
 
 		level_scaled = {
@@ -83,7 +83,7 @@ pm_steel_frame_buildings = {
 			goods_input_tools_add = 20 # x40 = 800
 
 			#output goods
-			goods_output_construction_add = 125
+			goods_output_construction_add = 100
 		}
 
 		level_scaled = {
@@ -121,7 +121,7 @@ pm_arc_welded_buildings = {
 			goods_input_electricity_add = 40 #x30 = 1200
 
 			#output goods
-			goods_output_construction_add = 188
+			goods_output_construction_add = 150
 		} 
 
 		level_scaled = {

@@ -28,7 +28,7 @@ construction_point_price = {
 }
 
 construction_good_price = {
-	value = 70 #base price of construction good
+	value = 95 #base price of construction good
 	if = {
 		#make sure that construction has been calculated once before to avoid assuming construction cost is -75%
 		limit = {
@@ -94,16 +94,21 @@ state_construction_allocation = {
 		}
 	}
 	max = 2.05 # demand only a limited amount more than is possible in this state
-	sg:construction = {
-		multiply = state_goods_production
-		divide = 10
-	}
+
 	if = {
 		limit = {
-			value = 0
+			sg:construction = {
+				state_goods_production = 0
+			}
 		}
 		value = local_var:remaining_construction_demand
 		multiply = 0.5
+	}
+	else = {
+		sg:construction = {
+			multiply = state_goods_production
+			divide = 10
+		}
 	}
 	min = 3
 	max = local_var:remaining_construction_demand
