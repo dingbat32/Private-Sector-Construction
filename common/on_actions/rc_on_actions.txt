@@ -18,6 +18,15 @@ set_construction_country = {
 			every_scope_state = {
 				if = {
 					limit = {
+						state_has_building_type_levels = {
+							target = bt:building_construction_point_converter
+							value > 1
+						}
+					}
+					remove_building = "building_construction_point_converter"
+				}
+				if = {
+					limit = {
 						NOT = {
 							has_building = building_construction_point_converter
 						}
@@ -28,6 +37,15 @@ set_construction_country = {
 						reserves = 1
 					}
 				}
+
+			}
+			set_local_variable = {
+				name = national_consumption
+				value = national_construction_consumption
+			}
+			set_local_variable = {
+				name = national_production
+				value = national_construction_production
 			}
 			set_local_variable = {
 				name = total_construction_demand
@@ -38,9 +56,6 @@ set_construction_country = {
 				value = local_var:total_construction_demand
 			}
 			ordered_scope_state = {
-				limit = {
-
-				}
 				order_by = construction_ordering
 				min = 0
 				max = {
@@ -48,7 +63,6 @@ set_construction_country = {
 						value = num_states
 					}
 				}
-
 
 				set_local_variable = {
 					name = state_construction
