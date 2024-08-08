@@ -16,9 +16,9 @@
 	max = {
 		value = local_var:national_production
 		multiply = 2
-		multiply = 1.1
+		multiply = 1.05
 		divide = 10
-		min = 5
+		min = 10
 	}
 }
 #price of each construction point is 10 goods
@@ -98,12 +98,20 @@ state_construction_allocation = {
 		multiply = state_goods_production
 		divide = 10
 	}
+	if = {
+		limit = {
+			value = 0
+		}
+		value = local_var:remaining_construction_demand
+		multiply = 0.5
+	}
 	min = 3
 	max = local_var:remaining_construction_demand
 }
 construction_ordering = {
 	sg:construction = {
 		value = state_goods_production
+		multiply = 100
 	}
 	add = {
 		value = gdp
