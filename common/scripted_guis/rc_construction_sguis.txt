@@ -1,0 +1,77 @@
+﻿button_1_sgui = {
+    scope = country
+    effect = {
+        set_variable = {
+            name = construction_spending_level
+            value = 0.2
+        }
+    }
+    is_valid = {
+        has_variable = construction_spending_level
+        NOT = {
+            var:construction_spending_level = 0.2
+        }
+    }
+
+}
+
+button_2_sgui = {
+    scope = country
+    effect = {
+        set_variable = {
+            name = construction_spending_level
+            value = 0.4
+        }
+    }
+    is_valid = {
+        has_variable = construction_spending_level
+        NOT = {
+            var:construction_spending_level = 0.4
+        }
+    }
+}
+button_3_sgui = {
+    scope = country
+    effect = {
+        set_variable = {
+            name = construction_spending_level
+            value = 0.6
+        }
+    }
+    is_valid = {
+        has_variable = construction_spending_level
+        NOT = {
+            var:construction_spending_level = 0.6
+        }
+    }
+}
+button_4_sgui = {
+    scope = country
+    effect = {
+        set_variable = {
+            name = construction_spending_level
+            value = 0.8
+        }
+    }
+    is_valid = {
+        has_variable = construction_spending_level
+        NOT = {
+            var:construction_spending_level = 0.8
+        }
+    }
+}
+button_5_sgui = {
+    scope = country
+    effect = {
+        set_variable = {
+            name = construction_spending_level
+            value = 1
+        }
+    }
+    is_valid = {
+        has_variable = construction_spending_level
+        NOT = {
+            var:construction_spending_level = 1
+        }
+    }
+}

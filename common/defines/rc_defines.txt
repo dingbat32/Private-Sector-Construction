@@ -1,3 +1,3 @@
-NCountry = {
+﻿NCountry = {
     CONSTRUCTION_CAMP_BUILDING = "building_construction_point_converter"
 }
