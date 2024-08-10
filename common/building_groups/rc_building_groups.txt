@@ -2,7 +2,9 @@
 	category = development
 
 	infrastructure_usage_per_level = 2
-	
+
+	lens = light_industry
+
 	can_use_slaves = yes
 	
 	always_possible = yes
