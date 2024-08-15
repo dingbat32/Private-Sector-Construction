@@ -1,17 +1,5 @@
-﻿construction_demand = {
-	if = {
-		limit = {
-			has_law = law_type:law_command_economy
-		}
-		value = income
-		multiply = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
-	}
-	else = {
-		value = investment_pool_gross_income
-		add = government_construction_spending
-	}
-	divide = construction_point_price
-	
+﻿calculate_limited_construction_demand = {
+	value = local_var:nominal_construction_demand
 	#set maximum usage to just over double the supply
 	max = {
 		value = local_var:national_production
@@ -21,6 +9,23 @@
 		min = 10
 	}
 }
+
+#Calculate construction while ignoring supply limit
+calculate_nominal_construction = {
+	if = {
+		limit = {
+			has_law = law_type:law_command_economy
+		}
+		value = income
+		multiply = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
+	}
+	else = {
+		value = investment_pool_gross_income
+		add = local_var:max_government_construction_spending
+	}
+	divide = construction_point_price
+}
+
 #price of each construction point is 10 goods
 construction_point_price = {
 	value = construction_good_price
@@ -77,7 +82,7 @@ national_construction_consumption = {
 }
 
 state_construction_allocation = {
-	value = local_var:total_construction_demand
+	value = local_var:limited_construction_demand
 	owner = {
 		divide = {
 			value = local_var:national_production
@@ -118,9 +123,35 @@ construction_ordering = {
 	}
 }
 
-government_construction_spending = {
+calculate_government_construction_spending = {
 	value = 1
 	subtract = modifier:country_private_construction_allocation_mult
 	multiply = investment_pool_gross_income
 	multiply = var:construction_spending_level
+}
+
+calculate_current_government_construction_spending = {
+	value = local_var:max_government_construction_spending
+	multiply = {
+		value = local_var:limited_construction_demand
+		if = {
+			limit = {
+				local_var:nominal_construction_demand != 0
+			}
+			divide = local_var:nominal_construction_demand
+		}
+	}
+	save_temporary_value_as = limited_spending_value
+	divide = construction_good_price
+	save_temporary_value_as = max_points
+	value = construction_queue_num_queued_government_levels
+	multiply = modifier:country_max_weekly_construction_progress_add
+	if = {
+		limit = {
+			scope:max_points != 0
+		}
+		divide = scope:max_points
+	}
+	max = 1
+	multiply = scope:limited_spending_value
 }
