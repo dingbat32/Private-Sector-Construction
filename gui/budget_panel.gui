@@ -484,7 +484,6 @@ types budget
 							blockoverride "tooltip_5" {
 							}			
 						}
-					}
 
 						tax_exp_frame_coin = {
 
