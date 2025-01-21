@@ -1,8 +1,8 @@
 ﻿calculate_limited_construction_demand = {
-	value = local_var:nominal_construction_demand
+	value = var:nominal_construction_demand
 	#set maximum usage to just over double the supply
 	max = {
-		value = local_var:national_production
+		value = var:national_production
 		multiply = 2
 		multiply = 1.05
 		divide = 10
@@ -21,7 +21,7 @@ calculate_nominal_construction = {
 	}
 	else = {
 		value = investment_pool_gross_income
-		add = local_var:max_government_construction_spending
+		add = var:max_government_construction_spending
 	}
 	divide = construction_point_price
 }
@@ -51,11 +51,29 @@ construction_price_multiplier = {
 	value = 0.75
 	multiply = {
 		value = {
-			value = local_var:national_consumption
-			subtract = local_var:national_production
+			value = var:national_consumption
+			subtract = var:national_production
 			divide = {
-				value = local_var:national_consumption
-				max = local_var:national_production
+				value = var:national_consumption
+				max = var:national_production
+				min = 1
+			}
+		}
+		#clamp between 1 and -1
+		max = 1
+		min = -1
+	}
+}
+
+construction_state_price_multiplier = {
+	value = 0.75
+	multiply = {
+		value = {
+			value = var:national_consumption
+			subtract = var:national_production
+			divide = {
+				value = var:national_consumption
+				max = var:national_production
 				min = 1
 			}
 		}
@@ -82,10 +100,12 @@ national_construction_consumption = {
 }
 
 state_construction_allocation = {
-	value = local_var:limited_construction_demand
+	owner = {
+		value = var:limited_construction_demand
+	}
 	owner = {
 		divide = {
-			value = local_var:national_production
+			value = var:national_production
 			divide = 10
 			min = 0.1
 		}
@@ -123,35 +143,34 @@ construction_ordering = {
 	}
 }
 
-calculate_government_construction_spending = {
+calculate_max_government_construction_spending = {
 	value = 1
 	subtract = modifier:country_private_construction_allocation_mult
 	multiply = investment_pool_gross_income
 	multiply = var:construction_spending_level
 }
 
-calculate_current_government_construction_spending = {
-	value = local_var:max_government_construction_spending
-	multiply = {
-		value = local_var:limited_construction_demand
-		if = {
-			limit = {
-				local_var:nominal_construction_demand != 0
+calculate_total_construction_spending = {
+	value = 0
+	every_scope_state = {
+		sg:construction = {
+			add = {
+				value = state_goods_consumption
+				multiply = 95
+				multiply = {
+					value = 1
+					add = state_goods_pricier
+				}
 			}
-			divide = local_var:nominal_construction_demand
 		}
 	}
-	save_temporary_value_as = limited_spending_value
-	divide = construction_good_price
-	save_temporary_value_as = max_points
-	value = construction_queue_num_queued_government_levels
-	multiply = modifier:country_max_weekly_construction_progress_add
-	if = {
-		limit = {
-			scope:max_points != 0
-		}
-		divide = scope:max_points
+}
+
+calculate_government_construction_spending = {
+	value = calculate_total_construction_spending
+	#subtract private spending
+	subtract = {
+		value = investment_pool_gross_income
+		subtract = investment_pool_net_income
 	}
-	max = 1
-	multiply = scope:limited_spending_value
 }

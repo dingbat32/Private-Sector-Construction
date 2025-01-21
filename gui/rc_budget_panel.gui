@@ -401,67 +401,90 @@ types budget
 						direction = vertical
 						parentanchor = hcenter
 						margin_bottom = 10
-						
-						tax_exp_frame_coin = {
-						
-							blockoverride "text_upper" {
-								text = "BUDGET_CONSTRUCTION_GOODS"
-							}
 
+						tax_exp_frame_coin = {
+							blockoverride "text_upper" {
+								text = "CONSTRUCTION_SPENDING_LEVEL"
+							}
+							blockoverride "second_line" {}
+							blockoverride "text_lower" {}
 							blockoverride "text_money" {
 								alpha = "[TransparentIfZero(GetPlayer.GetConstructionGoodsExpenses)]"
 								raw_text = "#N @money!-[GetPlayer.MakeScope.Var('government_construction_spending').GetValue|D-]"
 								using = construction_goods_expense_tooltip_with_graph
 							}
 
-							blockoverride "revenue_controls" {
+							blockoverride "button_1_click" {
+								onclick = "[GetScriptedGui('button_1_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = yes
+							}
+
+							blockoverride "button_2_click" {
+								onclick = "[GetScriptedGui('button_2_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = yes
 							}
 							
-							blockoverride "divider" {
+							blockoverride "button_3_click" {
+								onclick = "[GetScriptedGui('button_3_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = yes
 							}
 
-							blockoverride "second_line" {
-								flowcontainer = {
-									margin_top = 5
-									margin_bottom = 10
-									flowcontainer = {
-										direction = horizontal
-										spacing = 20
-										
-										flowcontainer = {
-											direction = vertical
-											parentanchor = vcenter
-											
-											button = {
-												name = "tutorial_highlight_pause_all_construction"
-
-												using = default_button_action
-												size = { 210 35 }
-												text = "PAUSE_ALL_CONSTRUCTION_BUTTON"
-												onclick = "[Execute(PauseAllConstruction)]"
-												enabled = "[IsValid(PauseAllConstruction)]"
-												tooltip = "[PauseAllConstructionTooltip]"
-												visible = "[IsValid(PauseAllConstruction)]"
-												using = tooltip_above
-												using = budget_pause_all_button_sound
-											}
-
-											button = {
-												using = default_button_action
-												size = { 210 35 }
-												text = "RESUME_ALL_CONSTRUCTION_BUTTON"
-												onclick = "[Execute(ResumeAllConstruction)]"
-												enabled = "[IsValid(ResumeAllConstruction)]"
-												tooltip = "[ResumeAllConstructionTooltip]"
-												visible = "[IsValid(ResumeAllConstruction)]"
-												using = tooltip_above
-												using = budget_resume_all_button_sound
-											}
-										}
-									}
-								}
+							blockoverride "button_4_click" {
+								onclick = "[GetScriptedGui('button_4_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = yes
 							}
+
+							blockoverride "button_5_click" {
+								onclick = "[GetScriptedGui('button_5_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+								enabled = yes
+							}
+
+							blockoverride "setvisible_very_low" {
+								visible = "[Not( GetScriptedGui('button_1_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+							}
+							blockoverride "setvisible_very_low2" {
+								visible = "[GetScriptedGui('button_1_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							}
+
+							blockoverride "setvisible_low" {
+								visible = "[Not( GetScriptedGui('button_2_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+							}
+							blockoverride "setvisible_low2" {
+								visible = "[GetScriptedGui('button_2_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							}
+
+							blockoverride "setvisible_medium" {
+								visible = "[Not( GetScriptedGui('button_3_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+							}
+							blockoverride "setvisible_medium2" {
+								visible = "[GetScriptedGui('button_3_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							}
+
+							blockoverride "setvisible_high" {
+								visible = "[Not( GetScriptedGui('button_4_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+							}
+							blockoverride "setvisible_high2" {
+								visible = "[GetScriptedGui('button_4_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							}
+
+							blockoverride "setvisible_very_high" {
+								visible = "[Not( GetScriptedGui('button_5_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+							}
+							blockoverride "setvisible_very_high2" {
+								visible = "[GetScriptedGui('button_5_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+							}
+							blockoverride "tooltip_1" {
+							}
+							blockoverride "tooltip_2" {
+							}
+							blockoverride "tooltip_3" {
+							}
+							blockoverride "tooltip_4" {
+							}
+							blockoverride "tooltip_5" {
+							}			
 						}
+					}
 
 						tax_exp_frame_coin = {
 

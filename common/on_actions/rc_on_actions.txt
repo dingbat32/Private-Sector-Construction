@@ -39,33 +39,30 @@ set_construction_country = {
 				}
 
 			}
-			set_local_variable = {
+			set_variable = {
+				name = max_government_construction_spending
+				value = calculate_max_government_construction_spending
+			}
+
+			set_variable = {
 				name = national_consumption
 				value = national_construction_consumption
 			}
-			set_local_variable = {
+			set_variable = {
 				name = national_production
 				value = national_construction_production
 			}
-			set_local_variable = {
-				name = max_government_construction_spending
-				value = calculate_government_construction_spending
-			}
-			set_local_variable = {
+			set_variable = {
 				name = nominal_construction_demand
 				value = calculate_nominal_construction
 			}
-			set_local_variable = {
+			set_variable = {
 				name = limited_construction_demand
 				value = calculate_limited_construction_demand
 			}
-			set_variable = {
-				name = government_construction_spending
-				value = calculate_current_government_construction_spending
-			}
 			set_local_variable = {
 				name = remaining_construction_demand
-				value = local_var:limited_construction_demand
+				value = var:limited_construction_demand
 			}
 			ordered_scope_state = {
 				order_by = construction_ordering
@@ -101,6 +98,21 @@ set_construction_country = {
 						}
 					}
 				}
+			}
+			set_variable = {
+				name = government_construction_spending
+				value = calculate_government_construction_spending
+			}
+		}
+	}
+}
+
+calculate_spending = {
+	effect = {
+		every_country = {
+			set_variable = {
+				name = government_construction_spending
+				value = calculate_government_construction_spending
 			}
 		}
 	}

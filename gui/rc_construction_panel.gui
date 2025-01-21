@@ -159,6 +159,9 @@ types construction_panel
 							blockoverride "second_line" {}
 							blockoverride "text_lower" {}
 							blockoverride "text_money" {
+								alpha = "[TransparentIfZero(GetPlayer.GetConstructionGoodsExpenses)]"
+								raw_text = "#N @money!-[GetPlayer.MakeScope.Var('government_construction_spending').GetValue|D-]"
+								using = construction_goods_expense_tooltip_with_graph
 							}
 
 							blockoverride "button_1_click" {
@@ -232,6 +235,7 @@ types construction_panel
 							}			
 						}
 					}
+
 
 					datacontext = "[AccessPlayer]"
 	
