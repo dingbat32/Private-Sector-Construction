@@ -34,7 +34,7 @@ building_construction_point_converter = {
 	buildable = no
 	expandable = no
 	downsizeable = no
-	cannot_switch_owner = yes
-
+	can_switch_owner = no
+	
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
 }
