@@ -1,3 +1,7 @@
 ﻿construction_throughput_mult = {
     building_construction_point_converter_throughput_add = 1
 }
+
+country_private_construction_allocation_add = {
+    country_private_construction_allocation_mult = 1
+}

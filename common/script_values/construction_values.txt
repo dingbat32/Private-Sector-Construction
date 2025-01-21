@@ -148,6 +148,15 @@ calculate_max_government_construction_spending = {
 	subtract = modifier:country_private_construction_allocation_mult
 	multiply = investment_pool_gross_income
 	multiply = var:construction_spending_level
+	if = {
+		limit = {
+			OR = {
+				is_construction_paused = yes
+				construction_queue_num_queued_government_levels = 0 
+			}
+		}
+		value = 0
+	}
 }
 
 calculate_total_construction_spending = {
@@ -172,5 +181,19 @@ calculate_government_construction_spending = {
 	subtract = {
 		value = investment_pool_gross_income
 		subtract = investment_pool_net_income
+	}
+}
+
+
+private_construction_increase = {
+	value = 1
+	multiply = {
+		value = 1
+		subtract = var:construction_spending_level
+	}
+	multiply = {
+		value = 1
+		add = var:prev_construction_allocation
+		subtract = modifier:country_private_construction_allocation_mult
 	}
 }

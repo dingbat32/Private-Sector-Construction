@@ -39,11 +39,38 @@ set_construction_country = {
 				}
 
 			}
+
+			if = {
+				limit = {
+					has_modifier = country_private_construction_allocation_add
+				}
+				remove_modifier = country_private_construction_allocation_add
+			}
+			else = {
+				set_variable = {
+					name = prev_construction_allocation
+					value = 0
+				}
+			}
+			set_local_variable = {
+				name = current_construction_increase
+				value = private_construction_increase
+			}
+			add_modifier = {
+				name = country_private_construction_allocation_add
+				multiplier = {
+					value = local_var:current_construction_increase
+				}
+			}
+			set_variable = {
+				name = prev_construction_allocation
+				value = local_var:current_construction_increase
+			}
+			
 			set_variable = {
 				name = max_government_construction_spending
 				value = calculate_max_government_construction_spending
 			}
-
 			set_variable = {
 				name = national_consumption
 				value = national_construction_consumption
