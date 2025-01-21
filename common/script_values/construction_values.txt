@@ -147,7 +147,6 @@ calculate_max_government_construction_spending = {
 	value = 1
 	subtract = modifier:country_private_construction_allocation_mult
 	multiply = investment_pool_gross_income
-	multiply = var:construction_spending_level
 	if = {
 		limit = {
 			OR = {
@@ -182,6 +181,8 @@ calculate_government_construction_spending = {
 		value = investment_pool_gross_income
 		subtract = investment_pool_net_income
 	}
+	max = var:max_government_construction_spending
+	min = 0
 }
 
 
