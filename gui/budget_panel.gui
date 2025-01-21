@@ -931,7 +931,7 @@ types budget
 										
 										align = right|nobaseline
 										raw_text = "#variable @money![State.GetGovernmentExpenses|+d]#!"
-										tooltip = "[State.GetGovernmentExpensesTooltip]"
+										tooltip = state_government_expenses_with_table
 										alpha = "[TransparentIfZero(State.GetGovernmentExpenses)]"
 									}
 
