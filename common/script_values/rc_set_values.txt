@@ -1,0 +1,3 @@
+﻿command_economy_spending_mult = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
+oversupply_limit = 1.05
+privatisation_percent_weeks = 12 #number of weeks to estimate over

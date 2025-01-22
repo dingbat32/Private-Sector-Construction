@@ -4,7 +4,7 @@
 	max = {
 		value = var:national_production
 		multiply = 2
-		multiply = 1.05
+		multiply = oversupply_limit
 		divide = 10
 		min = 10
 	}
@@ -17,10 +17,15 @@ calculate_nominal_construction = {
 			has_law = law_type:law_command_economy
 		}
 		value = income
-		multiply = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
+		multiply = command_economy_spending_mult
+		multiply = var:construction_spending_level
 	}
 	else = {
 		value = investment_pool_gross_income
+		multiply = {
+			value = 1
+			subtract = var:privatisation_percent_estimate
+		}
 		add = var:max_government_construction_spending
 	}
 	divide = construction_point_price
@@ -62,6 +67,37 @@ construction_price_multiplier = {
 		#clamp between 1 and -1
 		max = 1
 		min = -1
+	}
+}
+
+privatisation_spending_percent = {
+	value = var:privatisation_percent_estimate
+	multiply = {
+		value = privatisation_percent_weeks
+		subtract = 1
+	}
+	divide = privatisation_percent_weeks
+	add = {
+		value = privatisation_spending_percent_weekly
+		divide = privatisation_percent_weeks
+	}
+}
+
+privatisation_spending_percent_weekly = {
+	if = {
+		limit = {
+			var:prev_estimated_investment_pool = 0
+		}
+		value = 0
+	}
+	else = {
+		value = 1
+		subtract = {
+			value = investment_pool
+			divide = var:prev_estimated_investment_pool
+		}
+		min = 0
+		max = 1
 	}
 }
 
@@ -146,6 +182,7 @@ construction_ordering = {
 calculate_max_government_construction_spending = {
 	value = 1
 	subtract = modifier:country_private_construction_allocation_mult
+	divide = modifier:country_private_construction_allocation_mult
 	multiply = investment_pool_gross_income
 	if = {
 		limit = {

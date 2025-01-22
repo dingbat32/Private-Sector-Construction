@@ -1,4 +1,4 @@
-﻿set_construction_start = {
+﻿set_construction = {
 	effect = {
 		every_country = {
 			trigger_event = {
@@ -52,21 +52,52 @@ set_construction_country = {
 					value = 0
 				}
 			}
+			
+			if = {
+				limit = {
+					NOT = {
+						has_variable = prev_estimated_investment_pool
+					}
+				}
+				set_variable = {
+					name = prev_estimated_investment_pool
+					value = 0
+				}
+			}
+			
+			if = {
+				limit = {
+					has_variable = privatisation_percent_estimate
+				}
+				set_variable = {
+					name = privatisation_percent_estimate
+					value = privatisation_spending_percent
+				}
+			}
+			else = {
+				set_variable = {
+					name = privatisation_percent_estimate
+					value = 0
+				}
+			}
+
 			set_local_variable = {
 				name = current_construction_increase
 				value = private_construction_increase
 			}
+
 			add_modifier = {
 				name = country_private_construction_allocation_add
 				multiplier = {
 					value = local_var:current_construction_increase
 				}
 			}
+
 			set_variable = {
 				name = prev_construction_allocation
 				value = local_var:current_construction_increase
 			}
-			
+
 			set_variable = {
 				name = max_government_construction_spending
 				value = calculate_max_government_construction_spending
@@ -130,16 +161,13 @@ set_construction_country = {
 				name = government_construction_spending
 				value = calculate_government_construction_spending
 			}
-		}
-	}
-}
-
-calculate_spending = {
-	effect = {
-		every_country = {
 			set_variable = {
-				name = government_construction_spending
-				value = calculate_government_construction_spending
+				name = prev_estimated_investment_pool
+				value = {
+					value = investment_pool
+					add = investment_pool_net_income
+					min = 0
+				}
 			}
 		}
 	}
