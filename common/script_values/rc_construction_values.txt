@@ -38,7 +38,7 @@ construction_point_price = {
 }
 
 construction_good_price = {
-	value = 95 #base price of construction good
+	value = construction_good_base_price
 	if = {
 		#make sure that construction has been calculated once before to avoid assuming construction cost is -75%
 		limit = {
@@ -53,7 +53,7 @@ construction_good_price = {
 
 #calculate estimated national construction price multiplier based on formula: https://vic3.paradoxwikis.com/Market#Market_price
 construction_price_multiplier = {
-	value = 0.75
+	value = define:NEconomy|PRICE_RANGE
 	multiply = {
 		value = {
 			value = var:national_consumption
@@ -102,7 +102,7 @@ privatisation_spending_percent_weekly = {
 }
 
 construction_state_price_multiplier = {
-	value = 0.75
+	value = define:NEconomy|PRICE_RANGE
 	multiply = {
 		value = {
 			value = var:national_consumption
@@ -201,7 +201,7 @@ calculate_total_construction_spending = {
 		sg:construction = {
 			add = {
 				value = state_goods_consumption
-				multiply = 95
+				multiply = construction_good_base_price
 				multiply = {
 					value = 1
 					add = state_goods_pricier
