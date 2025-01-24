@@ -16,8 +16,7 @@ calculate_nominal_construction = {
 		limit = {
 			has_law = law_type:law_command_economy
 		}
-		value = income
-		multiply = command_economy_spending_mult
+		value = weekly_net_fixed_income
 		multiply = var:construction_spending_level
 	}
 	else = {
@@ -26,9 +25,13 @@ calculate_nominal_construction = {
 			value = 1
 			subtract = var:privatisation_percent_estimate
 		}
-		add = var:max_government_construction_spending
+		add = var:limited_government_construction_spending
 	}
 	divide = construction_point_price
+}
+
+corrected_investment_pool_gross_income = {
+
 }
 
 #price of each construction point is 10 goods
@@ -179,7 +182,7 @@ construction_ordering = {
 	}
 }
 
-calculate_max_government_construction_spending = {
+calculate_limited_government_construction_spending = {
 	value = 1
 	subtract = modifier:country_private_construction_allocation_mult
 	divide = modifier:country_private_construction_allocation_mult
@@ -193,6 +196,13 @@ calculate_max_government_construction_spending = {
 		}
 		value = 0
 	}
+}
+
+max_government_construction_spending = {
+	value = 1
+	subtract = corrected_private_allocation
+	divide = corrected_private_allocation
+	multiply = investment_pool_gross_income
 }
 
 calculate_total_construction_spending = {
@@ -218,20 +228,62 @@ calculate_government_construction_spending = {
 		value = investment_pool_gross_income
 		subtract = investment_pool_net_income
 	}
-	max = var:max_government_construction_spending
+	max = var:limited_government_construction_spending
 	min = 0
 }
 
 
 private_construction_increase = {
-	value = 1
-	multiply = {
-		value = 1
-		subtract = var:construction_spending_level
+	value = corrected_private_allocation
+	divide = {
+		value = corrected_private_allocation
+		add = {
+			value = 1
+			subtract = corrected_private_allocation
+			multiply = var:construction_spending_level
+		}
 	}
-	multiply = {
-		value = 1
-		add = var:prev_construction_allocation
-		subtract = modifier:country_private_construction_allocation_mult
+	subtract = corrected_private_allocation
+}
+
+corrected_private_allocation = {
+
+	value = modifier:country_private_construction_allocation_mult
+	if = {
+		limit = {
+			has_variable = prev_construction_allocation
+		}
+		subtract = var:prev_construction_allocation
+	}
+}
+
+ai_construction_demand = {
+	add = {
+		value = weekly_net_fixed_income
+		divide = 1500 #price of wooden construction
+
+		min = {
+			value = income
+			subtract = {
+				value = investment_pool_gross_income
+				subtract = investment_pool_net_income
+			}
+			divide = 7500 # 1 construction output per this much income
+		}
+	}
+	# Improved technology enables cheaper construction
+	# Based on a construction sector weekly balance of 1000
+	# Cost per wood construction 3000/2 = 1500
+	# Cost per iron construction 4600/5 = 950
+	# Cost per steel construction 5400/10 = 640
+
+	if = {
+		limit = { has_technology_researched = urban_planning }
+		multiply = 1.63
+	}
+
+	if = {
+		limit = { has_technology_researched = steel_frame_buildings }
+		multiply = 1.44
 	}
 }

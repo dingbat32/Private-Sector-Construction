@@ -10,7 +10,6 @@
 
 set_construction_country = {
 	effect = {
-		check_construction_spending_level = {}
 		if = {
 			limit = { 
 				has_technology_researched = urbanization
@@ -80,6 +79,15 @@ set_construction_country = {
 					value = 0
 				}
 			}
+			set_variable = {
+				name = national_consumption
+				value = national_construction_consumption
+			}
+			set_variable = {
+				name = national_production
+				value = national_construction_production
+			}
+			check_construction_spending_level = {}
 
 			set_local_variable = {
 				name = current_construction_increase
@@ -99,16 +107,8 @@ set_construction_country = {
 			}
 
 			set_variable = {
-				name = max_government_construction_spending
-				value = calculate_max_government_construction_spending
-			}
-			set_variable = {
-				name = national_consumption
-				value = national_construction_consumption
-			}
-			set_variable = {
-				name = national_production
-				value = national_construction_production
+				name = limited_government_construction_spending
+				value = calculate_limited_government_construction_spending
 			}
 			set_variable = {
 				name = nominal_construction_demand

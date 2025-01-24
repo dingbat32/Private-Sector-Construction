@@ -17,7 +17,22 @@
         else = {
             set_variable = {
                 name = construction_spending_level
-                value = 1
+                value = {
+                    if = {
+                        limit = {
+                            max_government_construction_spending = 0
+                        }
+                        value = 0
+                    } else = {
+                        value = ai_construction_demand
+                        divide = {
+                            value = max_government_construction_spending
+                            divide = construction_point_price
+                        }
+                        min = 0
+                        max = 1
+                    }
+                }
             }
         }
     }
