@@ -87,6 +87,22 @@ set_construction_country = {
 				name = national_production
 				value = national_construction_production
 			}
+			if = {
+				limit = {
+					has_variable = construction_price_estimate
+				}
+				set_variable = {
+					name = construction_price_estimate
+					value = construction_price_average
+				}
+			}
+			else = {
+				set_variable = {
+					name = construction_price_estimate
+					value = construction_good_base_price
+				}
+			}
+
 			check_construction_spending_level = {}
 
 			set_local_variable = {

@@ -27,20 +27,29 @@ calculate_nominal_construction = {
 		}
 		add = var:limited_government_construction_spending
 	}
-	divide = construction_point_price
+	divide = var:construction_price_estimate
 }
 
-corrected_investment_pool_gross_income = {
-
+construction_price_average = {
+	value = var:construction_price_estimate
+	multiply = {
+		value = construction_price_weeks
+		subtract = 1
+	}
+	divide = construction_price_weeks
+	add = {
+		value = construction_point_price_weekly
+		divide = construction_price_weeks
+	}
 }
 
 #price of each construction point is 10 goods
-construction_point_price = {
-	value = construction_good_price
+construction_point_price_weekly = {
+	value = construction_good_price_weekly
 	multiply = 10
 }
 
-construction_good_price = {
+construction_good_price_weekly = {
 	value = construction_good_base_price
 	if = {
 		#make sure that construction has been calculated once before to avoid assuming construction cost is -75%

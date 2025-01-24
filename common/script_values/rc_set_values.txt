@@ -2,3 +2,4 @@
 oversupply_limit = 1.05
 privatisation_percent_weeks = 12 #number of weeks to estimate over
 construction_good_base_price = 95
+construction_price_weeks = 12

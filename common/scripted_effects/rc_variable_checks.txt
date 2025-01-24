@@ -28,7 +28,7 @@
                     value = ai_construction_demand
                     divide = {
                         value = max_government_construction_spending
-                        divide = construction_point_price
+                        divide = var:construction_price_estimate
                     }
                     min = 0
                     max = 1
