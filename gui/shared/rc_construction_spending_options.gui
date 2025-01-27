@@ -1,0 +1,440 @@
+﻿# COPY-PASTED FOR NOW
+@panel_width_minus_10 = 530			# used to be 450
+@panel_width = 540  				# used to be 460
+@panel_width_half = 270				# used to be 230
+@panel_width_plus_10 = 550  		# used to be 470
+@panel_width_plus_14 = 554			# used to be 474
+@panel_width_plus_14_half = 277		# used to be 237
+@panel_width_plus_20 = 560			# used to be 480
+@panel_width_plus_30 = 570			# used to be 490
+@panel_width_plus_70 = 610			# used to be 530
+
+@foreign_invest_icon_size = 30
+
+types construction_spending_options_types {
+    type construction_spending_frame = construction_frame_coin {
+        blockoverride "text_upper" {
+            text = [concept_construction_spending]
+        }
+        blockoverride "second_line" {}
+        blockoverride "text_lower" {}
+        blockoverride "text_money" {
+            alpha = "[TransparentIfZero(GetPlayer.GetConstructionGoodsExpenses)]"
+            raw_text = "#N @money!-[GetPlayer.MakeScope.Var('government_construction_spending').GetValue|D-]"
+            using = construction_goods_expense_tooltip_with_graph
+        }
+
+        blockoverride "button_1_click" {
+            onclick = "[GetScriptedGui('button_1_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            enabled = yes
+        }
+
+        blockoverride "button_2_click" {
+            onclick = "[GetScriptedGui('button_2_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            enabled = yes
+        }
+        
+        blockoverride "button_3_click" {
+            onclick = "[GetScriptedGui('button_3_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            enabled = yes
+        }
+
+        blockoverride "button_4_click" {
+            onclick = "[GetScriptedGui('button_4_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            enabled = yes
+        }
+
+        blockoverride "button_5_click" {
+            onclick = "[GetScriptedGui('button_5_sgui').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+            enabled = yes
+        }
+
+        blockoverride "setvisible_very_low" {
+            visible = "[Not( GetScriptedGui('button_1_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+        }
+        blockoverride "setvisible_very_low2" {
+            visible = "[GetScriptedGui('button_1_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+
+        blockoverride "setvisible_low" {
+            visible = "[Not( GetScriptedGui('button_2_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+        }
+        blockoverride "setvisible_low2" {
+            visible = "[GetScriptedGui('button_2_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+
+        blockoverride "setvisible_medium" {
+            visible = "[Not( GetScriptedGui('button_3_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+        }
+        blockoverride "setvisible_medium2" {
+            visible = "[GetScriptedGui('button_3_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+
+        blockoverride "setvisible_high" {
+            visible = "[Not( GetScriptedGui('button_4_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+        }
+        blockoverride "setvisible_high2" {
+            visible = "[GetScriptedGui('button_4_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+
+        blockoverride "setvisible_very_high" {
+            visible = "[Not( GetScriptedGui('button_5_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End ))]"
+        }
+        blockoverride "setvisible_very_high2" {
+            visible = "[GetScriptedGui('button_5_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+        }
+        blockoverride "tooltip_1" {
+			datacontext = "[GetScriptedGui('button_1_sgui')]"
+            tooltip = "VERY_LOW_CONSTRUCTION_BUDGET_TT"
+        }
+        blockoverride "tooltip_2" {
+			datacontext = "[GetScriptedGui('button_2_sgui')]"
+            tooltip = "LOW_CONSTRUCTION_BUDGET_TT"
+        }
+        blockoverride "tooltip_3" {
+			datacontext = "[GetScriptedGui('button_3_sgui')]"
+            tooltip = "MEDIUM_CONSTRUCTION_BUDGET_TT"
+        }
+        blockoverride "tooltip_4" {
+			datacontext = "[GetScriptedGui('button_4_sgui')]"
+            tooltip = "HIGH_CONSTRUCTION_BUDGET_TT"
+        }
+        blockoverride "tooltip_5" {
+			datacontext = "[GetScriptedGui('button_5_sgui')]"
+            tooltip = "VERY_HIGH_CONSTRUCTION_BUDGET_TT"
+        }
+        blockoverride "context_very_low" {
+            datacontext = "[GetScriptedGui('button_1_sgui')]"
+        }
+        blockoverride "context_low" {
+            datacontext = "[GetScriptedGui('button_2_sgui')]"
+        }
+        blockoverride "context_medium" {
+            datacontext = "[GetScriptedGui('button_3_sgui')]"
+        }
+        blockoverride "context_high" {
+            datacontext = "[GetScriptedGui('button_4_sgui')]"
+        }
+        blockoverride "context_very_high" {
+            datacontext = "[GetScriptedGui('button_5_sgui')]"
+        }
+    }
+
+    type construction_frame_coin = container {
+		minimumsize = { @panel_width_minus_10 50 }
+
+		flowcontainer = {
+
+			parentanchor = vcenter
+			direction = vertical
+			margin_top = 3
+			margin_bottom = 3
+
+			textbox = {
+				autoresize = yes
+				fontsize_min = 12
+				max_width = 230
+				multiline = yes
+				block "text_upper" {
+					raw_text = "Upper text" 
+				}
+				parentanchor = left
+				elide = right
+				align = left|nobaseline
+			}
+
+			block "second_line" {
+				textbox = {
+					autoresize = yes
+					block "text_lower" {
+						raw_text = "Lower Text"
+					}
+					using = fontsize_small
+					margin_bottom = 6
+					parentanchor = left
+					elide = right
+					align = left|nobaseline
+				}
+			}
+		}
+
+		block "revenue_controls" {
+			set_level_bar_construction = {
+				position = { 230 0 }
+				parentanchor = vcenter
+			}
+		}
+		
+		textbox = {
+			autoresize = yes
+			block "text_money" {
+				raw_text = "@money! 0"
+			}
+			parentanchor = right|vcenter
+			margin_bottom = 6
+		}
+		
+		block "divider" {
+			divider_clean = {}
+		}
+	}
+	
+	### SET LEVEL BAR ITEM
+	type set_level_bar_construction_item = widget {
+
+		block "size" {
+			size = { 40 48 }
+		}
+
+		using = tooltip_above
+		
+		### BUTTON
+		button = {
+			using = default_button_action
+
+			block "button_size" {
+				size = { 35 32 }
+			}
+
+			parentanchor = center
+			block "click" {}
+			block "context" {}
+
+			button = {
+				block "setvisible_2" {}
+				block "button_texture" {}
+				alwaystransparent = yes
+
+				block "texture_size" {
+					size = { 24 24 }
+				}
+
+				parentanchor = center
+			}
+		}
+
+		### SELECTED FRAME
+		widget = {
+			block "selected_frame_size" {
+				size = { 37 35 }
+			}
+			parentanchor = center
+			block "setvisible" {}
+			
+			state = {
+				name = _show
+				duration = 0.35
+				alpha = 1
+			}
+			state = {
+				name = _hide
+				duration = 0
+				alpha = 0
+			}
+			
+			background = {
+				using = dark_area
+				alpha = 0.8
+			}
+			icon = {
+				using = highlighted_square_selection
+			}
+		}
+		
+		### SELECTED (icon)
+		icon = {
+			block "button_texture" {}
+
+			block "selected_texture_size" {
+				size = { 28 28 }
+			}
+
+			parentanchor = center
+			block "setvisible" {}
+		}
+		
+		### ARROW BOTTOM
+		icon = {
+			texture = "gfx/interface/budget/set_level_bar_arrow.dds"
+
+			block "selected_arrow_size" {	
+				size = { 21 12 }
+			}
+
+			scale = 1.2
+			parentanchor = bottom|hcenter
+			mirror = vertical
+			block "setvisible" {}
+			
+			state = {
+				name = _show
+				next = show_2
+				position = { 0 0 }
+				duration = 0
+				alpha = 1
+			}
+			state = {
+				name = show_2
+				next = show_3
+				position = { 0 3 }
+				duration = 0
+				alpha = 1
+			}
+			state = {
+				name = show_3
+				next = show_4
+				position = { 0 -2 }
+				duration = 0.2
+				alpha = 1
+			}
+			state = {
+				name = show_4
+				position = { 0 0 }
+				duration = 0.1
+				alpha = 1
+			}
+			
+			state = {
+				name = _hide
+				position = { 0 0 }
+				duration = 0
+				alpha = 0
+			}
+		}
+	}
+		
+	### SET LEVEL BAR (budget tax)
+	type set_level_bar_construction = flowcontainer {
+
+		block "tutorial_highilight_name" {
+			name = "tutorial_highlight_name"
+		}
+			
+		### VERY LOW
+		set_level_bar_construction_item = {
+            blockoverride "context" {
+                block "context_very_low" {}
+            }
+			block "tooltip_1" {
+				tooltip = "[GetPlayer.GetTaxLevelDescVeryLow]"
+			}
+			blockoverride "button_texture" {
+				texture = "gfx/interface/budget/budget_set_very_low.dds"
+			}
+			blockoverride "click" {
+				using = budget_coins_lvl_1_button_sound
+				block "button_1_click" {
+					onclick = "[Execute(GetPlayer.SetTaxLevelVeryLow)]"
+					enabled = "[GetPlayer.HasAnyTaxes]"
+				}
+			}
+			blockoverride "setvisible" {
+				block "setvisible_very_low" {}
+			}
+			blockoverride "setvisible_2" {
+				block "setvisible_very_low_2" {}
+			}
+		}
+		### LOW
+		set_level_bar_construction_item = {
+            blockoverride "context" {
+                block "context_low" {}
+            }
+            block "tooltip_2" {
+				tooltip = "[GetPlayer.GetTaxLevelDescLow]"
+			}
+			blockoverride "button_texture" {
+				texture = "gfx/interface/budget/budget_set_low.dds"
+			}
+			blockoverride "click" {
+				using = budget_coins_lvl_2_button_sound
+				block "button_2_click" {
+					onclick = "[Execute(GetPlayer.SetTaxLevelLow)]"
+					enabled = "[GetPlayer.HasAnyTaxes]"
+				}
+			}
+			blockoverride "setvisible" {
+				block "setvisible_low" {}
+			}
+			blockoverride "setvisible_2" {
+				block "setvisible_low_2" {}
+			}
+
+		}
+		### MEDIUM
+		set_level_bar_construction_item = {
+            blockoverride "context" {
+                block "context_medium" {}
+            }
+            block "tooltip_3" {
+				tooltip = "[GetPlayer.GetTaxLevelDescMedium]"
+			}
+			blockoverride "button_texture" {
+				texture = "gfx/interface/budget/budget_set_medium.dds"
+			}
+			blockoverride "click" {
+				using = budget_coins_lvl_3_button_sound
+				block "button_3_click" {
+					onclick = "[Execute(GetPlayer.SetTaxLevelMedium)]"
+					enabled = "[GetPlayer.HasAnyTaxes]"
+				}
+			}
+			blockoverride "setvisible" {
+				block "setvisible_medium" {}
+			}
+			blockoverride "setvisible_2" {
+				block "setvisible_medium_2" {}
+			}
+		}
+		### HIGH
+		set_level_bar_construction_item = {
+            blockoverride "context" {
+                block "context_high" {}
+            }
+            block "tooltip_4" {
+				tooltip = "[GetPlayer.GetTaxLevelDescHigh]"
+			}
+			blockoverride "button_texture" {
+				texture = "gfx/interface/budget/budget_set_high.dds"
+			}
+			blockoverride "click" {
+				using = budget_coins_lvl_4_button_sound
+				block "button_4_click" {
+					onclick = "[Execute(GetPlayer.SetTaxLevelHigh)]"
+					enabled = "[GetPlayer.HasAnyTaxes]"
+				}
+			}
+			blockoverride "setvisible" {
+				block "setvisible_high" {}
+			}
+			blockoverride "setvisible_2" {
+				block "setvisible_high_2" {}
+			}
+		}
+		### VERY HIGH
+		set_level_bar_construction_item = {
+			blockoverride "context" {
+                block "context_very_high" {}
+            }
+            block "tooltip_5" {
+				tooltip = "[GetPlayer.GetTaxLevelDescVeryHigh]"
+			}
+			blockoverride "button_texture" {
+				texture = "gfx/interface/budget/budget_set_very_high.dds"
+			}
+			blockoverride "click" {
+				using = budget_coins_lvl_5_button_sound
+				block "button_5_click" {
+					onclick = "[Execute(GetPlayer.SetTaxLevelVeryHigh)]"
+					enabled = "[GetPlayer.HasAnyTaxes]"
+				}
+			}
+			blockoverride "setvisible" {
+				block "setvisible_very_high" {}
+			}
+			blockoverride "setvisible_2" {
+				block "setvisible_very_high_2" {}
+			}
+		}
+	}
+}

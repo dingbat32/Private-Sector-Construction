@@ -10,6 +10,7 @@
 
 set_construction_country = {
 	effect = {
+		save_max_construction_spending_values = yes
 		if = {
 			limit = { 
 				has_technology_researched = urbanization

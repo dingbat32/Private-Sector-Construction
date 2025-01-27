@@ -1,5 +1,5 @@
 ﻿construction = {
-	texture = "gfx/interface/icons/building_icons/construction_camp.dds"
+	texture = "gfx/interface/icons/state_status_icons/has_construction.dds"
 	cost = 95
 	category = industrial
 	local = yes

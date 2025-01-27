@@ -1,0 +1,27 @@
+﻿l_english: 
+
+ VERY_LOW_CONSTRUCTION_BUDGET_TT: "Very low construction budget\n\n[ScriptedGui.BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ LOW_CONSTRUCTION_BUDGET_TT: "Low construction budget\n\n[ScriptedGui.BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ MEDIUM_CONSTRUCTION_BUDGET_TT: "Medium construction budget\n\n[ScriptedGui.BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ HIGH_CONSTRUCTION_BUDGET_TT: "High construction budget\n\n[ScriptedGui.BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+ VERY_HIGH_CONSTRUCTION_BUDGET_TT: "Very high construction budget\n\n[ScriptedGui.BuildTooltip( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+
+ VERY_LOW_CONSTRUCTION_USAGE_PROPORTION_TT: "Sets #yellow #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_TOOLTIP')] government construction usage#!#! to #V 20%#!"
+ LOW_CONSTRUCTION_USAGE_PROPORTION_TT: "Sets #yellow #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_TOOLTIP')] government construction usage#!#! to #V 40%#!"
+ MEDIUM_CONSTRUCTION_USAGE_PROPORTION_TT: "Sets #yellow #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_TOOLTIP')] government construction usage#!#! to #V 60%#!"
+ HIGH_CONSTRUCTION_USAGE_PROPORTION_TT: "Sets #yellow #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_TOOLTIP')] government construction usage#!#! to #V 80%#!"
+ VERY_HIGH_CONSTRUCTION_USAGE_PROPORTION_TT: "Sets #yellow #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_TOOLTIP')] government construction usage#!#! to #V 100%#!"
+
+ VERY_LOW_CONSTRUCTION_BUDGET_COST_TT: "Predicted spending: @money!#n -[GetPlayer.MakeScope.Var('very_low_construction_spending_value').GetValue|1*]#!"
+ LOW_CONSTRUCTION_BUDGET_COST_TT: "Predicted spending: @money!#n -[GetPlayer.MakeScope.Var('low_construction_spending_value').GetValue|1*]#!"
+ MEDIUM_CONSTRUCTION_BUDGET_COST_TT: "Predicted spending: @money!#n -[GetPlayer.MakeScope.Var('medium_construction_spending_value').GetValue|1*]#!"
+ HIGH_CONSTRUCTION_BUDGET_COST_TT: "Predicted spending: @money!#n -[GetPlayer.MakeScope.Var('high_construction_spending_value').GetValue|1*]#!"
+ VERY_HIGH_CONSTRUCTION_BUDGET_COST_TT: "Predicted spending: @money!#n -[GetPlayer.MakeScope.Var('very_high_construction_spending_value').GetValue|1*]#!"
+
+ CURRENT_DESC: "This is our current spending level"
+
+ CONSTRUCTION_TOOLTIP: "The proportion of the government's maximum construction spending, depending on the $ECONOMIC_SYSTEM_GC_LINK$"
+ SPENDING_DESC: "Predicted spending"
+
+ concept_construction_spending: "Construction Spending"
+ concept_construction_spending_desc: "How much the government is paying for construction"

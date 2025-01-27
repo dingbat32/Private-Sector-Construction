@@ -24,7 +24,7 @@
 bg_construction_converter = {	
 	category = urban
 	
-	#is_shown_in_outliner = no
+	is_shown_in_outliner = no
 
 	always_possible = yes	
 	

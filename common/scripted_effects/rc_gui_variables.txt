@@ -1,0 +1,37 @@
+﻿save_max_construction_spending_values = {
+    set_variable = {
+        name = very_low_construction_spending_value
+        value = {
+            value = max_government_construction_spending
+            multiply = 0.2
+        }
+    }
+    set_variable = {
+        name = low_construction_spending_value
+        value = {
+            value = max_government_construction_spending
+            multiply = 0.4
+        }
+    }
+    set_variable = {
+        name = medium_construction_spending_value
+        value = {
+            value = max_government_construction_spending
+            multiply = 0.6
+        }
+    }
+    set_variable = {
+        name = high_construction_spending_value
+        value = {
+            value = max_government_construction_spending
+            multiply = 0.8
+        }
+    }
+    set_variable = {
+        name = very_high_construction_spending_value
+        value = {
+            value = max_government_construction_spending
+            multiply = 1
+        }
+    }
+}

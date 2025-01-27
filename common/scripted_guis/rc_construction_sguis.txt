@@ -5,11 +5,20 @@
             name = construction_spending_level
             value = 0.2
         }
+        custom_tooltip = {
+            text = VERY_LOW_CONSTRUCTION_USAGE_PROPORTION_TT
+        }
+        custom_tooltip = {
+            text = VERY_LOW_CONSTRUCTION_BUDGET_COST_TT
+        }
     }
     is_valid = {
         has_variable = construction_spending_level
-        NOT = {
-            var:construction_spending_level = 0.2
+        custom_tooltip = {
+            text = CURRENT_DESC
+            NOT = {
+                var:construction_spending_level = 0.2
+            }
         }
     }
 
@@ -22,11 +31,20 @@ button_2_sgui = {
             name = construction_spending_level
             value = 0.4
         }
+        custom_tooltip = {
+            text = LOW_CONSTRUCTION_USAGE_PROPORTION_TT
+        }
+        custom_tooltip = {
+            text = LOW_CONSTRUCTION_BUDGET_COST_TT
+        }
     }
     is_valid = {
         has_variable = construction_spending_level
-        NOT = {
-            var:construction_spending_level = 0.4
+        custom_tooltip = {
+            text = CURRENT_DESC
+            NOT = {
+                var:construction_spending_level = 0.4
+            }
         }
     }
 }
@@ -37,11 +55,20 @@ button_3_sgui = {
             name = construction_spending_level
             value = 0.6
         }
+        custom_tooltip = {
+            text = MEDIUM_CONSTRUCTION_USAGE_PROPORTION_TT
+        }
+        custom_tooltip = {
+            text = MEDIUM_CONSTRUCTION_BUDGET_COST_TT
+        }
     }
     is_valid = {
         has_variable = construction_spending_level
-        NOT = {
-            var:construction_spending_level = 0.6
+        custom_tooltip = {
+            text = CURRENT_DESC
+            NOT = {
+                var:construction_spending_level = 0.6
+            }
         }
     }
 }
@@ -52,11 +79,20 @@ button_4_sgui = {
             name = construction_spending_level
             value = 0.8
         }
+        custom_tooltip = {
+            text = HIGH_CONSTRUCTION_USAGE_PROPORTION_TT
+        }
+        custom_tooltip = {
+            text = HIGH_CONSTRUCTION_BUDGET_COST_TT
+        }
     }
     is_valid = {
         has_variable = construction_spending_level
-        NOT = {
-            var:construction_spending_level = 0.8
+        custom_tooltip = {
+            text = CURRENT_DESC
+            NOT = {
+                var:construction_spending_level = 0.8
+            }
         }
     }
 }
@@ -67,11 +103,20 @@ button_5_sgui = {
             name = construction_spending_level
             value = 1
         }
+        custom_tooltip = {
+            text = VERY_HIGH_CONSTRUCTION_USAGE_PROPORTION_TT
+        }
+        custom_tooltip = {
+            text = VERY_HIGH_CONSTRUCTION_BUDGET_COST_TT
+        }
     }
     is_valid = {
         has_variable = construction_spending_level
-        NOT = {
-            var:construction_spending_level = 1
+        custom_tooltip = {
+            text = CURRENT_DESC
+            NOT = {
+                var:construction_spending_level = 1
+            }
         }
     }
 }
