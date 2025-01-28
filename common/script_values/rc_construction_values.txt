@@ -3,7 +3,7 @@
 	#set maximum usage to just over double the supply
 	max = {
 		value = var:national_production
-		multiply = 2
+		multiply = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
 		multiply = oversupply_limit
 		divide = 10
 		min = 10
