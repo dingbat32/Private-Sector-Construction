@@ -75,6 +75,13 @@ construction_price_multiplier = {
 				max = var:national_production
 				min = 1
 			}
+			multiply = {
+				value = 1
+				divide = {
+					value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+					subtract = 1
+				}
+			}
 		}
 		#clamp between 1 and -1
 		max = 1
