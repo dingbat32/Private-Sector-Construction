@@ -165,7 +165,11 @@ state_construction_allocation = {
 			min = 0.1
 		}
 	}
-	max = 2.05 # demand only a limited amount more than is possible in this state
+	# demand only a limited amount more than is possible in this state
+	max = {
+		value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+		multiply = oversupply_limit
+	}
 
 	if = {
 		limit = {
