@@ -1,7 +1,7 @@
 ﻿construction = {
 	texture = "gfx/interface/icons/state_status_icons/has_construction.dds"
-	cost = 95
+	cost = 70
 	category = industrial
 	local = yes
-	prestige_factor = 5
+	prestige_factor = 10
 }

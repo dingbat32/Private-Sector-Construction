@@ -168,10 +168,11 @@ state_construction_allocation = {
 	# demand only a limited amount more than is possible in this state
 	max = {
 		value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
-		multiply = oversupply_limit
+		multiply = state_oversupply_limit
 	}
 
 	if = {
+		#in a case of no production, demand half the remaining demand to get construction to build
 		limit = {
 			sg:construction = {
 				state_goods_production = 0
@@ -186,9 +187,10 @@ state_construction_allocation = {
 			divide = 10
 		}
 	}
-	min = 3
+	min = 10
 	max = local_var:remaining_construction_demand
 }
+
 construction_ordering = {
 	sg:construction = {
 		value = state_goods_production
