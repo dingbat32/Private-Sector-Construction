@@ -1,10 +1,16 @@
 {
-  "name" : "Realistic Construction",
+  "name" : "Private Sector Construction",
   "id" : "",
-  "version" : "0.1",
+  "version" : "1.0",
   "supported_game_version" : "",
-  "short_description" : "Allows private sector construction and market driven construction",
-  "tags" : [],
+  "short_description" : "Allows private sector and market driven construction",
+  "tags" : [
+    "Balance",
+    "Economy And Buildings",
+    "Expansion",
+    "Fixes",
+    "Gameplay"
+  ],
   "relationships" : [],                 
   "game_custom_data" : {
     "multiplayer_synchronized" : true
