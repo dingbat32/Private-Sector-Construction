@@ -309,3 +309,12 @@ ai_construction_demand = {
 		multiply = 1.44
 	}
 }
+
+construction_demand_ratio = {
+	value = var:nominal_construction_demand
+	multiply = 10
+	divide = {
+		value = var:national_production
+		min = 0.1
+	}
+}
