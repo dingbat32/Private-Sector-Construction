@@ -4,7 +4,7 @@ insufficient_construction_for_investment = {
 
 	valid = {
 		has_sufficient_construction_capacity_for_investment = no
-		construction_demand_ratio > 2
+		construction_demand_ratio > define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
 	}
 
 	type = angry_important_action
