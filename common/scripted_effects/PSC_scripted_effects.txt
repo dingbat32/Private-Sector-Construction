@@ -1,0 +1,86 @@
+﻿check_construction_spending_level = {
+    if = {
+        limit = {
+            is_player = yes
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = construction_spending_level
+                }
+            }
+            set_variable = {
+                name = construction_spending_level
+                value = 0.4
+            }
+        }
+    }
+    else = {
+        set_variable = {
+            name = construction_spending_level
+            value = {
+                if = {
+                    limit = {
+                        max_government_construction_spending = 0
+                    }
+                    value = 0
+                } else = {
+                    value = ai_construction_demand
+                    divide = {
+                        value = max_government_construction_spending
+                        divide = var:construction_price_estimate
+                    }
+                    min = 0
+                    max = 1
+                }
+            }
+        }
+    }
+}
+
+change_point_converter_production_method = {
+    if = {
+        limit = {
+            sg:wood_construction = {
+                state_goods_production > 0
+            }
+        }
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_wood_point_conversion
+        }
+    }
+    else_if = {
+        limit = {
+            sg:iron_construction = {
+                state_goods_production > 0
+            }
+        }
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_iron_point_conversion
+        }
+    }
+    else_if = {
+        limit = {
+            sg:steel_construction = {
+                state_goods_production > 0
+            }
+        }
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_steel_point_conversion
+        }
+    }
+    else_if = {
+        limit = {
+            sg:arc_welded_construction = {
+                state_goods_production > 0
+            }
+        }
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_arc_welded_point_conversion
+        }
+    }
+}

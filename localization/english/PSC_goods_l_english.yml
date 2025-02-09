@@ -1,0 +1,6 @@
+﻿l_english:
+ construction:0 "Construction"
+ wood_construction:0 "$construction$"
+ iron_construction:0 "$construction$"
+ steel_construction:0 "$construction$"
+ arc_welded_construction:0 "$construction$"

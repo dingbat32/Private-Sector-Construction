@@ -173,6 +173,7 @@ set_construction_country = {
 						}
 					}
 				}
+				change_point_converter_production_method = yes
 			}
 			set_variable = {
 				name = government_construction_spending

@@ -1,4 +1,4 @@
-﻿goods_output_construction_add={
+﻿goods_output_wood_construction_add={
 	decimals=1
 	color=good
 	game_data={
@@ -6,13 +6,62 @@
 	}
 }
 
-goods_input_construction_add={
+goods_input_wood_construction_add={
 	decimals=1
 	color=bad
 	game_data={
 		ai_value=0
 	}
 }
+
+goods_output_iron_construction_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_iron_construction_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_steel_construction_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_steel_construction_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_output_arc_welded_construction_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+goods_input_arc_welded_construction_add={
+	decimals=1
+	color=bad
+	game_data={
+		ai_value=0
+	}
+}
+
 
 building_construction_point_converter_throughput_add={
 	decimals=1

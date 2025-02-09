@@ -140,17 +140,13 @@ construction_state_price_multiplier = {
 
 national_construction_production = {
 	every_scope_state = {
-		sg:construction = {
-			add = state_goods_production 
-		}
+		add = sum_construction_types
 	}
 }
 
 national_construction_consumption = {
 	every_scope_state = {
-		sg:construction = {
-			add = state_goods_consumption 
-		}
+		add = sum_construction_types
 	}
 }
 
@@ -174,33 +170,43 @@ state_construction_allocation = {
 	if = {
 		#in a case of no production, demand half the remaining demand to get construction to build
 		limit = {
-			sg:construction = {
-				state_goods_production = 0
-			}
+			sum_construction_types = 0
 		}
 		value = local_var:remaining_construction_demand
 		multiply = 0.5
 	}
 	else = {
-		sg:construction = {
-			multiply = state_goods_production
-			divide = 10
-		}
+		multiply = sum_construction_types
+		divide = 10
 	}
 	min = 10
 	max = local_var:remaining_construction_demand
 }
 
 construction_ordering = {
-	sg:construction = {
-		value = state_goods_production
-		multiply = 100
-	}
+	value = sum_construction_types
+	multiply = 100
 	add = {
 		value = gdp
 		owner = {
 			divide = gdp
 		}
+	}
+}
+
+#Scope: State
+sum_construction_types = {
+	sg:wood_construction = {
+		value = state_goods_production
+	}
+	sg:iron_construction = {
+		add = state_goods_production
+	}
+	sg:steel_construction = {
+		add = state_goods_production
+	}
+	sg:arc_welded_construction = {
+		add = state_goods_production
 	}
 }
 
@@ -230,10 +236,40 @@ max_government_construction_spending = {
 calculate_total_construction_spending = {
 	value = 0
 	every_scope_state = {
-		sg:construction = {
+		sg:wood_construction = {
 			add = {
 				value = state_goods_consumption
-				multiply = construction_good_base_price
+				multiply = wood_construction_good_base_price
+				multiply = {
+					value = 1
+					add = state_goods_pricier
+				}
+			}
+		}
+		sg:iron_construction = {
+			add = {
+				value = state_goods_consumption
+				multiply = iron_construction_good_base_price
+				multiply = {
+					value = 1
+					add = state_goods_pricier
+				}
+			}
+		}
+		sg:steel_construction = {
+			add = {
+				value = state_goods_consumption
+				multiply = steel_construction_good_base_price
+				multiply = {
+					value = 1
+					add = state_goods_pricier
+				}
+			}
+		}
+		sg:arc_welded_construction = {
+			add = {
+				value = state_goods_consumption
+				multiply = arc_welded_construction_good_base_price
 				multiply = {
 					value = 1
 					add = state_goods_pricier

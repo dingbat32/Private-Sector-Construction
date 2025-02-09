@@ -10,7 +10,7 @@
 			goods_input_wood_add = 75 # x20 = 1500
 
 			#output goods
-			goods_output_construction_add = 20
+			goods_output_wood_construction_add = 20
 		}
 
 		level_scaled = {
@@ -46,7 +46,7 @@ pm_iron_frame_buildings = {
 			goods_input_tools_add = 10 # x40 = 400
 
 			#output goods
-			goods_output_construction_add = 50
+			goods_output_iron_construction_add = 50
 		}
 
 		level_scaled = {
@@ -83,7 +83,7 @@ pm_steel_frame_buildings = {
 			goods_input_tools_add = 20 # x40 = 800
 
 			#output goods
-			goods_output_construction_add = 100
+			goods_output_steel_construction_add = 100
 		}
 
 		level_scaled = {
@@ -121,7 +121,7 @@ pm_arc_welded_buildings = {
 			goods_input_electricity_add = 40 #x30 = 1200
 
 			#output goods
-			goods_output_construction_add = 150
+			goods_output_arc_welded_construction_add = 150
 		} 
 
 		level_scaled = {
@@ -145,7 +145,7 @@ pm_arc_welded_buildings = {
 	required_input_goods = electricity
 }
 
-pm_point_conversion = {
+pm_wood_point_conversion = {
 	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
 	is_default = yes
 
@@ -157,7 +157,64 @@ pm_point_conversion = {
 
 	building_modifiers = {
 		workforce_scaled = {
-			goods_input_construction_add = 10
+			goods_input_wood_construction_add = 10
+		}
+		unscaled = {
+			building_employment_bureaucrats_add = 2
+		}
+	}
+}
+
+pm_iron_point_conversion = {
+	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_construction_add = 1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_iron_construction_add = 10
+		}
+		unscaled = {
+			building_employment_bureaucrats_add = 2
+		}
+	}
+}
+
+pm_steel_point_conversion = {
+	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_construction_add = 1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_steel_construction_add = 10
+		}
+		unscaled = {
+			building_employment_bureaucrats_add = 2
+		}
+	}
+}
+
+pm_arc_welded_point_conversion = {
+	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
+
+	country_modifiers = {
+		workforce_scaled = {
+			country_construction_add = 1
+		}
+	}
+
+	building_modifiers = {
+		workforce_scaled = {
+			goods_input_arc_welded_construction_add = 10
 		}
 		unscaled = {
 			building_employment_bureaucrats_add = 2
