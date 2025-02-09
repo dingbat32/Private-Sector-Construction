@@ -27,7 +27,10 @@ calculate_nominal_construction = {
 		}
 		add = var:limited_government_construction_spending
 	}
-	divide = var:construction_price_estimate
+	divide = {
+		value = var:construction_price_estimate
+		min = 1
+	}
 }
 
 construction_price_average = {
@@ -43,49 +46,50 @@ construction_price_average = {
 	}
 }
 
-#price of each construction point is 10 goods
 construction_point_price_weekly = {
-	value = construction_good_price_weekly
+	if = {	
+		limit = {
+			AND = {
+				game_date > 1836.1.5
+				national_construction_consumption > 0
+			}
+		}
+		value = calculate_total_construction_spending
+		divide = national_construction_consumption
+	}
+	else = {
+		value = construction_good_adjustable_base_price
+	}
 	multiply = 10
 }
 
-construction_good_price_weekly = {
-	value = construction_good_base_price
+construction_good_adjustable_base_price = {
 	if = {
-		#make sure that construction has been calculated once before to avoid assuming construction cost is -75%
 		limit = {
-			game_date > 1836.1.5
+			owner = {
+				has_technology_researched = arc_welding
+			}
 		}
-		multiply = {
-			value = 1
-			add = construction_price_multiplier
-		}
+		value = arc_welded_construction_good_base_price
 	}
-}
-
-#calculate estimated national construction price multiplier based on formula: https://vic3.paradoxwikis.com/Market#Market_price
-construction_price_multiplier = {
-	value = define:NEconomy|PRICE_RANGE
-	multiply = {
-		value = {
-			value = var:national_consumption
-			subtract = var:national_production
-			divide = {
-				value = var:national_consumption
-				max = var:national_production
-				min = 1
-			}
-			multiply = {
-				value = 1
-				divide = {
-					value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
-					subtract = 1
-				}
-			}
+	else_if = {
+		limit = {
+            owner = {
+                has_technology_researched = steel_frame_buildings
+            }
+        }
+		value = steel_construction_good_base_price
+	}
+	else_if = {
+		limit = {
+            owner = {
+                has_technology_researched = urban_planning
+            }
 		}
-		#clamp between 1 and -1
-		max = 1
-		min = -1
+		value = iron_construction_good_base_price
+	}
+	else = {
+		value = wood_construction_good_base_price
 	}
 }
 
@@ -113,40 +117,25 @@ privatisation_spending_percent_weekly = {
 		value = 1
 		subtract = {
 			value = investment_pool
-			divide = var:prev_estimated_investment_pool
+			divide = {
+				value = var:prev_estimated_investment_pool
+				min = 1
+			}
 		}
 		min = 0
 		max = 1
 	}
 }
 
-construction_state_price_multiplier = {
-	value = define:NEconomy|PRICE_RANGE
-	multiply = {
-		value = {
-			value = var:national_consumption
-			subtract = var:national_production
-			divide = {
-				value = var:national_consumption
-				max = var:national_production
-				min = 1
-			}
-		}
-		#clamp between 1 and -1
-		max = 1
-		min = -1
-	}
-}
-
 national_construction_production = {
 	every_scope_state = {
-		add = sum_construction_types
+		add = sum_construction_types_production
 	}
 }
 
 national_construction_consumption = {
 	every_scope_state = {
-		add = sum_construction_types
+		add = sum_construction_types_consumption
 	}
 }
 
@@ -170,13 +159,13 @@ state_construction_allocation = {
 	if = {
 		#in a case of no production, demand half the remaining demand to get construction to build
 		limit = {
-			sum_construction_types = 0
+			sum_construction_types_production = 0
 		}
 		value = local_var:remaining_construction_demand
 		multiply = 0.5
 	}
 	else = {
-		multiply = sum_construction_types
+		multiply = sum_construction_types_production
 		divide = 10
 	}
 	min = 10
@@ -184,18 +173,21 @@ state_construction_allocation = {
 }
 
 construction_ordering = {
-	value = sum_construction_types
+	value = sum_construction_types_production
 	multiply = 100
 	add = {
 		value = gdp
 		owner = {
-			divide = gdp
+			divide = {
+				value = gdp
+				min = 1
+			}
 		}
 	}
 }
 
 #Scope: State
-sum_construction_types = {
+sum_construction_types_production = {
 	sg:wood_construction = {
 		value = state_goods_production
 	}
@@ -207,6 +199,22 @@ sum_construction_types = {
 	}
 	sg:arc_welded_construction = {
 		add = state_goods_production
+	}
+}
+
+#Scope: State
+sum_construction_types_consumption = {
+	sg:wood_construction = {
+		value = state_goods_consumption
+	}
+	sg:iron_construction = {
+		add = state_goods_consumption
+	}
+	sg:steel_construction = {
+		add = state_goods_consumption
+	}
+	sg:arc_welded_construction = {
+		add = state_goods_consumption
 	}
 }
 

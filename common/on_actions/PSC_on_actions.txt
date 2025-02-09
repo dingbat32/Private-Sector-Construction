@@ -37,7 +37,6 @@ set_construction_country = {
 						reserves = 1
 					}
 				}
-
 			}
 
 			if = {
@@ -100,7 +99,7 @@ set_construction_country = {
 			else = {
 				set_variable = {
 					name = construction_price_estimate
-					value = construction_good_base_price
+					value = construction_good_adjustable_base_price
 				}
 			}
 
