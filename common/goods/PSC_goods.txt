@@ -1,13 +1,13 @@
 ﻿wood_construction = {
 	texture = "gfx/interface/icons/state_status_icons/has_construction.dds"
-	cost = 70
+	cost = 130
 	category = industrial
 	local = yes
 	prestige_factor = 10
 }
 iron_construction = {
 	texture = "gfx/interface/icons/state_status_icons/has_construction.dds"
-	cost = 70
+	cost = 92
 	category = industrial
 	local = yes
 	prestige_factor = 10
