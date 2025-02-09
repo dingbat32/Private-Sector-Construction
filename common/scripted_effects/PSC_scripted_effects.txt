@@ -83,4 +83,32 @@ change_point_converter_production_method = {
             production_method = pm_arc_welded_point_conversion
         }
     }
+    else_if = {
+        limit = {
+            owner = {
+                has_technology_researched = arc_welding
+            }
+        }
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_arc_welded_point_conversion
+        }
+    }
+    else_if = {
+        limit = {
+            owner = {
+                has_technology_researched = steel_frame_buildings
+            }
+        }
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_steel_point_conversion
+        }
+    }
+    else = {
+        activate_production_method = {
+            building_type = building_construction_point_converter
+            production_method = pm_steel_point_conversion
+        }
+    }
 }
