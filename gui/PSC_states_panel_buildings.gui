@@ -124,20 +124,46 @@ types state_panel_types {
 			maximumsize = { 520 -1 }
 		}
 
+		# Hidden
 		flowcontainer = {
-			parentanchor = hcenter
 			datamodel = "[StatesPanel.AccessLocalGoods]"
-			datamodel_wrap = 3
-			item = {
-				textbox = {
-					minimumsize = { 130 -1 }
-					visible = "[Goods.IsLocal]"
-					raw_text = "STATE_BUILDING_TAB_LOCAL_GOODS_INFO"
-					autoresize = yes
-					align = center|nobaseline
+			maximumsize = { 0 0 }
+			alpha = 0
 
-					tooltipwidget = {
-						FancyTooltip_Goods = {}
+			item = {
+				widget = {
+					size = { 0 0 }
+					state = {
+						trigger_when = "[Goods.IsLocal]"
+						on_finish = "[GetScriptedGui('com_add_local_good').Execute(GuiScope
+										.SetRoot(StatesPanel.AccessState.MakeScope)
+										.AddScope('local_good', Goods.MakeScope)
+										.End
+									)]"
+					}
+				}
+			}
+		}
+
+		dynamicgridbox = {
+			datamodel = "[StatesPanel.AccessState.MakeScope.GetList('com_local_goods')]"
+			maximumsize = { 520 -1 }
+			minimumsize = { 520 25 }
+			datamodel_wrap = 3
+			flipdirection = yes
+
+			item = {
+				widget = {
+					datacontext = "[Scope.GetGoods.WithStateContext(StatesPanel.AccessState.Self)]"
+					size = { 170 25 }
+					textbox = {
+						size = { 170 25 }
+						raw_text = "STATE_BUILDING_TAB_LOCAL_GOODS_INFO"
+						align = center|nobaseline
+
+						tooltipwidget = {
+							FancyTooltip_Goods = {}
+						}
 					}
 				}
 			}
