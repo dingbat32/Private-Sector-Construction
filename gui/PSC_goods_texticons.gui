@@ -1,0 +1,36 @@
+texticon = {
+    icon = wood_construction
+	iconsize = {
+		texture = "gfx/interface/icons/goods_icons/wood_construction.dds"
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+	}
+}
+texticon = {
+    icon = iron_construction
+	iconsize = {
+		texture = "gfx/interface/icons/goods_icons/iron_construction.dds"
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+	}
+}
+texticon = {
+    icon = steel_construction
+	iconsize = {
+		texture = "gfx/interface/icons/goods_icons/steel_construction.dds"
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+	}
+}
+texticon = {
+    icon = arc_welded_construction
+	iconsize = {
+		texture = "gfx/interface/icons/goods_icons/arc_welded_construction.dds"
+		size = { 25 25 }
+		offset = { 0 7 }
+		fontsize = 18
+	}
+}
