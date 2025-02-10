@@ -49,10 +49,7 @@ construction_price_average = {
 construction_point_price_weekly = {
 	if = {	
 		limit = {
-			AND = {
-				game_date > 1836.1.5
-				national_construction_consumption > 0
-			}
+			national_construction_consumption > 0
 		}
 		value = calculate_total_construction_spending
 		divide = national_construction_consumption
