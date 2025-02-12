@@ -160,13 +160,13 @@ state_construction_allocation = {
 		}
 		value = local_var:remaining_construction_demand
 		multiply = 0.5
+		min = 10
+		max = local_var:remaining_construction_demand
 	}
 	else = {
 		multiply = sum_construction_types_production
 		divide = 10
 	}
-	min = 10
-	max = local_var:remaining_construction_demand
 }
 
 construction_ordering = {
@@ -323,7 +323,7 @@ corrected_private_allocation = {
 ai_construction_demand = {
 	add = {
 		value = weekly_net_fixed_income
-		divide = 1500 #price of wooden construction
+		divide = var:construction_price_estimate
 
 		min = {
 			value = income
@@ -332,22 +332,23 @@ ai_construction_demand = {
 				subtract = investment_pool_net_income
 			}
 			divide = 7500 # 1 construction output per this much income
+			# Improved technology enables cheaper construction
+			
+			# Based on a construction sector weekly balance of 1000
+			# Cost per wood construction 3000/2 = 1500
+			# Cost per iron construction 4600/5 = 950
+			# Cost per steel construction 5400/10 = 640
+
+			if = {
+				limit = { has_technology_researched = urban_planning }
+				multiply = 1.63
+			}
+
+			if = {
+				limit = { has_technology_researched = steel_frame_buildings }
+				multiply = 1.44
+			}
 		}
-	}
-	# Improved technology enables cheaper construction
-	# Based on a construction sector weekly balance of 1000
-	# Cost per wood construction 3000/2 = 1500
-	# Cost per iron construction 4600/5 = 950
-	# Cost per steel construction 5400/10 = 640
-
-	if = {
-		limit = { has_technology_researched = urban_planning }
-		multiply = 1.63
-	}
-
-	if = {
-		limit = { has_technology_researched = steel_frame_buildings }
-		multiply = 1.44
 	}
 }
 
