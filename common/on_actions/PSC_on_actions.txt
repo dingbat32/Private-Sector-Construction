@@ -11,181 +11,34 @@
 set_construction_country = {
 	effect = {
 		save_max_construction_spending_values = yes
-		if = {
-			limit = { 
-				has_technology_researched = urbanization
-			}
-			every_scope_state = {
-				if = {
-					limit = {
-						state_has_building_type_levels = {
-							target = bt:building_construction_point_converter
-							value > 1
-						}
-					}
-					remove_building = "building_construction_point_converter"
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_building = building_construction_point_converter
-						}
-					}
-					create_building = {
-						building = "building_construction_point_converter"
-						level = 1
-						reserves = 1
-					}
-				}
-			}
-
-			if = {
-				limit = {
-					has_modifier = country_private_construction_allocation_add
-				}
-				remove_modifier = country_private_construction_allocation_add
-			}
-			else = {
-				set_variable = {
-					name = prev_construction_allocation
-					value = 0
-				}
-			}
-			
-			if = {
-				limit = {
-					NOT = {
-						has_variable = prev_estimated_investment_pool
-					}
-				}
-				set_variable = {
-					name = prev_estimated_investment_pool
-					value = 0
-				}
-			}
-			
-			if = {
-				limit = {
-					has_variable = privatisation_percent_estimate
-				}
-				set_variable = {
-					name = privatisation_percent_estimate
-					value = privatisation_spending_percent
-				}
-			}
-			else = {
-				set_variable = {
-					name = privatisation_percent_estimate
-					value = 0
-				}
-			}
-			set_variable = {
-				name = national_consumption
-				value = national_construction_consumption
-			}
-			set_variable = {
-				name = national_production
-				value = national_construction_production
-			}
-			if = {
-				limit = {
-					has_variable = construction_price_estimate
-				}
-				set_variable = {
-					name = construction_price_estimate
-					value = construction_price_average
-				}
-			}
-			else = {
-				set_variable = {
-					name = construction_price_estimate
-					value = construction_good_adjustable_base_price
-				}
-			}
-
-			check_construction_spending_level = {}
-
-			set_local_variable = {
-				name = current_construction_increase
-				value = private_construction_increase
-			}
-
-			add_modifier = {
-				name = country_private_construction_allocation_add
-				multiplier = {
-					value = local_var:current_construction_increase
-				}
-			}
-
-			set_variable = {
-				name = prev_construction_allocation
-				value = local_var:current_construction_increase
-			}
-
-			set_variable = {
-				name = limited_government_construction_spending
-				value = calculate_limited_government_construction_spending
-			}
-			set_variable = {
-				name = nominal_construction_demand
-				value = calculate_nominal_construction
-			}
-			set_variable = {
-				name = limited_construction_demand
-				value = calculate_limited_construction_demand
-			}
-			set_local_variable = {
-				name = remaining_construction_demand
-				value = var:limited_construction_demand
-			}
-			ordered_scope_state = {
-				order_by = construction_ordering
-				min = 0
-				max = {
-					owner = {
-						value = num_states
-					}
-				}
-
-				set_local_variable = {
-					name = state_construction
-					value = state_construction_allocation
-				}
-				
-				change_local_variable = {
-					name = remaining_construction_demand
-					subtract = local_var:state_construction
-				}
-				
-				b:building_construction_point_converter = {
-					if = {
-						limit = {
-							has_modifier = construction_throughput_mult
-						}
-						remove_modifier = construction_throughput_mult
-					}
-					add_modifier = {
-						name = construction_throughput_mult
-						multiplier = {
-							value = local_var:state_construction
-							subtract = 1
-						}
-					}
-				}
-				change_point_converter_production_method = yes
-			}
-			set_variable = {
-				name = government_construction_spending
-				value = calculate_government_construction_spending
-			}
-			set_variable = {
-				name = prev_estimated_investment_pool
-				value = {
-					value = investment_pool
-					add = investment_pool_net_income
-					min = 0
-				}
-			}
-		}
+		set_construction_point_demand = yes
 	}
+}
+
+set_construction_weekly_on_action = {
+    effect = {
+        every_country = {
+            trigger_event = {
+                on_action = set_construction_country
+            }
+            trigger_event = {
+                on_action = set_construction_country
+                days = 7
+            }
+            trigger_event = {
+                on_action = set_construction_country
+                days = 14
+            }
+            trigger_event = {
+                on_action = set_construction_country
+                days = 21
+            }
+        }
+    }
+}
+
+on_monthly_pulse = {
+    on_actions = {
+        set_construction_weekly_on_action
+    }
 }
