@@ -14,10 +14,18 @@
                     limit = {
                         has_building = "building_construction_sector"
                     }
-                    create_building = {
-                        building = "building_construction_sector"
-                        reserves = 1
-                        level = 1
+                    b:building_construction_sector = {
+                        set_local_variable = {
+                            name = doubled_level
+                            value = {
+                                value = level
+                                multiply = 2
+                            }
+                        }
+                    }
+                    massive_building_switch = {
+                        type = building_construction_sector
+                        level = local_var:doubled_level
                     }
                 }
             }

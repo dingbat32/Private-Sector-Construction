@@ -1,7 +1,7 @@
-
+﻿
 massive_building_switch = {
     switch = {
-        trigger = local_var:regulator_level
+        trigger = $level$
         0 = {
             my_create_building = {type = $type$ level = 0 }
         }

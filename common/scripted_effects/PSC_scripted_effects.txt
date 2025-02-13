@@ -231,6 +231,7 @@ set_construction_point_demand = {
                 }
                 massive_building_switch = {
                     type = building_construction_regulator
+                    level = local_var:regulator_level
                 }
             }
         }

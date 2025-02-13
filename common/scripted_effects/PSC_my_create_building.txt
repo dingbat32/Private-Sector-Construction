@@ -2,5 +2,6 @@
     create_building = {
         building = $type$
         level = $level$
+        reserves = 1
     }
 }
