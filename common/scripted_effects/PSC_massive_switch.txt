@@ -1,0 +1,3006 @@
+
+massive_building_switch = {
+    switch = {
+        trigger = local_var:regulator_level
+        0 = {
+            my_create_building = {type = $type$ level = 0 }
+        }
+        1 = {
+            my_create_building = {type = $type$ level = 1 }
+        }
+        2 = {
+            my_create_building = {type = $type$ level = 2 }
+        }
+        3 = {
+            my_create_building = {type = $type$ level = 3 }
+        }
+        4 = {
+            my_create_building = {type = $type$ level = 4 }
+        }
+        5 = {
+            my_create_building = {type = $type$ level = 5 }
+        }
+        6 = {
+            my_create_building = {type = $type$ level = 6 }
+        }
+        7 = {
+            my_create_building = {type = $type$ level = 7 }
+        }
+        8 = {
+            my_create_building = {type = $type$ level = 8 }
+        }
+        9 = {
+            my_create_building = {type = $type$ level = 9 }
+        }
+        10 = {
+            my_create_building = {type = $type$ level = 10 }
+        }
+        11 = {
+            my_create_building = {type = $type$ level = 11 }
+        }
+        12 = {
+            my_create_building = {type = $type$ level = 12 }
+        }
+        13 = {
+            my_create_building = {type = $type$ level = 13 }
+        }
+        14 = {
+            my_create_building = {type = $type$ level = 14 }
+        }
+        15 = {
+            my_create_building = {type = $type$ level = 15 }
+        }
+        16 = {
+            my_create_building = {type = $type$ level = 16 }
+        }
+        17 = {
+            my_create_building = {type = $type$ level = 17 }
+        }
+        18 = {
+            my_create_building = {type = $type$ level = 18 }
+        }
+        19 = {
+            my_create_building = {type = $type$ level = 19 }
+        }
+        20 = {
+            my_create_building = {type = $type$ level = 20 }
+        }
+        21 = {
+            my_create_building = {type = $type$ level = 21 }
+        }
+        22 = {
+            my_create_building = {type = $type$ level = 22 }
+        }
+        23 = {
+            my_create_building = {type = $type$ level = 23 }
+        }
+        24 = {
+            my_create_building = {type = $type$ level = 24 }
+        }
+        25 = {
+            my_create_building = {type = $type$ level = 25 }
+        }
+        26 = {
+            my_create_building = {type = $type$ level = 26 }
+        }
+        27 = {
+            my_create_building = {type = $type$ level = 27 }
+        }
+        28 = {
+            my_create_building = {type = $type$ level = 28 }
+        }
+        29 = {
+            my_create_building = {type = $type$ level = 29 }
+        }
+        30 = {
+            my_create_building = {type = $type$ level = 30 }
+        }
+        31 = {
+            my_create_building = {type = $type$ level = 31 }
+        }
+        32 = {
+            my_create_building = {type = $type$ level = 32 }
+        }
+        33 = {
+            my_create_building = {type = $type$ level = 33 }
+        }
+        34 = {
+            my_create_building = {type = $type$ level = 34 }
+        }
+        35 = {
+            my_create_building = {type = $type$ level = 35 }
+        }
+        36 = {
+            my_create_building = {type = $type$ level = 36 }
+        }
+        37 = {
+            my_create_building = {type = $type$ level = 37 }
+        }
+        38 = {
+            my_create_building = {type = $type$ level = 38 }
+        }
+        39 = {
+            my_create_building = {type = $type$ level = 39 }
+        }
+        40 = {
+            my_create_building = {type = $type$ level = 40 }
+        }
+        41 = {
+            my_create_building = {type = $type$ level = 41 }
+        }
+        42 = {
+            my_create_building = {type = $type$ level = 42 }
+        }
+        43 = {
+            my_create_building = {type = $type$ level = 43 }
+        }
+        44 = {
+            my_create_building = {type = $type$ level = 44 }
+        }
+        45 = {
+            my_create_building = {type = $type$ level = 45 }
+        }
+        46 = {
+            my_create_building = {type = $type$ level = 46 }
+        }
+        47 = {
+            my_create_building = {type = $type$ level = 47 }
+        }
+        48 = {
+            my_create_building = {type = $type$ level = 48 }
+        }
+        49 = {
+            my_create_building = {type = $type$ level = 49 }
+        }
+        50 = {
+            my_create_building = {type = $type$ level = 50 }
+        }
+        51 = {
+            my_create_building = {type = $type$ level = 51 }
+        }
+        52 = {
+            my_create_building = {type = $type$ level = 52 }
+        }
+        53 = {
+            my_create_building = {type = $type$ level = 53 }
+        }
+        54 = {
+            my_create_building = {type = $type$ level = 54 }
+        }
+        55 = {
+            my_create_building = {type = $type$ level = 55 }
+        }
+        56 = {
+            my_create_building = {type = $type$ level = 56 }
+        }
+        57 = {
+            my_create_building = {type = $type$ level = 57 }
+        }
+        58 = {
+            my_create_building = {type = $type$ level = 58 }
+        }
+        59 = {
+            my_create_building = {type = $type$ level = 59 }
+        }
+        60 = {
+            my_create_building = {type = $type$ level = 60 }
+        }
+        61 = {
+            my_create_building = {type = $type$ level = 61 }
+        }
+        62 = {
+            my_create_building = {type = $type$ level = 62 }
+        }
+        63 = {
+            my_create_building = {type = $type$ level = 63 }
+        }
+        64 = {
+            my_create_building = {type = $type$ level = 64 }
+        }
+        65 = {
+            my_create_building = {type = $type$ level = 65 }
+        }
+        66 = {
+            my_create_building = {type = $type$ level = 66 }
+        }
+        67 = {
+            my_create_building = {type = $type$ level = 67 }
+        }
+        68 = {
+            my_create_building = {type = $type$ level = 68 }
+        }
+        69 = {
+            my_create_building = {type = $type$ level = 69 }
+        }
+        70 = {
+            my_create_building = {type = $type$ level = 70 }
+        }
+        71 = {
+            my_create_building = {type = $type$ level = 71 }
+        }
+        72 = {
+            my_create_building = {type = $type$ level = 72 }
+        }
+        73 = {
+            my_create_building = {type = $type$ level = 73 }
+        }
+        74 = {
+            my_create_building = {type = $type$ level = 74 }
+        }
+        75 = {
+            my_create_building = {type = $type$ level = 75 }
+        }
+        76 = {
+            my_create_building = {type = $type$ level = 76 }
+        }
+        77 = {
+            my_create_building = {type = $type$ level = 77 }
+        }
+        78 = {
+            my_create_building = {type = $type$ level = 78 }
+        }
+        79 = {
+            my_create_building = {type = $type$ level = 79 }
+        }
+        80 = {
+            my_create_building = {type = $type$ level = 80 }
+        }
+        81 = {
+            my_create_building = {type = $type$ level = 81 }
+        }
+        82 = {
+            my_create_building = {type = $type$ level = 82 }
+        }
+        83 = {
+            my_create_building = {type = $type$ level = 83 }
+        }
+        84 = {
+            my_create_building = {type = $type$ level = 84 }
+        }
+        85 = {
+            my_create_building = {type = $type$ level = 85 }
+        }
+        86 = {
+            my_create_building = {type = $type$ level = 86 }
+        }
+        87 = {
+            my_create_building = {type = $type$ level = 87 }
+        }
+        88 = {
+            my_create_building = {type = $type$ level = 88 }
+        }
+        89 = {
+            my_create_building = {type = $type$ level = 89 }
+        }
+        90 = {
+            my_create_building = {type = $type$ level = 90 }
+        }
+        91 = {
+            my_create_building = {type = $type$ level = 91 }
+        }
+        92 = {
+            my_create_building = {type = $type$ level = 92 }
+        }
+        93 = {
+            my_create_building = {type = $type$ level = 93 }
+        }
+        94 = {
+            my_create_building = {type = $type$ level = 94 }
+        }
+        95 = {
+            my_create_building = {type = $type$ level = 95 }
+        }
+        96 = {
+            my_create_building = {type = $type$ level = 96 }
+        }
+        97 = {
+            my_create_building = {type = $type$ level = 97 }
+        }
+        98 = {
+            my_create_building = {type = $type$ level = 98 }
+        }
+        99 = {
+            my_create_building = {type = $type$ level = 99 }
+        }
+        100 = {
+            my_create_building = {type = $type$ level = 100 }
+        }
+        101 = {
+            my_create_building = {type = $type$ level = 101 }
+        }
+        102 = {
+            my_create_building = {type = $type$ level = 102 }
+        }
+        103 = {
+            my_create_building = {type = $type$ level = 103 }
+        }
+        104 = {
+            my_create_building = {type = $type$ level = 104 }
+        }
+        105 = {
+            my_create_building = {type = $type$ level = 105 }
+        }
+        106 = {
+            my_create_building = {type = $type$ level = 106 }
+        }
+        107 = {
+            my_create_building = {type = $type$ level = 107 }
+        }
+        108 = {
+            my_create_building = {type = $type$ level = 108 }
+        }
+        109 = {
+            my_create_building = {type = $type$ level = 109 }
+        }
+        110 = {
+            my_create_building = {type = $type$ level = 110 }
+        }
+        111 = {
+            my_create_building = {type = $type$ level = 111 }
+        }
+        112 = {
+            my_create_building = {type = $type$ level = 112 }
+        }
+        113 = {
+            my_create_building = {type = $type$ level = 113 }
+        }
+        114 = {
+            my_create_building = {type = $type$ level = 114 }
+        }
+        115 = {
+            my_create_building = {type = $type$ level = 115 }
+        }
+        116 = {
+            my_create_building = {type = $type$ level = 116 }
+        }
+        117 = {
+            my_create_building = {type = $type$ level = 117 }
+        }
+        118 = {
+            my_create_building = {type = $type$ level = 118 }
+        }
+        119 = {
+            my_create_building = {type = $type$ level = 119 }
+        }
+        120 = {
+            my_create_building = {type = $type$ level = 120 }
+        }
+        121 = {
+            my_create_building = {type = $type$ level = 121 }
+        }
+        122 = {
+            my_create_building = {type = $type$ level = 122 }
+        }
+        123 = {
+            my_create_building = {type = $type$ level = 123 }
+        }
+        124 = {
+            my_create_building = {type = $type$ level = 124 }
+        }
+        125 = {
+            my_create_building = {type = $type$ level = 125 }
+        }
+        126 = {
+            my_create_building = {type = $type$ level = 126 }
+        }
+        127 = {
+            my_create_building = {type = $type$ level = 127 }
+        }
+        128 = {
+            my_create_building = {type = $type$ level = 128 }
+        }
+        129 = {
+            my_create_building = {type = $type$ level = 129 }
+        }
+        130 = {
+            my_create_building = {type = $type$ level = 130 }
+        }
+        131 = {
+            my_create_building = {type = $type$ level = 131 }
+        }
+        132 = {
+            my_create_building = {type = $type$ level = 132 }
+        }
+        133 = {
+            my_create_building = {type = $type$ level = 133 }
+        }
+        134 = {
+            my_create_building = {type = $type$ level = 134 }
+        }
+        135 = {
+            my_create_building = {type = $type$ level = 135 }
+        }
+        136 = {
+            my_create_building = {type = $type$ level = 136 }
+        }
+        137 = {
+            my_create_building = {type = $type$ level = 137 }
+        }
+        138 = {
+            my_create_building = {type = $type$ level = 138 }
+        }
+        139 = {
+            my_create_building = {type = $type$ level = 139 }
+        }
+        140 = {
+            my_create_building = {type = $type$ level = 140 }
+        }
+        141 = {
+            my_create_building = {type = $type$ level = 141 }
+        }
+        142 = {
+            my_create_building = {type = $type$ level = 142 }
+        }
+        143 = {
+            my_create_building = {type = $type$ level = 143 }
+        }
+        144 = {
+            my_create_building = {type = $type$ level = 144 }
+        }
+        145 = {
+            my_create_building = {type = $type$ level = 145 }
+        }
+        146 = {
+            my_create_building = {type = $type$ level = 146 }
+        }
+        147 = {
+            my_create_building = {type = $type$ level = 147 }
+        }
+        148 = {
+            my_create_building = {type = $type$ level = 148 }
+        }
+        149 = {
+            my_create_building = {type = $type$ level = 149 }
+        }
+        150 = {
+            my_create_building = {type = $type$ level = 150 }
+        }
+        151 = {
+            my_create_building = {type = $type$ level = 151 }
+        }
+        152 = {
+            my_create_building = {type = $type$ level = 152 }
+        }
+        153 = {
+            my_create_building = {type = $type$ level = 153 }
+        }
+        154 = {
+            my_create_building = {type = $type$ level = 154 }
+        }
+        155 = {
+            my_create_building = {type = $type$ level = 155 }
+        }
+        156 = {
+            my_create_building = {type = $type$ level = 156 }
+        }
+        157 = {
+            my_create_building = {type = $type$ level = 157 }
+        }
+        158 = {
+            my_create_building = {type = $type$ level = 158 }
+        }
+        159 = {
+            my_create_building = {type = $type$ level = 159 }
+        }
+        160 = {
+            my_create_building = {type = $type$ level = 160 }
+        }
+        161 = {
+            my_create_building = {type = $type$ level = 161 }
+        }
+        162 = {
+            my_create_building = {type = $type$ level = 162 }
+        }
+        163 = {
+            my_create_building = {type = $type$ level = 163 }
+        }
+        164 = {
+            my_create_building = {type = $type$ level = 164 }
+        }
+        165 = {
+            my_create_building = {type = $type$ level = 165 }
+        }
+        166 = {
+            my_create_building = {type = $type$ level = 166 }
+        }
+        167 = {
+            my_create_building = {type = $type$ level = 167 }
+        }
+        168 = {
+            my_create_building = {type = $type$ level = 168 }
+        }
+        169 = {
+            my_create_building = {type = $type$ level = 169 }
+        }
+        170 = {
+            my_create_building = {type = $type$ level = 170 }
+        }
+        171 = {
+            my_create_building = {type = $type$ level = 171 }
+        }
+        172 = {
+            my_create_building = {type = $type$ level = 172 }
+        }
+        173 = {
+            my_create_building = {type = $type$ level = 173 }
+        }
+        174 = {
+            my_create_building = {type = $type$ level = 174 }
+        }
+        175 = {
+            my_create_building = {type = $type$ level = 175 }
+        }
+        176 = {
+            my_create_building = {type = $type$ level = 176 }
+        }
+        177 = {
+            my_create_building = {type = $type$ level = 177 }
+        }
+        178 = {
+            my_create_building = {type = $type$ level = 178 }
+        }
+        179 = {
+            my_create_building = {type = $type$ level = 179 }
+        }
+        180 = {
+            my_create_building = {type = $type$ level = 180 }
+        }
+        181 = {
+            my_create_building = {type = $type$ level = 181 }
+        }
+        182 = {
+            my_create_building = {type = $type$ level = 182 }
+        }
+        183 = {
+            my_create_building = {type = $type$ level = 183 }
+        }
+        184 = {
+            my_create_building = {type = $type$ level = 184 }
+        }
+        185 = {
+            my_create_building = {type = $type$ level = 185 }
+        }
+        186 = {
+            my_create_building = {type = $type$ level = 186 }
+        }
+        187 = {
+            my_create_building = {type = $type$ level = 187 }
+        }
+        188 = {
+            my_create_building = {type = $type$ level = 188 }
+        }
+        189 = {
+            my_create_building = {type = $type$ level = 189 }
+        }
+        190 = {
+            my_create_building = {type = $type$ level = 190 }
+        }
+        191 = {
+            my_create_building = {type = $type$ level = 191 }
+        }
+        192 = {
+            my_create_building = {type = $type$ level = 192 }
+        }
+        193 = {
+            my_create_building = {type = $type$ level = 193 }
+        }
+        194 = {
+            my_create_building = {type = $type$ level = 194 }
+        }
+        195 = {
+            my_create_building = {type = $type$ level = 195 }
+        }
+        196 = {
+            my_create_building = {type = $type$ level = 196 }
+        }
+        197 = {
+            my_create_building = {type = $type$ level = 197 }
+        }
+        198 = {
+            my_create_building = {type = $type$ level = 198 }
+        }
+        199 = {
+            my_create_building = {type = $type$ level = 199 }
+        }
+        200 = {
+            my_create_building = {type = $type$ level = 200 }
+        }
+        201 = {
+            my_create_building = {type = $type$ level = 201 }
+        }
+        202 = {
+            my_create_building = {type = $type$ level = 202 }
+        }
+        203 = {
+            my_create_building = {type = $type$ level = 203 }
+        }
+        204 = {
+            my_create_building = {type = $type$ level = 204 }
+        }
+        205 = {
+            my_create_building = {type = $type$ level = 205 }
+        }
+        206 = {
+            my_create_building = {type = $type$ level = 206 }
+        }
+        207 = {
+            my_create_building = {type = $type$ level = 207 }
+        }
+        208 = {
+            my_create_building = {type = $type$ level = 208 }
+        }
+        209 = {
+            my_create_building = {type = $type$ level = 209 }
+        }
+        210 = {
+            my_create_building = {type = $type$ level = 210 }
+        }
+        211 = {
+            my_create_building = {type = $type$ level = 211 }
+        }
+        212 = {
+            my_create_building = {type = $type$ level = 212 }
+        }
+        213 = {
+            my_create_building = {type = $type$ level = 213 }
+        }
+        214 = {
+            my_create_building = {type = $type$ level = 214 }
+        }
+        215 = {
+            my_create_building = {type = $type$ level = 215 }
+        }
+        216 = {
+            my_create_building = {type = $type$ level = 216 }
+        }
+        217 = {
+            my_create_building = {type = $type$ level = 217 }
+        }
+        218 = {
+            my_create_building = {type = $type$ level = 218 }
+        }
+        219 = {
+            my_create_building = {type = $type$ level = 219 }
+        }
+        220 = {
+            my_create_building = {type = $type$ level = 220 }
+        }
+        221 = {
+            my_create_building = {type = $type$ level = 221 }
+        }
+        222 = {
+            my_create_building = {type = $type$ level = 222 }
+        }
+        223 = {
+            my_create_building = {type = $type$ level = 223 }
+        }
+        224 = {
+            my_create_building = {type = $type$ level = 224 }
+        }
+        225 = {
+            my_create_building = {type = $type$ level = 225 }
+        }
+        226 = {
+            my_create_building = {type = $type$ level = 226 }
+        }
+        227 = {
+            my_create_building = {type = $type$ level = 227 }
+        }
+        228 = {
+            my_create_building = {type = $type$ level = 228 }
+        }
+        229 = {
+            my_create_building = {type = $type$ level = 229 }
+        }
+        230 = {
+            my_create_building = {type = $type$ level = 230 }
+        }
+        231 = {
+            my_create_building = {type = $type$ level = 231 }
+        }
+        232 = {
+            my_create_building = {type = $type$ level = 232 }
+        }
+        233 = {
+            my_create_building = {type = $type$ level = 233 }
+        }
+        234 = {
+            my_create_building = {type = $type$ level = 234 }
+        }
+        235 = {
+            my_create_building = {type = $type$ level = 235 }
+        }
+        236 = {
+            my_create_building = {type = $type$ level = 236 }
+        }
+        237 = {
+            my_create_building = {type = $type$ level = 237 }
+        }
+        238 = {
+            my_create_building = {type = $type$ level = 238 }
+        }
+        239 = {
+            my_create_building = {type = $type$ level = 239 }
+        }
+        240 = {
+            my_create_building = {type = $type$ level = 240 }
+        }
+        241 = {
+            my_create_building = {type = $type$ level = 241 }
+        }
+        242 = {
+            my_create_building = {type = $type$ level = 242 }
+        }
+        243 = {
+            my_create_building = {type = $type$ level = 243 }
+        }
+        244 = {
+            my_create_building = {type = $type$ level = 244 }
+        }
+        245 = {
+            my_create_building = {type = $type$ level = 245 }
+        }
+        246 = {
+            my_create_building = {type = $type$ level = 246 }
+        }
+        247 = {
+            my_create_building = {type = $type$ level = 247 }
+        }
+        248 = {
+            my_create_building = {type = $type$ level = 248 }
+        }
+        249 = {
+            my_create_building = {type = $type$ level = 249 }
+        }
+        250 = {
+            my_create_building = {type = $type$ level = 250 }
+        }
+        251 = {
+            my_create_building = {type = $type$ level = 251 }
+        }
+        252 = {
+            my_create_building = {type = $type$ level = 252 }
+        }
+        253 = {
+            my_create_building = {type = $type$ level = 253 }
+        }
+        254 = {
+            my_create_building = {type = $type$ level = 254 }
+        }
+        255 = {
+            my_create_building = {type = $type$ level = 255 }
+        }
+        256 = {
+            my_create_building = {type = $type$ level = 256 }
+        }
+        257 = {
+            my_create_building = {type = $type$ level = 257 }
+        }
+        258 = {
+            my_create_building = {type = $type$ level = 258 }
+        }
+        259 = {
+            my_create_building = {type = $type$ level = 259 }
+        }
+        260 = {
+            my_create_building = {type = $type$ level = 260 }
+        }
+        261 = {
+            my_create_building = {type = $type$ level = 261 }
+        }
+        262 = {
+            my_create_building = {type = $type$ level = 262 }
+        }
+        263 = {
+            my_create_building = {type = $type$ level = 263 }
+        }
+        264 = {
+            my_create_building = {type = $type$ level = 264 }
+        }
+        265 = {
+            my_create_building = {type = $type$ level = 265 }
+        }
+        266 = {
+            my_create_building = {type = $type$ level = 266 }
+        }
+        267 = {
+            my_create_building = {type = $type$ level = 267 }
+        }
+        268 = {
+            my_create_building = {type = $type$ level = 268 }
+        }
+        269 = {
+            my_create_building = {type = $type$ level = 269 }
+        }
+        270 = {
+            my_create_building = {type = $type$ level = 270 }
+        }
+        271 = {
+            my_create_building = {type = $type$ level = 271 }
+        }
+        272 = {
+            my_create_building = {type = $type$ level = 272 }
+        }
+        273 = {
+            my_create_building = {type = $type$ level = 273 }
+        }
+        274 = {
+            my_create_building = {type = $type$ level = 274 }
+        }
+        275 = {
+            my_create_building = {type = $type$ level = 275 }
+        }
+        276 = {
+            my_create_building = {type = $type$ level = 276 }
+        }
+        277 = {
+            my_create_building = {type = $type$ level = 277 }
+        }
+        278 = {
+            my_create_building = {type = $type$ level = 278 }
+        }
+        279 = {
+            my_create_building = {type = $type$ level = 279 }
+        }
+        280 = {
+            my_create_building = {type = $type$ level = 280 }
+        }
+        281 = {
+            my_create_building = {type = $type$ level = 281 }
+        }
+        282 = {
+            my_create_building = {type = $type$ level = 282 }
+        }
+        283 = {
+            my_create_building = {type = $type$ level = 283 }
+        }
+        284 = {
+            my_create_building = {type = $type$ level = 284 }
+        }
+        285 = {
+            my_create_building = {type = $type$ level = 285 }
+        }
+        286 = {
+            my_create_building = {type = $type$ level = 286 }
+        }
+        287 = {
+            my_create_building = {type = $type$ level = 287 }
+        }
+        288 = {
+            my_create_building = {type = $type$ level = 288 }
+        }
+        289 = {
+            my_create_building = {type = $type$ level = 289 }
+        }
+        290 = {
+            my_create_building = {type = $type$ level = 290 }
+        }
+        291 = {
+            my_create_building = {type = $type$ level = 291 }
+        }
+        292 = {
+            my_create_building = {type = $type$ level = 292 }
+        }
+        293 = {
+            my_create_building = {type = $type$ level = 293 }
+        }
+        294 = {
+            my_create_building = {type = $type$ level = 294 }
+        }
+        295 = {
+            my_create_building = {type = $type$ level = 295 }
+        }
+        296 = {
+            my_create_building = {type = $type$ level = 296 }
+        }
+        297 = {
+            my_create_building = {type = $type$ level = 297 }
+        }
+        298 = {
+            my_create_building = {type = $type$ level = 298 }
+        }
+        299 = {
+            my_create_building = {type = $type$ level = 299 }
+        }
+        300 = {
+            my_create_building = {type = $type$ level = 300 }
+        }
+        301 = {
+            my_create_building = {type = $type$ level = 301 }
+        }
+        302 = {
+            my_create_building = {type = $type$ level = 302 }
+        }
+        303 = {
+            my_create_building = {type = $type$ level = 303 }
+        }
+        304 = {
+            my_create_building = {type = $type$ level = 304 }
+        }
+        305 = {
+            my_create_building = {type = $type$ level = 305 }
+        }
+        306 = {
+            my_create_building = {type = $type$ level = 306 }
+        }
+        307 = {
+            my_create_building = {type = $type$ level = 307 }
+        }
+        308 = {
+            my_create_building = {type = $type$ level = 308 }
+        }
+        309 = {
+            my_create_building = {type = $type$ level = 309 }
+        }
+        310 = {
+            my_create_building = {type = $type$ level = 310 }
+        }
+        311 = {
+            my_create_building = {type = $type$ level = 311 }
+        }
+        312 = {
+            my_create_building = {type = $type$ level = 312 }
+        }
+        313 = {
+            my_create_building = {type = $type$ level = 313 }
+        }
+        314 = {
+            my_create_building = {type = $type$ level = 314 }
+        }
+        315 = {
+            my_create_building = {type = $type$ level = 315 }
+        }
+        316 = {
+            my_create_building = {type = $type$ level = 316 }
+        }
+        317 = {
+            my_create_building = {type = $type$ level = 317 }
+        }
+        318 = {
+            my_create_building = {type = $type$ level = 318 }
+        }
+        319 = {
+            my_create_building = {type = $type$ level = 319 }
+        }
+        320 = {
+            my_create_building = {type = $type$ level = 320 }
+        }
+        321 = {
+            my_create_building = {type = $type$ level = 321 }
+        }
+        322 = {
+            my_create_building = {type = $type$ level = 322 }
+        }
+        323 = {
+            my_create_building = {type = $type$ level = 323 }
+        }
+        324 = {
+            my_create_building = {type = $type$ level = 324 }
+        }
+        325 = {
+            my_create_building = {type = $type$ level = 325 }
+        }
+        326 = {
+            my_create_building = {type = $type$ level = 326 }
+        }
+        327 = {
+            my_create_building = {type = $type$ level = 327 }
+        }
+        328 = {
+            my_create_building = {type = $type$ level = 328 }
+        }
+        329 = {
+            my_create_building = {type = $type$ level = 329 }
+        }
+        330 = {
+            my_create_building = {type = $type$ level = 330 }
+        }
+        331 = {
+            my_create_building = {type = $type$ level = 331 }
+        }
+        332 = {
+            my_create_building = {type = $type$ level = 332 }
+        }
+        333 = {
+            my_create_building = {type = $type$ level = 333 }
+        }
+        334 = {
+            my_create_building = {type = $type$ level = 334 }
+        }
+        335 = {
+            my_create_building = {type = $type$ level = 335 }
+        }
+        336 = {
+            my_create_building = {type = $type$ level = 336 }
+        }
+        337 = {
+            my_create_building = {type = $type$ level = 337 }
+        }
+        338 = {
+            my_create_building = {type = $type$ level = 338 }
+        }
+        339 = {
+            my_create_building = {type = $type$ level = 339 }
+        }
+        340 = {
+            my_create_building = {type = $type$ level = 340 }
+        }
+        341 = {
+            my_create_building = {type = $type$ level = 341 }
+        }
+        342 = {
+            my_create_building = {type = $type$ level = 342 }
+        }
+        343 = {
+            my_create_building = {type = $type$ level = 343 }
+        }
+        344 = {
+            my_create_building = {type = $type$ level = 344 }
+        }
+        345 = {
+            my_create_building = {type = $type$ level = 345 }
+        }
+        346 = {
+            my_create_building = {type = $type$ level = 346 }
+        }
+        347 = {
+            my_create_building = {type = $type$ level = 347 }
+        }
+        348 = {
+            my_create_building = {type = $type$ level = 348 }
+        }
+        349 = {
+            my_create_building = {type = $type$ level = 349 }
+        }
+        350 = {
+            my_create_building = {type = $type$ level = 350 }
+        }
+        351 = {
+            my_create_building = {type = $type$ level = 351 }
+        }
+        352 = {
+            my_create_building = {type = $type$ level = 352 }
+        }
+        353 = {
+            my_create_building = {type = $type$ level = 353 }
+        }
+        354 = {
+            my_create_building = {type = $type$ level = 354 }
+        }
+        355 = {
+            my_create_building = {type = $type$ level = 355 }
+        }
+        356 = {
+            my_create_building = {type = $type$ level = 356 }
+        }
+        357 = {
+            my_create_building = {type = $type$ level = 357 }
+        }
+        358 = {
+            my_create_building = {type = $type$ level = 358 }
+        }
+        359 = {
+            my_create_building = {type = $type$ level = 359 }
+        }
+        360 = {
+            my_create_building = {type = $type$ level = 360 }
+        }
+        361 = {
+            my_create_building = {type = $type$ level = 361 }
+        }
+        362 = {
+            my_create_building = {type = $type$ level = 362 }
+        }
+        363 = {
+            my_create_building = {type = $type$ level = 363 }
+        }
+        364 = {
+            my_create_building = {type = $type$ level = 364 }
+        }
+        365 = {
+            my_create_building = {type = $type$ level = 365 }
+        }
+        366 = {
+            my_create_building = {type = $type$ level = 366 }
+        }
+        367 = {
+            my_create_building = {type = $type$ level = 367 }
+        }
+        368 = {
+            my_create_building = {type = $type$ level = 368 }
+        }
+        369 = {
+            my_create_building = {type = $type$ level = 369 }
+        }
+        370 = {
+            my_create_building = {type = $type$ level = 370 }
+        }
+        371 = {
+            my_create_building = {type = $type$ level = 371 }
+        }
+        372 = {
+            my_create_building = {type = $type$ level = 372 }
+        }
+        373 = {
+            my_create_building = {type = $type$ level = 373 }
+        }
+        374 = {
+            my_create_building = {type = $type$ level = 374 }
+        }
+        375 = {
+            my_create_building = {type = $type$ level = 375 }
+        }
+        376 = {
+            my_create_building = {type = $type$ level = 376 }
+        }
+        377 = {
+            my_create_building = {type = $type$ level = 377 }
+        }
+        378 = {
+            my_create_building = {type = $type$ level = 378 }
+        }
+        379 = {
+            my_create_building = {type = $type$ level = 379 }
+        }
+        380 = {
+            my_create_building = {type = $type$ level = 380 }
+        }
+        381 = {
+            my_create_building = {type = $type$ level = 381 }
+        }
+        382 = {
+            my_create_building = {type = $type$ level = 382 }
+        }
+        383 = {
+            my_create_building = {type = $type$ level = 383 }
+        }
+        384 = {
+            my_create_building = {type = $type$ level = 384 }
+        }
+        385 = {
+            my_create_building = {type = $type$ level = 385 }
+        }
+        386 = {
+            my_create_building = {type = $type$ level = 386 }
+        }
+        387 = {
+            my_create_building = {type = $type$ level = 387 }
+        }
+        388 = {
+            my_create_building = {type = $type$ level = 388 }
+        }
+        389 = {
+            my_create_building = {type = $type$ level = 389 }
+        }
+        390 = {
+            my_create_building = {type = $type$ level = 390 }
+        }
+        391 = {
+            my_create_building = {type = $type$ level = 391 }
+        }
+        392 = {
+            my_create_building = {type = $type$ level = 392 }
+        }
+        393 = {
+            my_create_building = {type = $type$ level = 393 }
+        }
+        394 = {
+            my_create_building = {type = $type$ level = 394 }
+        }
+        395 = {
+            my_create_building = {type = $type$ level = 395 }
+        }
+        396 = {
+            my_create_building = {type = $type$ level = 396 }
+        }
+        397 = {
+            my_create_building = {type = $type$ level = 397 }
+        }
+        398 = {
+            my_create_building = {type = $type$ level = 398 }
+        }
+        399 = {
+            my_create_building = {type = $type$ level = 399 }
+        }
+        400 = {
+            my_create_building = {type = $type$ level = 400 }
+        }
+        401 = {
+            my_create_building = {type = $type$ level = 401 }
+        }
+        402 = {
+            my_create_building = {type = $type$ level = 402 }
+        }
+        403 = {
+            my_create_building = {type = $type$ level = 403 }
+        }
+        404 = {
+            my_create_building = {type = $type$ level = 404 }
+        }
+        405 = {
+            my_create_building = {type = $type$ level = 405 }
+        }
+        406 = {
+            my_create_building = {type = $type$ level = 406 }
+        }
+        407 = {
+            my_create_building = {type = $type$ level = 407 }
+        }
+        408 = {
+            my_create_building = {type = $type$ level = 408 }
+        }
+        409 = {
+            my_create_building = {type = $type$ level = 409 }
+        }
+        410 = {
+            my_create_building = {type = $type$ level = 410 }
+        }
+        411 = {
+            my_create_building = {type = $type$ level = 411 }
+        }
+        412 = {
+            my_create_building = {type = $type$ level = 412 }
+        }
+        413 = {
+            my_create_building = {type = $type$ level = 413 }
+        }
+        414 = {
+            my_create_building = {type = $type$ level = 414 }
+        }
+        415 = {
+            my_create_building = {type = $type$ level = 415 }
+        }
+        416 = {
+            my_create_building = {type = $type$ level = 416 }
+        }
+        417 = {
+            my_create_building = {type = $type$ level = 417 }
+        }
+        418 = {
+            my_create_building = {type = $type$ level = 418 }
+        }
+        419 = {
+            my_create_building = {type = $type$ level = 419 }
+        }
+        420 = {
+            my_create_building = {type = $type$ level = 420 }
+        }
+        421 = {
+            my_create_building = {type = $type$ level = 421 }
+        }
+        422 = {
+            my_create_building = {type = $type$ level = 422 }
+        }
+        423 = {
+            my_create_building = {type = $type$ level = 423 }
+        }
+        424 = {
+            my_create_building = {type = $type$ level = 424 }
+        }
+        425 = {
+            my_create_building = {type = $type$ level = 425 }
+        }
+        426 = {
+            my_create_building = {type = $type$ level = 426 }
+        }
+        427 = {
+            my_create_building = {type = $type$ level = 427 }
+        }
+        428 = {
+            my_create_building = {type = $type$ level = 428 }
+        }
+        429 = {
+            my_create_building = {type = $type$ level = 429 }
+        }
+        430 = {
+            my_create_building = {type = $type$ level = 430 }
+        }
+        431 = {
+            my_create_building = {type = $type$ level = 431 }
+        }
+        432 = {
+            my_create_building = {type = $type$ level = 432 }
+        }
+        433 = {
+            my_create_building = {type = $type$ level = 433 }
+        }
+        434 = {
+            my_create_building = {type = $type$ level = 434 }
+        }
+        435 = {
+            my_create_building = {type = $type$ level = 435 }
+        }
+        436 = {
+            my_create_building = {type = $type$ level = 436 }
+        }
+        437 = {
+            my_create_building = {type = $type$ level = 437 }
+        }
+        438 = {
+            my_create_building = {type = $type$ level = 438 }
+        }
+        439 = {
+            my_create_building = {type = $type$ level = 439 }
+        }
+        440 = {
+            my_create_building = {type = $type$ level = 440 }
+        }
+        441 = {
+            my_create_building = {type = $type$ level = 441 }
+        }
+        442 = {
+            my_create_building = {type = $type$ level = 442 }
+        }
+        443 = {
+            my_create_building = {type = $type$ level = 443 }
+        }
+        444 = {
+            my_create_building = {type = $type$ level = 444 }
+        }
+        445 = {
+            my_create_building = {type = $type$ level = 445 }
+        }
+        446 = {
+            my_create_building = {type = $type$ level = 446 }
+        }
+        447 = {
+            my_create_building = {type = $type$ level = 447 }
+        }
+        448 = {
+            my_create_building = {type = $type$ level = 448 }
+        }
+        449 = {
+            my_create_building = {type = $type$ level = 449 }
+        }
+        450 = {
+            my_create_building = {type = $type$ level = 450 }
+        }
+        451 = {
+            my_create_building = {type = $type$ level = 451 }
+        }
+        452 = {
+            my_create_building = {type = $type$ level = 452 }
+        }
+        453 = {
+            my_create_building = {type = $type$ level = 453 }
+        }
+        454 = {
+            my_create_building = {type = $type$ level = 454 }
+        }
+        455 = {
+            my_create_building = {type = $type$ level = 455 }
+        }
+        456 = {
+            my_create_building = {type = $type$ level = 456 }
+        }
+        457 = {
+            my_create_building = {type = $type$ level = 457 }
+        }
+        458 = {
+            my_create_building = {type = $type$ level = 458 }
+        }
+        459 = {
+            my_create_building = {type = $type$ level = 459 }
+        }
+        460 = {
+            my_create_building = {type = $type$ level = 460 }
+        }
+        461 = {
+            my_create_building = {type = $type$ level = 461 }
+        }
+        462 = {
+            my_create_building = {type = $type$ level = 462 }
+        }
+        463 = {
+            my_create_building = {type = $type$ level = 463 }
+        }
+        464 = {
+            my_create_building = {type = $type$ level = 464 }
+        }
+        465 = {
+            my_create_building = {type = $type$ level = 465 }
+        }
+        466 = {
+            my_create_building = {type = $type$ level = 466 }
+        }
+        467 = {
+            my_create_building = {type = $type$ level = 467 }
+        }
+        468 = {
+            my_create_building = {type = $type$ level = 468 }
+        }
+        469 = {
+            my_create_building = {type = $type$ level = 469 }
+        }
+        470 = {
+            my_create_building = {type = $type$ level = 470 }
+        }
+        471 = {
+            my_create_building = {type = $type$ level = 471 }
+        }
+        472 = {
+            my_create_building = {type = $type$ level = 472 }
+        }
+        473 = {
+            my_create_building = {type = $type$ level = 473 }
+        }
+        474 = {
+            my_create_building = {type = $type$ level = 474 }
+        }
+        475 = {
+            my_create_building = {type = $type$ level = 475 }
+        }
+        476 = {
+            my_create_building = {type = $type$ level = 476 }
+        }
+        477 = {
+            my_create_building = {type = $type$ level = 477 }
+        }
+        478 = {
+            my_create_building = {type = $type$ level = 478 }
+        }
+        479 = {
+            my_create_building = {type = $type$ level = 479 }
+        }
+        480 = {
+            my_create_building = {type = $type$ level = 480 }
+        }
+        481 = {
+            my_create_building = {type = $type$ level = 481 }
+        }
+        482 = {
+            my_create_building = {type = $type$ level = 482 }
+        }
+        483 = {
+            my_create_building = {type = $type$ level = 483 }
+        }
+        484 = {
+            my_create_building = {type = $type$ level = 484 }
+        }
+        485 = {
+            my_create_building = {type = $type$ level = 485 }
+        }
+        486 = {
+            my_create_building = {type = $type$ level = 486 }
+        }
+        487 = {
+            my_create_building = {type = $type$ level = 487 }
+        }
+        488 = {
+            my_create_building = {type = $type$ level = 488 }
+        }
+        489 = {
+            my_create_building = {type = $type$ level = 489 }
+        }
+        490 = {
+            my_create_building = {type = $type$ level = 490 }
+        }
+        491 = {
+            my_create_building = {type = $type$ level = 491 }
+        }
+        492 = {
+            my_create_building = {type = $type$ level = 492 }
+        }
+        493 = {
+            my_create_building = {type = $type$ level = 493 }
+        }
+        494 = {
+            my_create_building = {type = $type$ level = 494 }
+        }
+        495 = {
+            my_create_building = {type = $type$ level = 495 }
+        }
+        496 = {
+            my_create_building = {type = $type$ level = 496 }
+        }
+        497 = {
+            my_create_building = {type = $type$ level = 497 }
+        }
+        498 = {
+            my_create_building = {type = $type$ level = 498 }
+        }
+        499 = {
+            my_create_building = {type = $type$ level = 499 }
+        }
+        500 = {
+            my_create_building = {type = $type$ level = 500 }
+        }
+        501 = {
+            my_create_building = {type = $type$ level = 501 }
+        }
+        502 = {
+            my_create_building = {type = $type$ level = 502 }
+        }
+        503 = {
+            my_create_building = {type = $type$ level = 503 }
+        }
+        504 = {
+            my_create_building = {type = $type$ level = 504 }
+        }
+        505 = {
+            my_create_building = {type = $type$ level = 505 }
+        }
+        506 = {
+            my_create_building = {type = $type$ level = 506 }
+        }
+        507 = {
+            my_create_building = {type = $type$ level = 507 }
+        }
+        508 = {
+            my_create_building = {type = $type$ level = 508 }
+        }
+        509 = {
+            my_create_building = {type = $type$ level = 509 }
+        }
+        510 = {
+            my_create_building = {type = $type$ level = 510 }
+        }
+        511 = {
+            my_create_building = {type = $type$ level = 511 }
+        }
+        512 = {
+            my_create_building = {type = $type$ level = 512 }
+        }
+        513 = {
+            my_create_building = {type = $type$ level = 513 }
+        }
+        514 = {
+            my_create_building = {type = $type$ level = 514 }
+        }
+        515 = {
+            my_create_building = {type = $type$ level = 515 }
+        }
+        516 = {
+            my_create_building = {type = $type$ level = 516 }
+        }
+        517 = {
+            my_create_building = {type = $type$ level = 517 }
+        }
+        518 = {
+            my_create_building = {type = $type$ level = 518 }
+        }
+        519 = {
+            my_create_building = {type = $type$ level = 519 }
+        }
+        520 = {
+            my_create_building = {type = $type$ level = 520 }
+        }
+        521 = {
+            my_create_building = {type = $type$ level = 521 }
+        }
+        522 = {
+            my_create_building = {type = $type$ level = 522 }
+        }
+        523 = {
+            my_create_building = {type = $type$ level = 523 }
+        }
+        524 = {
+            my_create_building = {type = $type$ level = 524 }
+        }
+        525 = {
+            my_create_building = {type = $type$ level = 525 }
+        }
+        526 = {
+            my_create_building = {type = $type$ level = 526 }
+        }
+        527 = {
+            my_create_building = {type = $type$ level = 527 }
+        }
+        528 = {
+            my_create_building = {type = $type$ level = 528 }
+        }
+        529 = {
+            my_create_building = {type = $type$ level = 529 }
+        }
+        530 = {
+            my_create_building = {type = $type$ level = 530 }
+        }
+        531 = {
+            my_create_building = {type = $type$ level = 531 }
+        }
+        532 = {
+            my_create_building = {type = $type$ level = 532 }
+        }
+        533 = {
+            my_create_building = {type = $type$ level = 533 }
+        }
+        534 = {
+            my_create_building = {type = $type$ level = 534 }
+        }
+        535 = {
+            my_create_building = {type = $type$ level = 535 }
+        }
+        536 = {
+            my_create_building = {type = $type$ level = 536 }
+        }
+        537 = {
+            my_create_building = {type = $type$ level = 537 }
+        }
+        538 = {
+            my_create_building = {type = $type$ level = 538 }
+        }
+        539 = {
+            my_create_building = {type = $type$ level = 539 }
+        }
+        540 = {
+            my_create_building = {type = $type$ level = 540 }
+        }
+        541 = {
+            my_create_building = {type = $type$ level = 541 }
+        }
+        542 = {
+            my_create_building = {type = $type$ level = 542 }
+        }
+        543 = {
+            my_create_building = {type = $type$ level = 543 }
+        }
+        544 = {
+            my_create_building = {type = $type$ level = 544 }
+        }
+        545 = {
+            my_create_building = {type = $type$ level = 545 }
+        }
+        546 = {
+            my_create_building = {type = $type$ level = 546 }
+        }
+        547 = {
+            my_create_building = {type = $type$ level = 547 }
+        }
+        548 = {
+            my_create_building = {type = $type$ level = 548 }
+        }
+        549 = {
+            my_create_building = {type = $type$ level = 549 }
+        }
+        550 = {
+            my_create_building = {type = $type$ level = 550 }
+        }
+        551 = {
+            my_create_building = {type = $type$ level = 551 }
+        }
+        552 = {
+            my_create_building = {type = $type$ level = 552 }
+        }
+        553 = {
+            my_create_building = {type = $type$ level = 553 }
+        }
+        554 = {
+            my_create_building = {type = $type$ level = 554 }
+        }
+        555 = {
+            my_create_building = {type = $type$ level = 555 }
+        }
+        556 = {
+            my_create_building = {type = $type$ level = 556 }
+        }
+        557 = {
+            my_create_building = {type = $type$ level = 557 }
+        }
+        558 = {
+            my_create_building = {type = $type$ level = 558 }
+        }
+        559 = {
+            my_create_building = {type = $type$ level = 559 }
+        }
+        560 = {
+            my_create_building = {type = $type$ level = 560 }
+        }
+        561 = {
+            my_create_building = {type = $type$ level = 561 }
+        }
+        562 = {
+            my_create_building = {type = $type$ level = 562 }
+        }
+        563 = {
+            my_create_building = {type = $type$ level = 563 }
+        }
+        564 = {
+            my_create_building = {type = $type$ level = 564 }
+        }
+        565 = {
+            my_create_building = {type = $type$ level = 565 }
+        }
+        566 = {
+            my_create_building = {type = $type$ level = 566 }
+        }
+        567 = {
+            my_create_building = {type = $type$ level = 567 }
+        }
+        568 = {
+            my_create_building = {type = $type$ level = 568 }
+        }
+        569 = {
+            my_create_building = {type = $type$ level = 569 }
+        }
+        570 = {
+            my_create_building = {type = $type$ level = 570 }
+        }
+        571 = {
+            my_create_building = {type = $type$ level = 571 }
+        }
+        572 = {
+            my_create_building = {type = $type$ level = 572 }
+        }
+        573 = {
+            my_create_building = {type = $type$ level = 573 }
+        }
+        574 = {
+            my_create_building = {type = $type$ level = 574 }
+        }
+        575 = {
+            my_create_building = {type = $type$ level = 575 }
+        }
+        576 = {
+            my_create_building = {type = $type$ level = 576 }
+        }
+        577 = {
+            my_create_building = {type = $type$ level = 577 }
+        }
+        578 = {
+            my_create_building = {type = $type$ level = 578 }
+        }
+        579 = {
+            my_create_building = {type = $type$ level = 579 }
+        }
+        580 = {
+            my_create_building = {type = $type$ level = 580 }
+        }
+        581 = {
+            my_create_building = {type = $type$ level = 581 }
+        }
+        582 = {
+            my_create_building = {type = $type$ level = 582 }
+        }
+        583 = {
+            my_create_building = {type = $type$ level = 583 }
+        }
+        584 = {
+            my_create_building = {type = $type$ level = 584 }
+        }
+        585 = {
+            my_create_building = {type = $type$ level = 585 }
+        }
+        586 = {
+            my_create_building = {type = $type$ level = 586 }
+        }
+        587 = {
+            my_create_building = {type = $type$ level = 587 }
+        }
+        588 = {
+            my_create_building = {type = $type$ level = 588 }
+        }
+        589 = {
+            my_create_building = {type = $type$ level = 589 }
+        }
+        590 = {
+            my_create_building = {type = $type$ level = 590 }
+        }
+        591 = {
+            my_create_building = {type = $type$ level = 591 }
+        }
+        592 = {
+            my_create_building = {type = $type$ level = 592 }
+        }
+        593 = {
+            my_create_building = {type = $type$ level = 593 }
+        }
+        594 = {
+            my_create_building = {type = $type$ level = 594 }
+        }
+        595 = {
+            my_create_building = {type = $type$ level = 595 }
+        }
+        596 = {
+            my_create_building = {type = $type$ level = 596 }
+        }
+        597 = {
+            my_create_building = {type = $type$ level = 597 }
+        }
+        598 = {
+            my_create_building = {type = $type$ level = 598 }
+        }
+        599 = {
+            my_create_building = {type = $type$ level = 599 }
+        }
+        600 = {
+            my_create_building = {type = $type$ level = 600 }
+        }
+        601 = {
+            my_create_building = {type = $type$ level = 601 }
+        }
+        602 = {
+            my_create_building = {type = $type$ level = 602 }
+        }
+        603 = {
+            my_create_building = {type = $type$ level = 603 }
+        }
+        604 = {
+            my_create_building = {type = $type$ level = 604 }
+        }
+        605 = {
+            my_create_building = {type = $type$ level = 605 }
+        }
+        606 = {
+            my_create_building = {type = $type$ level = 606 }
+        }
+        607 = {
+            my_create_building = {type = $type$ level = 607 }
+        }
+        608 = {
+            my_create_building = {type = $type$ level = 608 }
+        }
+        609 = {
+            my_create_building = {type = $type$ level = 609 }
+        }
+        610 = {
+            my_create_building = {type = $type$ level = 610 }
+        }
+        611 = {
+            my_create_building = {type = $type$ level = 611 }
+        }
+        612 = {
+            my_create_building = {type = $type$ level = 612 }
+        }
+        613 = {
+            my_create_building = {type = $type$ level = 613 }
+        }
+        614 = {
+            my_create_building = {type = $type$ level = 614 }
+        }
+        615 = {
+            my_create_building = {type = $type$ level = 615 }
+        }
+        616 = {
+            my_create_building = {type = $type$ level = 616 }
+        }
+        617 = {
+            my_create_building = {type = $type$ level = 617 }
+        }
+        618 = {
+            my_create_building = {type = $type$ level = 618 }
+        }
+        619 = {
+            my_create_building = {type = $type$ level = 619 }
+        }
+        620 = {
+            my_create_building = {type = $type$ level = 620 }
+        }
+        621 = {
+            my_create_building = {type = $type$ level = 621 }
+        }
+        622 = {
+            my_create_building = {type = $type$ level = 622 }
+        }
+        623 = {
+            my_create_building = {type = $type$ level = 623 }
+        }
+        624 = {
+            my_create_building = {type = $type$ level = 624 }
+        }
+        625 = {
+            my_create_building = {type = $type$ level = 625 }
+        }
+        626 = {
+            my_create_building = {type = $type$ level = 626 }
+        }
+        627 = {
+            my_create_building = {type = $type$ level = 627 }
+        }
+        628 = {
+            my_create_building = {type = $type$ level = 628 }
+        }
+        629 = {
+            my_create_building = {type = $type$ level = 629 }
+        }
+        630 = {
+            my_create_building = {type = $type$ level = 630 }
+        }
+        631 = {
+            my_create_building = {type = $type$ level = 631 }
+        }
+        632 = {
+            my_create_building = {type = $type$ level = 632 }
+        }
+        633 = {
+            my_create_building = {type = $type$ level = 633 }
+        }
+        634 = {
+            my_create_building = {type = $type$ level = 634 }
+        }
+        635 = {
+            my_create_building = {type = $type$ level = 635 }
+        }
+        636 = {
+            my_create_building = {type = $type$ level = 636 }
+        }
+        637 = {
+            my_create_building = {type = $type$ level = 637 }
+        }
+        638 = {
+            my_create_building = {type = $type$ level = 638 }
+        }
+        639 = {
+            my_create_building = {type = $type$ level = 639 }
+        }
+        640 = {
+            my_create_building = {type = $type$ level = 640 }
+        }
+        641 = {
+            my_create_building = {type = $type$ level = 641 }
+        }
+        642 = {
+            my_create_building = {type = $type$ level = 642 }
+        }
+        643 = {
+            my_create_building = {type = $type$ level = 643 }
+        }
+        644 = {
+            my_create_building = {type = $type$ level = 644 }
+        }
+        645 = {
+            my_create_building = {type = $type$ level = 645 }
+        }
+        646 = {
+            my_create_building = {type = $type$ level = 646 }
+        }
+        647 = {
+            my_create_building = {type = $type$ level = 647 }
+        }
+        648 = {
+            my_create_building = {type = $type$ level = 648 }
+        }
+        649 = {
+            my_create_building = {type = $type$ level = 649 }
+        }
+        650 = {
+            my_create_building = {type = $type$ level = 650 }
+        }
+        651 = {
+            my_create_building = {type = $type$ level = 651 }
+        }
+        652 = {
+            my_create_building = {type = $type$ level = 652 }
+        }
+        653 = {
+            my_create_building = {type = $type$ level = 653 }
+        }
+        654 = {
+            my_create_building = {type = $type$ level = 654 }
+        }
+        655 = {
+            my_create_building = {type = $type$ level = 655 }
+        }
+        656 = {
+            my_create_building = {type = $type$ level = 656 }
+        }
+        657 = {
+            my_create_building = {type = $type$ level = 657 }
+        }
+        658 = {
+            my_create_building = {type = $type$ level = 658 }
+        }
+        659 = {
+            my_create_building = {type = $type$ level = 659 }
+        }
+        660 = {
+            my_create_building = {type = $type$ level = 660 }
+        }
+        661 = {
+            my_create_building = {type = $type$ level = 661 }
+        }
+        662 = {
+            my_create_building = {type = $type$ level = 662 }
+        }
+        663 = {
+            my_create_building = {type = $type$ level = 663 }
+        }
+        664 = {
+            my_create_building = {type = $type$ level = 664 }
+        }
+        665 = {
+            my_create_building = {type = $type$ level = 665 }
+        }
+        666 = {
+            my_create_building = {type = $type$ level = 666 }
+        }
+        667 = {
+            my_create_building = {type = $type$ level = 667 }
+        }
+        668 = {
+            my_create_building = {type = $type$ level = 668 }
+        }
+        669 = {
+            my_create_building = {type = $type$ level = 669 }
+        }
+        670 = {
+            my_create_building = {type = $type$ level = 670 }
+        }
+        671 = {
+            my_create_building = {type = $type$ level = 671 }
+        }
+        672 = {
+            my_create_building = {type = $type$ level = 672 }
+        }
+        673 = {
+            my_create_building = {type = $type$ level = 673 }
+        }
+        674 = {
+            my_create_building = {type = $type$ level = 674 }
+        }
+        675 = {
+            my_create_building = {type = $type$ level = 675 }
+        }
+        676 = {
+            my_create_building = {type = $type$ level = 676 }
+        }
+        677 = {
+            my_create_building = {type = $type$ level = 677 }
+        }
+        678 = {
+            my_create_building = {type = $type$ level = 678 }
+        }
+        679 = {
+            my_create_building = {type = $type$ level = 679 }
+        }
+        680 = {
+            my_create_building = {type = $type$ level = 680 }
+        }
+        681 = {
+            my_create_building = {type = $type$ level = 681 }
+        }
+        682 = {
+            my_create_building = {type = $type$ level = 682 }
+        }
+        683 = {
+            my_create_building = {type = $type$ level = 683 }
+        }
+        684 = {
+            my_create_building = {type = $type$ level = 684 }
+        }
+        685 = {
+            my_create_building = {type = $type$ level = 685 }
+        }
+        686 = {
+            my_create_building = {type = $type$ level = 686 }
+        }
+        687 = {
+            my_create_building = {type = $type$ level = 687 }
+        }
+        688 = {
+            my_create_building = {type = $type$ level = 688 }
+        }
+        689 = {
+            my_create_building = {type = $type$ level = 689 }
+        }
+        690 = {
+            my_create_building = {type = $type$ level = 690 }
+        }
+        691 = {
+            my_create_building = {type = $type$ level = 691 }
+        }
+        692 = {
+            my_create_building = {type = $type$ level = 692 }
+        }
+        693 = {
+            my_create_building = {type = $type$ level = 693 }
+        }
+        694 = {
+            my_create_building = {type = $type$ level = 694 }
+        }
+        695 = {
+            my_create_building = {type = $type$ level = 695 }
+        }
+        696 = {
+            my_create_building = {type = $type$ level = 696 }
+        }
+        697 = {
+            my_create_building = {type = $type$ level = 697 }
+        }
+        698 = {
+            my_create_building = {type = $type$ level = 698 }
+        }
+        699 = {
+            my_create_building = {type = $type$ level = 699 }
+        }
+        700 = {
+            my_create_building = {type = $type$ level = 700 }
+        }
+        701 = {
+            my_create_building = {type = $type$ level = 701 }
+        }
+        702 = {
+            my_create_building = {type = $type$ level = 702 }
+        }
+        703 = {
+            my_create_building = {type = $type$ level = 703 }
+        }
+        704 = {
+            my_create_building = {type = $type$ level = 704 }
+        }
+        705 = {
+            my_create_building = {type = $type$ level = 705 }
+        }
+        706 = {
+            my_create_building = {type = $type$ level = 706 }
+        }
+        707 = {
+            my_create_building = {type = $type$ level = 707 }
+        }
+        708 = {
+            my_create_building = {type = $type$ level = 708 }
+        }
+        709 = {
+            my_create_building = {type = $type$ level = 709 }
+        }
+        710 = {
+            my_create_building = {type = $type$ level = 710 }
+        }
+        711 = {
+            my_create_building = {type = $type$ level = 711 }
+        }
+        712 = {
+            my_create_building = {type = $type$ level = 712 }
+        }
+        713 = {
+            my_create_building = {type = $type$ level = 713 }
+        }
+        714 = {
+            my_create_building = {type = $type$ level = 714 }
+        }
+        715 = {
+            my_create_building = {type = $type$ level = 715 }
+        }
+        716 = {
+            my_create_building = {type = $type$ level = 716 }
+        }
+        717 = {
+            my_create_building = {type = $type$ level = 717 }
+        }
+        718 = {
+            my_create_building = {type = $type$ level = 718 }
+        }
+        719 = {
+            my_create_building = {type = $type$ level = 719 }
+        }
+        720 = {
+            my_create_building = {type = $type$ level = 720 }
+        }
+        721 = {
+            my_create_building = {type = $type$ level = 721 }
+        }
+        722 = {
+            my_create_building = {type = $type$ level = 722 }
+        }
+        723 = {
+            my_create_building = {type = $type$ level = 723 }
+        }
+        724 = {
+            my_create_building = {type = $type$ level = 724 }
+        }
+        725 = {
+            my_create_building = {type = $type$ level = 725 }
+        }
+        726 = {
+            my_create_building = {type = $type$ level = 726 }
+        }
+        727 = {
+            my_create_building = {type = $type$ level = 727 }
+        }
+        728 = {
+            my_create_building = {type = $type$ level = 728 }
+        }
+        729 = {
+            my_create_building = {type = $type$ level = 729 }
+        }
+        730 = {
+            my_create_building = {type = $type$ level = 730 }
+        }
+        731 = {
+            my_create_building = {type = $type$ level = 731 }
+        }
+        732 = {
+            my_create_building = {type = $type$ level = 732 }
+        }
+        733 = {
+            my_create_building = {type = $type$ level = 733 }
+        }
+        734 = {
+            my_create_building = {type = $type$ level = 734 }
+        }
+        735 = {
+            my_create_building = {type = $type$ level = 735 }
+        }
+        736 = {
+            my_create_building = {type = $type$ level = 736 }
+        }
+        737 = {
+            my_create_building = {type = $type$ level = 737 }
+        }
+        738 = {
+            my_create_building = {type = $type$ level = 738 }
+        }
+        739 = {
+            my_create_building = {type = $type$ level = 739 }
+        }
+        740 = {
+            my_create_building = {type = $type$ level = 740 }
+        }
+        741 = {
+            my_create_building = {type = $type$ level = 741 }
+        }
+        742 = {
+            my_create_building = {type = $type$ level = 742 }
+        }
+        743 = {
+            my_create_building = {type = $type$ level = 743 }
+        }
+        744 = {
+            my_create_building = {type = $type$ level = 744 }
+        }
+        745 = {
+            my_create_building = {type = $type$ level = 745 }
+        }
+        746 = {
+            my_create_building = {type = $type$ level = 746 }
+        }
+        747 = {
+            my_create_building = {type = $type$ level = 747 }
+        }
+        748 = {
+            my_create_building = {type = $type$ level = 748 }
+        }
+        749 = {
+            my_create_building = {type = $type$ level = 749 }
+        }
+        750 = {
+            my_create_building = {type = $type$ level = 750 }
+        }
+        751 = {
+            my_create_building = {type = $type$ level = 751 }
+        }
+        752 = {
+            my_create_building = {type = $type$ level = 752 }
+        }
+        753 = {
+            my_create_building = {type = $type$ level = 753 }
+        }
+        754 = {
+            my_create_building = {type = $type$ level = 754 }
+        }
+        755 = {
+            my_create_building = {type = $type$ level = 755 }
+        }
+        756 = {
+            my_create_building = {type = $type$ level = 756 }
+        }
+        757 = {
+            my_create_building = {type = $type$ level = 757 }
+        }
+        758 = {
+            my_create_building = {type = $type$ level = 758 }
+        }
+        759 = {
+            my_create_building = {type = $type$ level = 759 }
+        }
+        760 = {
+            my_create_building = {type = $type$ level = 760 }
+        }
+        761 = {
+            my_create_building = {type = $type$ level = 761 }
+        }
+        762 = {
+            my_create_building = {type = $type$ level = 762 }
+        }
+        763 = {
+            my_create_building = {type = $type$ level = 763 }
+        }
+        764 = {
+            my_create_building = {type = $type$ level = 764 }
+        }
+        765 = {
+            my_create_building = {type = $type$ level = 765 }
+        }
+        766 = {
+            my_create_building = {type = $type$ level = 766 }
+        }
+        767 = {
+            my_create_building = {type = $type$ level = 767 }
+        }
+        768 = {
+            my_create_building = {type = $type$ level = 768 }
+        }
+        769 = {
+            my_create_building = {type = $type$ level = 769 }
+        }
+        770 = {
+            my_create_building = {type = $type$ level = 770 }
+        }
+        771 = {
+            my_create_building = {type = $type$ level = 771 }
+        }
+        772 = {
+            my_create_building = {type = $type$ level = 772 }
+        }
+        773 = {
+            my_create_building = {type = $type$ level = 773 }
+        }
+        774 = {
+            my_create_building = {type = $type$ level = 774 }
+        }
+        775 = {
+            my_create_building = {type = $type$ level = 775 }
+        }
+        776 = {
+            my_create_building = {type = $type$ level = 776 }
+        }
+        777 = {
+            my_create_building = {type = $type$ level = 777 }
+        }
+        778 = {
+            my_create_building = {type = $type$ level = 778 }
+        }
+        779 = {
+            my_create_building = {type = $type$ level = 779 }
+        }
+        780 = {
+            my_create_building = {type = $type$ level = 780 }
+        }
+        781 = {
+            my_create_building = {type = $type$ level = 781 }
+        }
+        782 = {
+            my_create_building = {type = $type$ level = 782 }
+        }
+        783 = {
+            my_create_building = {type = $type$ level = 783 }
+        }
+        784 = {
+            my_create_building = {type = $type$ level = 784 }
+        }
+        785 = {
+            my_create_building = {type = $type$ level = 785 }
+        }
+        786 = {
+            my_create_building = {type = $type$ level = 786 }
+        }
+        787 = {
+            my_create_building = {type = $type$ level = 787 }
+        }
+        788 = {
+            my_create_building = {type = $type$ level = 788 }
+        }
+        789 = {
+            my_create_building = {type = $type$ level = 789 }
+        }
+        790 = {
+            my_create_building = {type = $type$ level = 790 }
+        }
+        791 = {
+            my_create_building = {type = $type$ level = 791 }
+        }
+        792 = {
+            my_create_building = {type = $type$ level = 792 }
+        }
+        793 = {
+            my_create_building = {type = $type$ level = 793 }
+        }
+        794 = {
+            my_create_building = {type = $type$ level = 794 }
+        }
+        795 = {
+            my_create_building = {type = $type$ level = 795 }
+        }
+        796 = {
+            my_create_building = {type = $type$ level = 796 }
+        }
+        797 = {
+            my_create_building = {type = $type$ level = 797 }
+        }
+        798 = {
+            my_create_building = {type = $type$ level = 798 }
+        }
+        799 = {
+            my_create_building = {type = $type$ level = 799 }
+        }
+        800 = {
+            my_create_building = {type = $type$ level = 800 }
+        }
+        801 = {
+            my_create_building = {type = $type$ level = 801 }
+        }
+        802 = {
+            my_create_building = {type = $type$ level = 802 }
+        }
+        803 = {
+            my_create_building = {type = $type$ level = 803 }
+        }
+        804 = {
+            my_create_building = {type = $type$ level = 804 }
+        }
+        805 = {
+            my_create_building = {type = $type$ level = 805 }
+        }
+        806 = {
+            my_create_building = {type = $type$ level = 806 }
+        }
+        807 = {
+            my_create_building = {type = $type$ level = 807 }
+        }
+        808 = {
+            my_create_building = {type = $type$ level = 808 }
+        }
+        809 = {
+            my_create_building = {type = $type$ level = 809 }
+        }
+        810 = {
+            my_create_building = {type = $type$ level = 810 }
+        }
+        811 = {
+            my_create_building = {type = $type$ level = 811 }
+        }
+        812 = {
+            my_create_building = {type = $type$ level = 812 }
+        }
+        813 = {
+            my_create_building = {type = $type$ level = 813 }
+        }
+        814 = {
+            my_create_building = {type = $type$ level = 814 }
+        }
+        815 = {
+            my_create_building = {type = $type$ level = 815 }
+        }
+        816 = {
+            my_create_building = {type = $type$ level = 816 }
+        }
+        817 = {
+            my_create_building = {type = $type$ level = 817 }
+        }
+        818 = {
+            my_create_building = {type = $type$ level = 818 }
+        }
+        819 = {
+            my_create_building = {type = $type$ level = 819 }
+        }
+        820 = {
+            my_create_building = {type = $type$ level = 820 }
+        }
+        821 = {
+            my_create_building = {type = $type$ level = 821 }
+        }
+        822 = {
+            my_create_building = {type = $type$ level = 822 }
+        }
+        823 = {
+            my_create_building = {type = $type$ level = 823 }
+        }
+        824 = {
+            my_create_building = {type = $type$ level = 824 }
+        }
+        825 = {
+            my_create_building = {type = $type$ level = 825 }
+        }
+        826 = {
+            my_create_building = {type = $type$ level = 826 }
+        }
+        827 = {
+            my_create_building = {type = $type$ level = 827 }
+        }
+        828 = {
+            my_create_building = {type = $type$ level = 828 }
+        }
+        829 = {
+            my_create_building = {type = $type$ level = 829 }
+        }
+        830 = {
+            my_create_building = {type = $type$ level = 830 }
+        }
+        831 = {
+            my_create_building = {type = $type$ level = 831 }
+        }
+        832 = {
+            my_create_building = {type = $type$ level = 832 }
+        }
+        833 = {
+            my_create_building = {type = $type$ level = 833 }
+        }
+        834 = {
+            my_create_building = {type = $type$ level = 834 }
+        }
+        835 = {
+            my_create_building = {type = $type$ level = 835 }
+        }
+        836 = {
+            my_create_building = {type = $type$ level = 836 }
+        }
+        837 = {
+            my_create_building = {type = $type$ level = 837 }
+        }
+        838 = {
+            my_create_building = {type = $type$ level = 838 }
+        }
+        839 = {
+            my_create_building = {type = $type$ level = 839 }
+        }
+        840 = {
+            my_create_building = {type = $type$ level = 840 }
+        }
+        841 = {
+            my_create_building = {type = $type$ level = 841 }
+        }
+        842 = {
+            my_create_building = {type = $type$ level = 842 }
+        }
+        843 = {
+            my_create_building = {type = $type$ level = 843 }
+        }
+        844 = {
+            my_create_building = {type = $type$ level = 844 }
+        }
+        845 = {
+            my_create_building = {type = $type$ level = 845 }
+        }
+        846 = {
+            my_create_building = {type = $type$ level = 846 }
+        }
+        847 = {
+            my_create_building = {type = $type$ level = 847 }
+        }
+        848 = {
+            my_create_building = {type = $type$ level = 848 }
+        }
+        849 = {
+            my_create_building = {type = $type$ level = 849 }
+        }
+        850 = {
+            my_create_building = {type = $type$ level = 850 }
+        }
+        851 = {
+            my_create_building = {type = $type$ level = 851 }
+        }
+        852 = {
+            my_create_building = {type = $type$ level = 852 }
+        }
+        853 = {
+            my_create_building = {type = $type$ level = 853 }
+        }
+        854 = {
+            my_create_building = {type = $type$ level = 854 }
+        }
+        855 = {
+            my_create_building = {type = $type$ level = 855 }
+        }
+        856 = {
+            my_create_building = {type = $type$ level = 856 }
+        }
+        857 = {
+            my_create_building = {type = $type$ level = 857 }
+        }
+        858 = {
+            my_create_building = {type = $type$ level = 858 }
+        }
+        859 = {
+            my_create_building = {type = $type$ level = 859 }
+        }
+        860 = {
+            my_create_building = {type = $type$ level = 860 }
+        }
+        861 = {
+            my_create_building = {type = $type$ level = 861 }
+        }
+        862 = {
+            my_create_building = {type = $type$ level = 862 }
+        }
+        863 = {
+            my_create_building = {type = $type$ level = 863 }
+        }
+        864 = {
+            my_create_building = {type = $type$ level = 864 }
+        }
+        865 = {
+            my_create_building = {type = $type$ level = 865 }
+        }
+        866 = {
+            my_create_building = {type = $type$ level = 866 }
+        }
+        867 = {
+            my_create_building = {type = $type$ level = 867 }
+        }
+        868 = {
+            my_create_building = {type = $type$ level = 868 }
+        }
+        869 = {
+            my_create_building = {type = $type$ level = 869 }
+        }
+        870 = {
+            my_create_building = {type = $type$ level = 870 }
+        }
+        871 = {
+            my_create_building = {type = $type$ level = 871 }
+        }
+        872 = {
+            my_create_building = {type = $type$ level = 872 }
+        }
+        873 = {
+            my_create_building = {type = $type$ level = 873 }
+        }
+        874 = {
+            my_create_building = {type = $type$ level = 874 }
+        }
+        875 = {
+            my_create_building = {type = $type$ level = 875 }
+        }
+        876 = {
+            my_create_building = {type = $type$ level = 876 }
+        }
+        877 = {
+            my_create_building = {type = $type$ level = 877 }
+        }
+        878 = {
+            my_create_building = {type = $type$ level = 878 }
+        }
+        879 = {
+            my_create_building = {type = $type$ level = 879 }
+        }
+        880 = {
+            my_create_building = {type = $type$ level = 880 }
+        }
+        881 = {
+            my_create_building = {type = $type$ level = 881 }
+        }
+        882 = {
+            my_create_building = {type = $type$ level = 882 }
+        }
+        883 = {
+            my_create_building = {type = $type$ level = 883 }
+        }
+        884 = {
+            my_create_building = {type = $type$ level = 884 }
+        }
+        885 = {
+            my_create_building = {type = $type$ level = 885 }
+        }
+        886 = {
+            my_create_building = {type = $type$ level = 886 }
+        }
+        887 = {
+            my_create_building = {type = $type$ level = 887 }
+        }
+        888 = {
+            my_create_building = {type = $type$ level = 888 }
+        }
+        889 = {
+            my_create_building = {type = $type$ level = 889 }
+        }
+        890 = {
+            my_create_building = {type = $type$ level = 890 }
+        }
+        891 = {
+            my_create_building = {type = $type$ level = 891 }
+        }
+        892 = {
+            my_create_building = {type = $type$ level = 892 }
+        }
+        893 = {
+            my_create_building = {type = $type$ level = 893 }
+        }
+        894 = {
+            my_create_building = {type = $type$ level = 894 }
+        }
+        895 = {
+            my_create_building = {type = $type$ level = 895 }
+        }
+        896 = {
+            my_create_building = {type = $type$ level = 896 }
+        }
+        897 = {
+            my_create_building = {type = $type$ level = 897 }
+        }
+        898 = {
+            my_create_building = {type = $type$ level = 898 }
+        }
+        899 = {
+            my_create_building = {type = $type$ level = 899 }
+        }
+        900 = {
+            my_create_building = {type = $type$ level = 900 }
+        }
+        901 = {
+            my_create_building = {type = $type$ level = 901 }
+        }
+        902 = {
+            my_create_building = {type = $type$ level = 902 }
+        }
+        903 = {
+            my_create_building = {type = $type$ level = 903 }
+        }
+        904 = {
+            my_create_building = {type = $type$ level = 904 }
+        }
+        905 = {
+            my_create_building = {type = $type$ level = 905 }
+        }
+        906 = {
+            my_create_building = {type = $type$ level = 906 }
+        }
+        907 = {
+            my_create_building = {type = $type$ level = 907 }
+        }
+        908 = {
+            my_create_building = {type = $type$ level = 908 }
+        }
+        909 = {
+            my_create_building = {type = $type$ level = 909 }
+        }
+        910 = {
+            my_create_building = {type = $type$ level = 910 }
+        }
+        911 = {
+            my_create_building = {type = $type$ level = 911 }
+        }
+        912 = {
+            my_create_building = {type = $type$ level = 912 }
+        }
+        913 = {
+            my_create_building = {type = $type$ level = 913 }
+        }
+        914 = {
+            my_create_building = {type = $type$ level = 914 }
+        }
+        915 = {
+            my_create_building = {type = $type$ level = 915 }
+        }
+        916 = {
+            my_create_building = {type = $type$ level = 916 }
+        }
+        917 = {
+            my_create_building = {type = $type$ level = 917 }
+        }
+        918 = {
+            my_create_building = {type = $type$ level = 918 }
+        }
+        919 = {
+            my_create_building = {type = $type$ level = 919 }
+        }
+        920 = {
+            my_create_building = {type = $type$ level = 920 }
+        }
+        921 = {
+            my_create_building = {type = $type$ level = 921 }
+        }
+        922 = {
+            my_create_building = {type = $type$ level = 922 }
+        }
+        923 = {
+            my_create_building = {type = $type$ level = 923 }
+        }
+        924 = {
+            my_create_building = {type = $type$ level = 924 }
+        }
+        925 = {
+            my_create_building = {type = $type$ level = 925 }
+        }
+        926 = {
+            my_create_building = {type = $type$ level = 926 }
+        }
+        927 = {
+            my_create_building = {type = $type$ level = 927 }
+        }
+        928 = {
+            my_create_building = {type = $type$ level = 928 }
+        }
+        929 = {
+            my_create_building = {type = $type$ level = 929 }
+        }
+        930 = {
+            my_create_building = {type = $type$ level = 930 }
+        }
+        931 = {
+            my_create_building = {type = $type$ level = 931 }
+        }
+        932 = {
+            my_create_building = {type = $type$ level = 932 }
+        }
+        933 = {
+            my_create_building = {type = $type$ level = 933 }
+        }
+        934 = {
+            my_create_building = {type = $type$ level = 934 }
+        }
+        935 = {
+            my_create_building = {type = $type$ level = 935 }
+        }
+        936 = {
+            my_create_building = {type = $type$ level = 936 }
+        }
+        937 = {
+            my_create_building = {type = $type$ level = 937 }
+        }
+        938 = {
+            my_create_building = {type = $type$ level = 938 }
+        }
+        939 = {
+            my_create_building = {type = $type$ level = 939 }
+        }
+        940 = {
+            my_create_building = {type = $type$ level = 940 }
+        }
+        941 = {
+            my_create_building = {type = $type$ level = 941 }
+        }
+        942 = {
+            my_create_building = {type = $type$ level = 942 }
+        }
+        943 = {
+            my_create_building = {type = $type$ level = 943 }
+        }
+        944 = {
+            my_create_building = {type = $type$ level = 944 }
+        }
+        945 = {
+            my_create_building = {type = $type$ level = 945 }
+        }
+        946 = {
+            my_create_building = {type = $type$ level = 946 }
+        }
+        947 = {
+            my_create_building = {type = $type$ level = 947 }
+        }
+        948 = {
+            my_create_building = {type = $type$ level = 948 }
+        }
+        949 = {
+            my_create_building = {type = $type$ level = 949 }
+        }
+        950 = {
+            my_create_building = {type = $type$ level = 950 }
+        }
+        951 = {
+            my_create_building = {type = $type$ level = 951 }
+        }
+        952 = {
+            my_create_building = {type = $type$ level = 952 }
+        }
+        953 = {
+            my_create_building = {type = $type$ level = 953 }
+        }
+        954 = {
+            my_create_building = {type = $type$ level = 954 }
+        }
+        955 = {
+            my_create_building = {type = $type$ level = 955 }
+        }
+        956 = {
+            my_create_building = {type = $type$ level = 956 }
+        }
+        957 = {
+            my_create_building = {type = $type$ level = 957 }
+        }
+        958 = {
+            my_create_building = {type = $type$ level = 958 }
+        }
+        959 = {
+            my_create_building = {type = $type$ level = 959 }
+        }
+        960 = {
+            my_create_building = {type = $type$ level = 960 }
+        }
+        961 = {
+            my_create_building = {type = $type$ level = 961 }
+        }
+        962 = {
+            my_create_building = {type = $type$ level = 962 }
+        }
+        963 = {
+            my_create_building = {type = $type$ level = 963 }
+        }
+        964 = {
+            my_create_building = {type = $type$ level = 964 }
+        }
+        965 = {
+            my_create_building = {type = $type$ level = 965 }
+        }
+        966 = {
+            my_create_building = {type = $type$ level = 966 }
+        }
+        967 = {
+            my_create_building = {type = $type$ level = 967 }
+        }
+        968 = {
+            my_create_building = {type = $type$ level = 968 }
+        }
+        969 = {
+            my_create_building = {type = $type$ level = 969 }
+        }
+        970 = {
+            my_create_building = {type = $type$ level = 970 }
+        }
+        971 = {
+            my_create_building = {type = $type$ level = 971 }
+        }
+        972 = {
+            my_create_building = {type = $type$ level = 972 }
+        }
+        973 = {
+            my_create_building = {type = $type$ level = 973 }
+        }
+        974 = {
+            my_create_building = {type = $type$ level = 974 }
+        }
+        975 = {
+            my_create_building = {type = $type$ level = 975 }
+        }
+        976 = {
+            my_create_building = {type = $type$ level = 976 }
+        }
+        977 = {
+            my_create_building = {type = $type$ level = 977 }
+        }
+        978 = {
+            my_create_building = {type = $type$ level = 978 }
+        }
+        979 = {
+            my_create_building = {type = $type$ level = 979 }
+        }
+        980 = {
+            my_create_building = {type = $type$ level = 980 }
+        }
+        981 = {
+            my_create_building = {type = $type$ level = 981 }
+        }
+        982 = {
+            my_create_building = {type = $type$ level = 982 }
+        }
+        983 = {
+            my_create_building = {type = $type$ level = 983 }
+        }
+        984 = {
+            my_create_building = {type = $type$ level = 984 }
+        }
+        985 = {
+            my_create_building = {type = $type$ level = 985 }
+        }
+        986 = {
+            my_create_building = {type = $type$ level = 986 }
+        }
+        987 = {
+            my_create_building = {type = $type$ level = 987 }
+        }
+        988 = {
+            my_create_building = {type = $type$ level = 988 }
+        }
+        989 = {
+            my_create_building = {type = $type$ level = 989 }
+        }
+        990 = {
+            my_create_building = {type = $type$ level = 990 }
+        }
+        991 = {
+            my_create_building = {type = $type$ level = 991 }
+        }
+        992 = {
+            my_create_building = {type = $type$ level = 992 }
+        }
+        993 = {
+            my_create_building = {type = $type$ level = 993 }
+        }
+        994 = {
+            my_create_building = {type = $type$ level = 994 }
+        }
+        995 = {
+            my_create_building = {type = $type$ level = 995 }
+        }
+        996 = {
+            my_create_building = {type = $type$ level = 996 }
+        }
+        997 = {
+            my_create_building = {type = $type$ level = 997 }
+        }
+        998 = {
+            my_create_building = {type = $type$ level = 998 }
+        }
+        999 = {
+            my_create_building = {type = $type$ level = 999 }
+        }
+    }
+}

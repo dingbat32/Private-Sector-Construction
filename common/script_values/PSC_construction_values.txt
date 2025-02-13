@@ -71,17 +71,17 @@ construction_good_adjustable_base_price = {
 	}
 	else_if = {
 		limit = {
-            owner = {
-                has_technology_researched = steel_frame_buildings
-            }
+			owner = {
+				has_technology_researched = steel_frame_buildings
+			}
         }
 		value = steel_construction_good_base_price
 	}
 	else_if = {
 		limit = {
-            owner = {
-                has_technology_researched = urban_planning
-            }
+			owner = {
+				has_technology_researched = urban_planning
+			}
 		}
 		value = iron_construction_good_base_price
 	}
@@ -359,4 +359,16 @@ construction_demand_ratio = {
 		value = var:national_production
 		min = 0.1
 	}
+}
+
+construction_regulator_level = {
+	if = {
+		limit = {
+			has_building = building_construction_sector
+		}
+		b:building_construction_sector = {
+			value = level
+		}
+	}
+	min = 1
 }

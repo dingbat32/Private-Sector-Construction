@@ -63,7 +63,7 @@ goods_input_arc_welded_construction_add={
 }
 
 
-building_construction_point_converter_throughput_add={
+building_construction_regulator_throughput_add={
 	decimals=1
 	color=good
 	game_data={

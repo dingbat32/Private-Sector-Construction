@@ -1,0 +1,6 @@
+﻿my_create_building = {
+    create_building = {
+        building = $type$
+        level = $level$
+    }
+}

@@ -6,7 +6,7 @@
 			}
             every_scope_state = {
                 create_building = {
-                    building = "building_construction_point_converter"
+                    building = building_construction_regulator
                     level = 1
                     reserves = 1
                 }

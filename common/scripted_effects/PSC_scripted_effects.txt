@@ -54,13 +54,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_wood_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_wood_point_conversion
             }
         }
@@ -74,13 +74,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_iron_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_iron_point_conversion
             }
         }
@@ -94,13 +94,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_steel_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_steel_point_conversion
             }
         }
@@ -114,13 +114,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_arc_welded_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_arc_welded_point_conversion
             }
         }
@@ -135,13 +135,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_arc_welded_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_arc_welded_point_conversion
             }
         }
@@ -155,13 +155,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_steel_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_steel_point_conversion
             }
         }
@@ -175,13 +175,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_iron_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_iron_point_conversion
             }
         }
@@ -190,13 +190,13 @@ change_point_converter_production_method = {
         if = {
             limit = {
                 NOT = {
-                    b:building_construction_point_converter = {
+                    b:building_construction_regulator = {
                         has_active_production_method = pm_wood_point_conversion
                     }
                 }
             }
             activate_production_method = {
-                building_type = building_construction_point_converter
+                building_type = building_construction_regulator
                 production_method = pm_wood_point_conversion
             }
         }
@@ -209,25 +209,28 @@ set_construction_point_demand = {
             has_technology_researched = urbanization
         }
         every_scope_state = {
-            if = {
-                limit = {
-                    state_has_building_type_levels = {
-                        target = bt:building_construction_point_converter
-                        value > 1
-                    }
-                }
-                remove_building = "building_construction_point_converter"
+            set_local_variable = {
+                name = regulator_level
+                value = construction_regulator_level
             }
             if = {
                 limit = {
-                    NOT = {
-                        has_building = building_construction_point_converter
+                    state_has_building_type_levels = {
+                        target = bt:building_construction_regulator
+                        value > local_var:regulator_level
                     }
                 }
-                create_building = {
-                    building = "building_construction_point_converter"
-                    level = 1
-                    reserves = 1
+                remove_building = "building_construction_regulator"
+            }
+            if = {
+                limit = {
+                    state_has_building_type_levels = {
+                        target = bt:building_construction_regulator
+                        value < local_var:regulator_level
+                    }
+                }
+                massive_building_switch = {
+                    type = building_construction_regulator
                 }
             }
         }
@@ -344,19 +347,27 @@ set_construction_point_demand = {
                 subtract = local_var:state_construction
             }
             
-            b:building_construction_point_converter = {
+            b:building_construction_regulator = {
                 if = {
                     limit = {
                         has_modifier = construction_throughput_mult
                     }
                     remove_modifier = construction_throughput_mult
                 }
-                add_modifier = {
-                    name = construction_throughput_mult
-                    multiplier = {
+                set_local_variable = {
+                    name = modifier_mult
+                    value = {
                         value = local_var:state_construction
+                        divide = {
+                            value = level
+                            min = 1
+                        }
                         subtract = 1
                     }
+                }
+                add_modifier = {
+                    name = construction_throughput_mult
+                    multiplier = local_var:modifier_mult
                 }
             }
             change_point_converter_production_method = yes

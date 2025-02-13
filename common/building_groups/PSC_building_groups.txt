@@ -21,10 +21,9 @@
 	foreign_investment_ai_factor = 0.75
 }
 
-bg_construction_converter = {	
+bg_construction_regulator = {	
 	category = urban
 	
-	is_shown_in_outliner = no
 
 	always_possible = yes	
 	

@@ -33,14 +33,14 @@ building_construction_sector = {
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_farming.dds"
 }
 
-building_construction_point_converter = {
-	building_group = bg_construction_converter
+building_construction_regulator = {
+	building_group = bg_construction_regulator
 	icon = "gfx/interface/icons/building_icons/construction_camp.dds"
 	unlocking_technologies = {
 		urbanization
 	}
 	production_method_groups = {
-		pmg_construction_point_converter
+		pmg_construction_regulator
 	}
 	
 
