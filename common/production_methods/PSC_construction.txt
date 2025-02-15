@@ -150,7 +150,7 @@ pm_arc_welded_buildings = {
 }
 
 pm_wood_point_conversion = {
-	texture = "gfx/interface/icons/production_method_icons/wooden_buildings.dds"
+	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 	is_default = yes
 
 	country_modifiers = {
@@ -167,10 +167,14 @@ pm_wood_point_conversion = {
 			building_employment_bureaucrats_add = 50
 		}
 	}
+
+	unlocking_production_methods = {
+		pm_wood_point_conversion
+	}
 }
 
 pm_iron_point_conversion = {
-	texture = "gfx/interface/icons/production_method_icons/iron_frame_buildings.dds"
+	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 
 	country_modifiers = {
 		workforce_scaled = {
@@ -186,10 +190,14 @@ pm_iron_point_conversion = {
 			building_employment_bureaucrats_add = 50
 		}
 	}
+
+	unlocking_production_methods = {
+		pm_iron_point_conversion
+	}
 }
 
 pm_steel_point_conversion = {
-	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
+	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 
 	country_modifiers = {
 		workforce_scaled = {
@@ -205,10 +213,14 @@ pm_steel_point_conversion = {
 			building_employment_bureaucrats_add = 50
 		}
 	}
+
+	unlocking_production_methods = {
+		pm_steel_point_conversion
+	}
 }
 
 pm_arc_welded_point_conversion = {
-	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
+	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 
 	country_modifiers = {
 		workforce_scaled = {
@@ -223,5 +235,9 @@ pm_arc_welded_point_conversion = {
 		level_scaled = {
 			building_employment_bureaucrats_add = 50
 		}
+	}
+
+	unlocking_production_methods = {
+		pm_arc_welded_point_conversion
 	}
 }
