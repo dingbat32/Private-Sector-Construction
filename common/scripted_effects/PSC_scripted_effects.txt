@@ -203,39 +203,12 @@ change_point_converter_production_method = {
     }
 }
 
+#Scope: Country
 set_construction_point_demand = {
     if = {
         limit = { 
             has_technology_researched = urbanization
         }
-        every_scope_state = {
-            set_local_variable = {
-                name = regulator_level
-                value = construction_regulator_level
-            }
-            if = {
-                limit = {
-                    state_has_building_type_levels = {
-                        target = bt:building_construction_regulator
-                        value > local_var:regulator_level
-                    }
-                }
-                remove_building = "building_construction_regulator"
-            }
-            if = {
-                limit = {
-                    state_has_building_type_levels = {
-                        target = bt:building_construction_regulator
-                        value < local_var:regulator_level
-                    }
-                }
-                massive_building_switch = {
-                    type = building_construction_regulator
-                    level = local_var:regulator_level
-                }
-            }
-        }
-
         if = {
             limit = {
                 has_modifier = country_private_construction_allocation_add
@@ -277,12 +250,12 @@ set_construction_point_demand = {
             }
         }
         set_variable = {
-            name = national_consumption
-            value = national_construction_consumption
-        }
-        set_variable = {
             name = national_production
             value = national_construction_production
+        }
+        set_variable = {
+            name = total_construction_spending
+            value = calculate_total_construction_spending
         }
         if = {
             limit = {
@@ -347,7 +320,8 @@ set_construction_point_demand = {
                 name = remaining_construction_demand
                 subtract = local_var:state_construction
             }
-            
+            set_construction_regulator_level = yes
+
             b:building_construction_regulator = {
                 if = {
                     limit = {
@@ -384,6 +358,35 @@ set_construction_point_demand = {
                 add = investment_pool_net_income
                 min = 0
             }
+        }
+    }
+}
+
+#Scope: State
+set_construction_regulator_level = {
+    set_local_variable = {
+        name = regulator_level
+        value = construction_regulator_level
+    }
+    if = {
+        limit = {
+            state_has_building_type_levels = {
+                target = bt:building_construction_regulator
+                value > local_var:regulator_level
+            }
+        }
+        remove_building = "building_construction_regulator"
+    }
+    if = {
+        limit = {
+            state_has_building_type_levels = {
+                target = bt:building_construction_regulator
+                value < local_var:regulator_level
+            }
+        }
+        massive_building_switch = {
+            type = building_construction_regulator
+            level = local_var:regulator_level
         }
     }
 }

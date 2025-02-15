@@ -51,7 +51,7 @@ construction_point_price_weekly = {
 		limit = {
 			national_construction_consumption > 0
 		}
-		value = calculate_total_construction_spending
+		value = var:total_construction_spending
 		divide = national_construction_consumption
 	}
 	else = {
@@ -285,7 +285,7 @@ calculate_total_construction_spending = {
 }
 
 calculate_government_construction_spending = {
-	value = calculate_total_construction_spending
+	value = var:total_construction_spending
 	#subtract private spending
 	subtract = {
 		value = investment_pool_gross_income
