@@ -387,7 +387,8 @@ calculate_state_construction_efficiency = {
 	}
 }
 
-#Scope: Any
+# Credit: Kate the Sibyl for this square root code
+# Scope: Any
 calculate_sqrt = {
 	value = {
 		add = 5
