@@ -372,3 +372,169 @@ construction_regulator_level = {
 	}
 	min = 1
 }
+
+#Scope: State
+calculate_state_construction_efficiency = {
+	b:building_construction_sector = {
+		value = level
+		multiply = occupancy
+	}
+	save_temporary_value_as = num_to_sqrt
+	value = calculate_sqrt
+	multiply = goods_efficiency_per_level
+	owner = {
+		multiply = construction_sector_efficiency_multiplier
+	}
+}
+
+#Scope: Any
+calculate_sqrt = {
+	value = {
+		add = 5
+		subtract = {
+			add = {
+				add = 5
+				multiply = 5
+			}
+			subtract = scope:num_to_sqrt
+			divide = {
+				add = 5
+				multiply = 2
+			}
+		}
+	}
+	save_temporary_value_as = guess
+	value = {
+		add = scope:guess
+		subtract = {
+			add = {
+				add = scope:guess
+				multiply = scope:guess
+			}
+			subtract = scope:num_to_sqrt
+			divide = {
+				add = scope:guess
+				multiply = 2
+			}
+		}
+	}
+	save_temporary_value_as = guess
+	value = {
+		add = scope:guess
+		subtract = {
+			add = {
+				add = scope:guess
+				multiply = scope:guess
+			}
+			subtract = scope:num_to_sqrt
+			divide = {
+				add = scope:guess
+				multiply = 2
+			}
+		}
+	}
+}
+
+goods_efficiency_per_level = {
+	b:building_construction_sector = {
+		if = {
+			limit = {
+				has_active_production_method = pm_wooden_buildings
+			}
+			value = 0.001
+		}
+		else_if = {
+			limit = {
+				has_active_production_method = pm_iron_frame_buildings
+			}
+			value = 0.002
+		}
+		else_if = {
+			limit = {
+				has_active_production_method = pm_steel_frame_buildings
+			}
+			value = 0.0035
+		}
+		else = {
+			limit = {
+				has_active_production_method = pm_arc_welded_buildings
+			}
+			value = 0.005
+		}
+		
+	}
+}
+
+#Scope: Country
+calculate_construction_sector_max_level = {
+	value = 0
+	if = {
+		limit = {
+			has_technology_researched = urbanization
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_technology_researched = urban_planning
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_technology_researched = modern_sewerage
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_technology_researched = steel_frame_buildings
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_technology_researched = elevator
+		}
+		add = 5
+	}
+}
+
+#Scope: Country
+construction_sector_efficiency_multiplier = {
+	value = calculate_construction_sector_max_level
+	multiply = 2 #account for halved construction sector
+	save_temporary_value_as = modified_max_level
+	# Pre-calculated values using the square root of the level where we want equality
+	# sqrt(20) = 4.47 etc.
+	if = {
+		limit = {
+			scope:modified_max_level = 20
+		}
+		value = 4.4721
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 30
+		}
+		value = 5.4772
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 40
+		}
+		value = 6.3246
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 50
+		}
+		value = 7.07107
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 60
+		}
+		value = 7.7460
+	}
+}

@@ -321,7 +321,7 @@ set_construction_point_demand = {
                 subtract = local_var:state_construction
             }
             set_construction_regulator_level = yes
-
+            set_state_construction_efficiency = yes
             b:building_construction_regulator = {
                 if = {
                     limit = {
@@ -387,6 +387,29 @@ set_construction_regulator_level = {
         massive_building_switch = {
             type = building_construction_regulator
             level = local_var:regulator_level
+        }
+    }
+}
+
+#Scope: State
+set_state_construction_efficiency = {
+    if = {
+        limit = {
+            has_building = building_construction_sector
+        }
+        if = {
+            limit = {
+                has_modifier = state_construction_efficiency_increase
+            }
+            remove_modifier = state_construction_efficiency_increase
+        }
+        set_local_variable = {
+            name = efficiency_val
+            value = calculate_state_construction_efficiency
+        }
+        add_modifier = {
+            name = state_construction_efficiency_increase
+            multiplier = local_var:efficiency_val
         }
     }
 }

@@ -8,7 +8,7 @@ country_private_construction_allocation_add = {
     country_private_construction_allocation_mult = 1
 }
 
-construction_max_level_adjustment = {
-    icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-    state_building_construction_sector_max_level_add = 1
+state_construction_efficiency_increase = {
+    icon = gfx/interface/icons/timed_modifier_icons/modifier_framing_positive.dds
+    state_construction_mult = 1
 }
