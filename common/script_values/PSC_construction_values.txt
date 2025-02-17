@@ -147,11 +147,6 @@ state_construction_allocation = {
 			min = 0.1
 		}
 	}
-	# demand only a limited amount more than is possible in this state
-	max = {
-		value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
-		multiply = state_oversupply_limit
-	}
 
 	if = {
 		#in a case of no production, demand half the remaining demand to get construction to build
@@ -166,6 +161,21 @@ state_construction_allocation = {
 	else = {
 		multiply = sum_construction_types_production
 		divide = 10
+
+		# demand only a limited amount more than is possible in this state
+		max = {
+			value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+			multiply = sum_construction_types_production
+
+			#Add at most one level's production over the limit
+			add = {
+				value = sum_construction_types_production
+				b:building_construction_sector = {
+					divide = level
+				}
+			}
+			divide = 10
+		}
 	}
 }
 
@@ -504,11 +514,23 @@ calculate_construction_sector_max_level = {
 #Scope: Country
 construction_sector_efficiency_multiplier = {
 	value = calculate_construction_sector_max_level
-	multiply = 2 #account for halved construction sector
+	#multiply = 2 #account for halved construction sector
 	save_temporary_value_as = modified_max_level
 	# Pre-calculated values using the square root of the level where we want equality
 	# sqrt(20) = 4.47 etc.
 	if = {
+		limit = {
+			scope:modified_max_level = 10
+		}
+		value = 3.1622
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 15
+		}
+		value = 3.8729
+	}
+	else_if = {
 		limit = {
 			scope:modified_max_level = 20
 		}
@@ -516,26 +538,14 @@ construction_sector_efficiency_multiplier = {
 	}
 	else_if = {
 		limit = {
+			scope:modified_max_level = 25
+		}
+		value = 5
+	}
+	else_if = {
+		limit = {
 			scope:modified_max_level = 30
 		}
 		value = 5.4772
-	}
-	else_if = {
-		limit = {
-			scope:modified_max_level = 40
-		}
-		value = 6.3246
-	}
-	else_if = {
-		limit = {
-			scope:modified_max_level = 50
-		}
-		value = 7.07107
-	}
-	else_if = {
-		limit = {
-			scope:modified_max_level = 60
-		}
-		value = 7.7460
 	}
 }

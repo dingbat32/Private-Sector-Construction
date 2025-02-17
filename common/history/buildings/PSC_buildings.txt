@@ -10,24 +10,6 @@
                     level = 1
                     reserves = 1
                 }
-                if = {
-                    limit = {
-                        has_building = "building_construction_sector"
-                    }
-                    b:building_construction_sector = {
-                        set_local_variable = {
-                            name = doubled_level
-                            value = {
-                                value = level
-                                multiply = 2
-                            }
-                        }
-                    }
-                    massive_building_switch = {
-                        type = building_construction_sector
-                        level = local_var:doubled_level
-                    }
-                }
             }
         }
     }
