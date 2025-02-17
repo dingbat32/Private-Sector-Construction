@@ -4,8 +4,8 @@ building_construction_sector = {
 	icon = "gfx/interface/icons/building_icons/construction_camp.dds"
 	city_type = city
 	levels_per_mesh = 5
-		
-	has_max_level = no
+	
+	ai_nationalization_desire = 0.25
 
 	unlocking_technologies = {
 		urbanization

@@ -17,12 +17,12 @@
 		default_auto_expand_rule = yes
 	}
 
-	economy_of_scale_ai_factor = 5.0
+	economy_of_scale_ai_factor = 2.0
 	foreign_investment_ai_factor = 0.75
 }
 
 bg_construction_regulator = {	
-	category = urban
+	category = development
 	
 
 	always_possible = yes	
