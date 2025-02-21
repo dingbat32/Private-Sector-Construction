@@ -1,17 +1,6 @@
-﻿calculate_limited_construction_demand = {
-	value = var:nominal_construction_demand
-	#set maximum usage to just over double the supply
-	max = {
-		value = var:national_production
-		multiply = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
-		multiply = oversupply_limit
-		divide = 10
-		min = 10
-	}
-}
-
+﻿
 #Calculate construction while ignoring supply limit
-calculate_nominal_construction = {
+calculate_total_construction_spending = {
 	if = {
 		limit = {
 			has_law = law_type:law_command_economy
@@ -26,67 +15,6 @@ calculate_nominal_construction = {
 			subtract = var:privatisation_percent_estimate
 		}
 		add = var:limited_government_construction_spending
-	}
-	divide = {
-		value = var:construction_price_estimate
-		min = 1
-	}
-}
-
-construction_price_average = {
-	value = var:construction_price_estimate
-	multiply = {
-		value = construction_price_weeks
-		subtract = 1
-	}
-	divide = construction_price_weeks
-	add = {
-		value = construction_point_price_weekly
-		divide = construction_price_weeks
-	}
-}
-
-construction_point_price_weekly = {
-	if = {	
-		limit = {
-			national_construction_consumption > 0
-		}
-		value = var:total_construction_spending
-		divide = national_construction_consumption
-	}
-	else = {
-		value = construction_good_adjustable_base_price
-	}
-	multiply = 10
-}
-
-construction_good_adjustable_base_price = {
-	if = {
-		limit = {
-			owner = {
-				has_technology_researched = arc_welding
-			}
-		}
-		value = arc_welded_construction_good_base_price
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_technology_researched = steel_frame_buildings
-			}
-        }
-		value = steel_construction_good_base_price
-	}
-	else_if = {
-		limit = {
-			owner = {
-				has_technology_researched = urban_planning
-			}
-		}
-		value = iron_construction_good_base_price
-	}
-	else = {
-		value = wood_construction_good_base_price
 	}
 }
 
@@ -111,39 +39,23 @@ privatisation_spending_percent_weekly = {
 		value = 0
 	}
 	else = {
-		value = 1
-		subtract = {
-			value = investment_pool
-			divide = {
-				value = var:prev_estimated_investment_pool
-				min = 1
-			}
+		value = var:prev_estimated_investment_pool
+		subtract = investment_pool
+		divide = {
+			value = investment_pool_gross_income
+			min = 1
 		}
 		min = 0
-		max = 1
 	}
 }
 
-national_construction_production = {
-	every_scope_state = {
-		add = sum_construction_types_production
-	}
-}
-
-national_construction_consumption = {
-	every_scope_state = {
-		add = sum_construction_types_consumption
-	}
-}
-
-state_construction_allocation = {
+state_construction_spending_allocation = {
 	owner = {
-		value = var:limited_construction_demand
+		value = var:total_construction_spending
 	}
 	owner = {
 		divide = {
 			value = var:national_production
-			divide = 10
 			min = 0.1
 		}
 	}
@@ -151,36 +63,59 @@ state_construction_allocation = {
 	if = {
 		#in a case of no production, demand half the remaining demand to get construction to build
 		limit = {
-			sum_construction_types_production = 0
+			var:state_construction_production = 0
 		}
-		value = local_var:remaining_construction_demand
+		value = local_var:remaining_construction_spending
 		multiply = 0.5
-		min = 10
-		max = local_var:remaining_construction_demand
+		min = {
+			value = {
+				value = local_var:state_construction_base_price
+				multiply = {
+					value = 1
+					add = define:NEconomy|PRICE_RANGE
+				}
+			}
+			multiply = construction_min_demand
+		}
+		max = local_var:remaining_construction_spending
 	}
 	else = {
-		multiply = sum_construction_types_production
-		divide = 10
+		multiply = var:state_construction_production
 
 		# demand only a limited amount more than is possible in this state
 		max = {
 			value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
-			multiply = sum_construction_types_production
+			multiply = var:state_construction_production
 
 			#Add at most one level's production over the limit
 			add = {
-				value = sum_construction_types_production
+				value = var:state_construction_production
 				b:building_construction_sector = {
-					divide = level
+					divide = {
+						value = level
+						min = 1
+					}
 				}
 			}
-			divide = 10
+			multiply = {
+				value = local_var:state_construction_base_price
+				multiply = {
+					value = 1
+					add = define:NEconomy|PRICE_RANGE
+				}
+			}
 		}
 	}
 }
 
+calculate_national_production = {
+	every_scope_state = {
+		add = var:state_construction_production
+	}
+}
+
 construction_ordering = {
-	value = sum_construction_types_production
+	value = var:state_construction_production
 	multiply = 100
 	add = {
 		value = gdp
@@ -209,22 +144,6 @@ sum_construction_types_production = {
 	}
 }
 
-#Scope: State
-sum_construction_types_consumption = {
-	sg:wood_construction = {
-		value = state_goods_consumption
-	}
-	sg:iron_construction = {
-		add = state_goods_consumption
-	}
-	sg:steel_construction = {
-		add = state_goods_consumption
-	}
-	sg:arc_welded_construction = {
-		add = state_goods_consumption
-	}
-}
-
 calculate_limited_government_construction_spending = {
 	value = 1
 	subtract = modifier:country_private_construction_allocation_mult
@@ -241,57 +160,11 @@ calculate_limited_government_construction_spending = {
 	}
 }
 
-max_government_construction_spending = {
+calculate_max_government_construction_spending = {
 	value = 1
-	subtract = corrected_private_allocation
-	divide = corrected_private_allocation
+	subtract = var:corrected_private_allocation
+	divide = var:corrected_private_allocation
 	multiply = investment_pool_gross_income
-}
-
-calculate_total_construction_spending = {
-	value = 0
-	every_scope_state = {
-		sg:wood_construction = {
-			add = {
-				value = state_goods_consumption
-				multiply = wood_construction_good_base_price
-				multiply = {
-					value = 1
-					add = state_goods_pricier
-				}
-			}
-		}
-		sg:iron_construction = {
-			add = {
-				value = state_goods_consumption
-				multiply = iron_construction_good_base_price
-				multiply = {
-					value = 1
-					add = state_goods_pricier
-				}
-			}
-		}
-		sg:steel_construction = {
-			add = {
-				value = state_goods_consumption
-				multiply = steel_construction_good_base_price
-				multiply = {
-					value = 1
-					add = state_goods_pricier
-				}
-			}
-		}
-		sg:arc_welded_construction = {
-			add = {
-				value = state_goods_consumption
-				multiply = arc_welded_construction_good_base_price
-				multiply = {
-					value = 1
-					add = state_goods_pricier
-				}
-			}
-		}
-	}
 }
 
 calculate_government_construction_spending = {
@@ -301,26 +174,24 @@ calculate_government_construction_spending = {
 		value = investment_pool_gross_income
 		subtract = investment_pool_net_income
 	}
-	max = var:limited_government_construction_spending
 	min = 0
 }
 
 
 private_construction_increase = {
-	value = corrected_private_allocation
+	value = var:corrected_private_allocation
 	divide = {
-		value = corrected_private_allocation
+		value = var:corrected_private_allocation
 		add = {
 			value = 1
-			subtract = corrected_private_allocation
+			subtract = var:corrected_private_allocation
 			multiply = var:construction_spending_level
 		}
 	}
-	subtract = corrected_private_allocation
+	subtract = var:corrected_private_allocation
 }
 
-corrected_private_allocation = {
-
+calculate_corrected_private_allocation = {
 	value = modifier:country_private_construction_allocation_mult
 	if = {
 		limit = {
@@ -333,7 +204,6 @@ corrected_private_allocation = {
 ai_construction_demand = {
 	add = {
 		value = weekly_net_fixed_income
-		divide = var:construction_price_estimate
 
 		min = {
 			value = income
@@ -341,33 +211,25 @@ ai_construction_demand = {
 				value = investment_pool_gross_income
 				subtract = investment_pool_net_income
 			}
-			divide = 7500 # 1 construction output per this much income
-			# Improved technology enables cheaper construction
-			
-			# Based on a construction sector weekly balance of 1000
-			# Cost per wood construction 3000/2 = 1500
-			# Cost per iron construction 4600/5 = 950
-			# Cost per steel construction 5400/10 = 640
-
-			if = {
-				limit = { has_technology_researched = urban_planning }
-				multiply = 1.63
-			}
-
-			if = {
-				limit = { has_technology_researched = steel_frame_buildings }
-				multiply = 1.44
-			}
+			divide = 5 # 1/5 of income on construction
 		}
 	}
 }
 
 construction_demand_ratio = {
-	value = var:nominal_construction_demand
-	multiply = 10
-	divide = {
-		value = var:national_production
-		min = 0.1
+	if = {
+		limit = {
+			AND = {
+				has_variable = nominal_construction_demand
+				has_variable = national_production
+			}
+		}
+		value = var:nominal_construction_demand
+		multiply = construction_goods_per_point
+		divide = {
+			value = var:national_production
+			min = 0.1
+		}
 	}
 }
 
@@ -397,24 +259,72 @@ calculate_state_construction_efficiency = {
 	}
 }
 
-# Credit: Kate the Sibyl for this square root code
 # Scope: Any
+# Calculates square roots for values of up to 10000000000
 calculate_sqrt = {
-	value = {
-		add = 5
-		subtract = {
-			add = {
-				add = 5
-				multiply = 5
+	# Use a linear estimate over two intervals to calculate an estimated square root:
+	# https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Linear_estimates
+	value = scope:num_to_sqrt
+	save_temporary_value_as = a
+	value = 0
+	save_temporary_value_as = n
+	if = {
+		limit = {
+			scope:a = 0
+		}
+		value = 0
+	}
+	else = {
+		if = {
+			limit = {
+				scope:a >= 100
 			}
-			subtract = scope:num_to_sqrt
-			divide = {
-				add = 5
-				multiply = 2
+			value = recurse_a
+			divide = 100
+		}
+		else_if = {
+			limit = {
+				scope:a < 1
+			}
+			value = recurse_a
+			multiply = 100
+		}
+		if = {
+			limit = {
+				scope:a < 10
+			}
+			value = 0.28
+			multiply = scope:a
+			add = 0.89
+		}
+		else = {
+			value = 0.089
+			multiply = scope:a
+			add = 2.8
+		}
+		multiply = {
+			value = 1
+			if = {
+				limit = {
+					scope:n > 0
+				}
+				value = recurse_n
+				multiply = 10
+			}
+			else_if = {
+				limit = {
+					scope:n < 0
+				}
+				value = recurse_n
+				divide = 10
 			}
 		}
+		save_temporary_value_as = guess
+		value = recurse_sqrt1
 	}
-	save_temporary_value_as = guess
+}
+
+recurse_sqrt1 = {
 	value = {
 		add = scope:guess
 		subtract = {
@@ -430,20 +340,98 @@ calculate_sqrt = {
 		}
 	}
 	save_temporary_value_as = guess
-	value = {
-		add = scope:guess
-		subtract = {
-			add = {
-				add = scope:guess
-				multiply = scope:guess
-			}
-			subtract = scope:num_to_sqrt
-			divide = {
-				add = scope:guess
-				multiply = 2
+	value = scope:num_to_sqrt
+	subtract = {
+		value = scope:guess
+		multiply = scope:guess
+	}
+	save_temporary_value_as = error_absolute
+	divide = scope:num_to_sqrt # error proportional to total
+	multiply = error_accuracy_denominator
+	save_temporary_value_as = error_relative
+	if = {
+		limit = {
+			AND = {
+				OR = {
+					scope:error_relative > 1
+					scope:error_relative < -1
+				}
+				OR = {
+					scope:error_absolute > 0.001
+					scope:error_absolute < -0.001
+				}
 			}
 		}
+		value = recurse_sqrt2
 	}
+	else = {
+		value = scope:guess
+	}
+}
+
+recurse_sqrt2 = {
+	value = recurse_sqrt1
+}
+
+recurse_a = {
+	value = scope:a
+	save_temporary_value_as = a
+	if = {
+		limit = {
+			scope:a >= 100
+		}
+		value = scope:n
+		add = 1
+		save_temporary_value_as = n
+		value = scope:a
+		divide = 100
+		save_temporary_value_as = a
+		value = recurse_a2
+	}
+	else_if = {
+		limit = {
+			scope:a < 1
+		}
+		value = scope:n
+		subtract = 1
+		save_temporary_value_as = n
+		value = scope:a
+		multiply = 100
+		save_temporary_value_as = a
+		value = recurse_a2
+	}
+}
+
+recurse_a2 = {
+	value = recurse_a
+}
+
+recurse_n = {
+	value = 1
+	if = {
+		limit = {
+			scope:n > 0
+		}	
+		value = scope:n
+		subtract = 1
+		save_temporary_value_as = n
+		value = recurse_n2
+		multiply = 10
+	}
+	else_if = {
+		limit = {
+			scope:n < 0
+		}	
+		value = scope:n
+		add = 1
+		save_temporary_value_as = n
+		value = recurse_n2
+		divide = 10
+	}
+}
+
+recurse_n2 = {
+	value = recurse_n
 }
 
 goods_efficiency_per_level = {
@@ -467,12 +455,8 @@ goods_efficiency_per_level = {
 			value = 0.0035
 		}
 		else = {
-			limit = {
-				has_active_production_method = pm_arc_welded_buildings
-			}
 			value = 0.005
 		}
-		
 	}
 }
 
@@ -547,5 +531,158 @@ construction_sector_efficiency_multiplier = {
 			scope:modified_max_level = 30
 		}
 		value = 5.4772
+	}
+}
+
+# Scope: State
+state_construction_allocation = {
+	value = 1
+	add = define:NEconomy|PRICE_RANGE
+	multiply = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+	multiply = var:state_construction_production
+	multiply = local_var:state_construction_base_price
+	save_temporary_value_as = spending_excess_point
+	
+	value = 1
+	subtract = define:NEconomy|PRICE_RANGE
+	divide = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+	multiply = var:state_construction_production
+	multiply = local_var:state_construction_base_price
+	save_temporary_value_as = spending_low_point
+
+	value = local_var:state_construction_spending
+	divide = {
+		value = var:state_construction_production
+		min = 0.001
+	}
+	save_temporary_value_as = estimated_price
+
+	# Calculate the the amount of buy orders you can get with a certain amount of money
+	# based on the market price formula https://vic3.paradoxwikis.com/Market#Market_price 
+	# but with price = amount / buy orders and solved for buy orders.
+	if = { 	# This is the case where there is no spending
+		limit = {
+			local_var:state_construction_spending = 0
+		}
+		value = 0
+	}
+	else_if = { # This is the case where the clamp is -1
+		limit = {
+			local_var:state_construction_spending <= scope:spending_low_point
+		}
+		value = local_var:state_construction_spending
+		divide = {
+			value = local_var:state_construction_base_price
+			multiply = {
+				value = 1
+				subtract = define:NEconomy|PRICE_RANGE
+			}
+		}
+	}
+	else_if = { # This is the case where the clamp is 1
+		limit = {
+			local_var:state_construction_spending >= scope:spending_excess_point
+		}
+		value = local_var:state_construction_spending
+		divide = {
+			value = local_var:state_construction_base_price
+			multiply = {
+				value = 1
+				add = define:NEconomy|PRICE_RANGE
+			}
+		}
+	}
+	else_if = { # This is the case where buy orders > sell orders, so the denominator is BUY
+
+		limit = {
+			scope:estimated_price > local_var:state_construction_base_price
+		}
+		value = var:state_construction_production
+		multiply = {
+			value = 4
+			multiply = local_var:state_construction_spending
+			multiply = define:NEconomy|PRICE_RANGE
+			multiply = {
+				value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+				subtract = 1
+			}
+			add = {
+				value = local_var:state_construction_base_price
+				multiply = var:state_construction_production
+				multiply = {
+					subtract = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+					add = define:NEconomy|PRICE_RANGE
+					add = 1
+					save_temporary_value_as = to_square
+					multiply = scope:to_square
+				}
+			}
+		}
+		divide = {
+			value = local_var:state_construction_base_price
+			multiply = define:NEconomy|PRICE_RANGE
+			multiply = define:NEconomy|PRICE_RANGE
+		}
+		save_temporary_value_as = num_to_sqrt
+		value = calculate_sqrt
+		multiply = define:NEconomy|PRICE_RANGE
+		add = {
+			value = var:state_construction_production
+			multiply = {
+				subtract = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+				add = define:NEconomy|PRICE_RANGE
+				add = 1
+			}
+		}
+		divide = {
+			value = define:NEconomy|PRICE_RANGE
+			multiply = 2
+		}
+	} 
+	else = { # This is the case where buy orders < sell orders, so the denominator is SELL
+		value = local_var:state_construction_spending
+		multiply = {
+			value = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+			subtract = 1
+		}
+		add = {
+			value = var:state_construction_production
+			multiply = define:NEconomy|PRICE_RANGE
+			multiply = local_var:state_construction_base_price
+		}
+		divide = {
+			add = define:NEconomy|BUY_SELL_DIFF_AT_MAX_FACTOR
+			add = define:NEconomy|PRICE_RANGE
+			subtract = 1
+			multiply = local_var:state_construction_base_price
+		}
+	}
+	divide = construction_goods_per_point
+}
+
+# Scope: State
+calculate_state_construction_base_price = {
+	b:building_construction_regulator = {
+		if = {
+			limit = {
+				has_active_production_method = pm_wood_point_conversion
+			}
+			value = wood_construction_good_base_price
+		}
+		else_if = {
+			limit = {
+				has_active_production_method = pm_iron_point_conversion
+			}
+			value = iron_construction_good_base_price
+		}
+		else_if = {
+			limit = {
+				has_active_production_method = pm_steel_point_conversion
+			}
+			value = steel_construction_good_base_price
+		}
+		else = {
+			value = arc_welded_construction_good_base_price
+		}
 	}
 }

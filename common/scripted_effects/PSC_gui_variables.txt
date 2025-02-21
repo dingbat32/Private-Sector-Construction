@@ -2,36 +2,76 @@
     set_variable = {
         name = very_low_construction_spending_value
         value = {
-            value = max_government_construction_spending
-            multiply = 0.2
+            if = {
+                limit = {
+                    has_variable = max_government_construction_spending
+                }
+                value = var:max_government_construction_spending
+                multiply = 0.2
+            }
+            else = {
+                value = 0
+            }
         }
     }
     set_variable = {
         name = low_construction_spending_value
         value = {
-            value = max_government_construction_spending
-            multiply = 0.4
+            if = {
+                limit = {
+                    has_variable = max_government_construction_spending
+                }
+                value = var:max_government_construction_spending
+                multiply = 0.4
+            }
+            else = {
+                value = 0
+            }
         }
     }
     set_variable = {
         name = medium_construction_spending_value
         value = {
-            value = max_government_construction_spending
-            multiply = 0.6
+            if = {
+                limit = {
+                    has_variable = max_government_construction_spending
+                }
+                value = var:max_government_construction_spending
+                multiply = 0.6
+            }
+            else = {
+                value = 0
+            }
         }
     }
     set_variable = {
         name = high_construction_spending_value
         value = {
-            value = max_government_construction_spending
-            multiply = 0.8
+            if = {
+                limit = {
+                    has_variable = max_government_construction_spending
+                }
+                value = var:max_government_construction_spending
+                multiply = 0.8
+            }
+            else = {
+                value = 0
+            }
         }
     }
     set_variable = {
         name = very_high_construction_spending_value
         value = {
-            value = max_government_construction_spending
-            multiply = 1
+            if = {
+                limit = {
+                    has_variable = max_government_construction_spending
+                }
+                value = var:max_government_construction_spending
+                multiply = 1
+            }
+            else = {
+                value = 0
+            }
         }
     }
 }
