@@ -1,0 +1,61 @@
+﻿calculate_added_days = {
+    value = 7
+    subtract = day_of_the_week
+    modulo = 6
+}
+
+day_of_the_week = {
+    # Determining the day of the week:
+    value = year
+    subtract = 1836 # one day added per year, since v3 has no leap years
+    add = 2 # wednesday start date
+
+    # add offset for different months
+    if = {
+        limit = {
+            OR = {
+                month = 1
+                month = 2
+                month = 10
+            }
+        }
+        add = 3
+    }
+    else_if = {
+        limit = {
+            OR = {
+                month = 3
+                month = 6
+            }
+        }
+        add = 6
+    }
+    else_if = {
+        limit = {
+            month = 4
+        }
+        add = 1
+    }
+    else_if = {
+        limit = {
+            month = 5
+        }
+        add = 4
+    }
+    else_if = {
+        limit = {
+            month = 7
+        }
+        add = 2
+    }
+    else_if = {
+        limit = {
+            OR = {
+                month = 8
+                month = 11
+            }
+        }
+        add = 5
+    }
+    modulo = 7
+}

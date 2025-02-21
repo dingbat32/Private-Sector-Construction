@@ -1,7 +1,7 @@
 ﻿GLOBAL = {
     c:GBR = {
         trigger_event = {
-            on_action = set_construction
+            on_action = set_construction_weekly_on_action
             days = 1
         }
     }
