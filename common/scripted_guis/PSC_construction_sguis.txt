@@ -120,3 +120,37 @@ button_5_sgui = {
         }
     }
 }
+
+psc_save_real_construction_cost = {
+    scope = country
+	
+    saved_scopes = {
+		construction_good_expenses
+	}
+    effect = {
+        set_variable = {
+            name = real_construction_spending
+            value = scope:construction_good_expenses
+        }
+        set_variable = {
+            name = last_real_construction_check
+            value = game_date
+        }
+    }
+}
+
+psc_test_show = {
+    scope = country
+
+    is_valid = {
+        AND = {
+            is_player = yes
+            OR = {
+                NOT = {
+                    has_variable = last_real_construction_check
+                }
+                var:last_construction_run > var:last_real_construction_check
+            }
+        }
+    }
+}

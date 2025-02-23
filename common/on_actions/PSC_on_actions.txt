@@ -29,6 +29,17 @@ set_construction_country = {
 	}
 }
 
+set_spending_value = {
+    effect = {
+        if = {
+            limit = {
+                is_player = yes
+            }
+            set_government_construction_spending = yes
+        }
+    }
+}
+
 set_construction_weekly_on_action = {
     effect = {
         set_global_variable = {
@@ -50,7 +61,15 @@ set_construction_weekly_on_action = {
                 }
                 change_local_variable = {
                     name = event_day
-                    add = 7
+                    add = 1
+                }
+                delay_event_switch = {
+                    on_action_name = set_spending_value
+                    num_days = local_var:event_day
+                }
+                change_local_variable = {
+                    name = event_day
+                    add = 6
                 }
             }
         }

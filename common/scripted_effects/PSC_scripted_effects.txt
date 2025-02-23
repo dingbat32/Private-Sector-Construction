@@ -294,28 +294,32 @@ set_construction_point_demand = {
             value = calculate_max_government_construction_spending
         }
         check_construction_spending_level = yes
-
-        set_local_variable = {
-            name = current_construction_increase
-            value = private_construction_increase
-        }
-
-        add_modifier = {
-            name = country_private_construction_allocation_add
-            multiplier = {
-                value = local_var:current_construction_increase
-            }
-        }
-
-        set_variable = {
-            name = prev_construction_allocation
-            value = local_var:current_construction_increase
-        }
-
         set_variable = {
             name = limited_government_construction_spending
             value = calculate_limited_government_construction_spending
         }
+        if = {
+            limit = {
+                var:limited_government_construction_spending < government_allocation_threshold
+            }
+            set_local_variable = {
+                name = current_construction_increase
+                value = private_construction_increase
+            }
+
+            add_modifier = {
+                name = country_private_construction_allocation_add
+                multiplier = {
+                    value = local_var:current_construction_increase
+                }
+            }
+
+            set_variable = {
+                name = prev_construction_allocation
+                value = local_var:current_construction_increase
+            }
+        }
+
         set_variable = {
             name = total_construction_spending
             value = calculate_total_construction_spending
@@ -323,6 +327,11 @@ set_construction_point_demand = {
         set_local_variable = {
             name = remaining_construction_spending
             value = var:total_construction_spending
+        }
+
+        set_local_variable = {
+            name = real_construction_spending
+            value = 0
         }
         ordered_scope_state = {
             order_by = construction_ordering
@@ -373,12 +382,10 @@ set_construction_point_demand = {
                 }
             }
             change_point_converter_production_method = yes
+
         }
-        
-        set_variable = {
-            name = government_construction_spending
-            value = calculate_government_construction_spending
-        }
+
+
         set_variable = {
             name = prev_estimated_investment_pool
             value = {
@@ -439,5 +446,12 @@ set_state_construction_efficiency = {
             name = state_construction_efficiency_increase
             multiplier = local_var:efficiency_val
         }
+    }
+}
+
+set_government_construction_spending = {
+    set_variable = {
+        name = government_construction_spending
+        value = calculate_government_construction_spending
     }
 }

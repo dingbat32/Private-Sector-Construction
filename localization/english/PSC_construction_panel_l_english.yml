@@ -20,8 +20,8 @@
 
  CURRENT_DESC: "This is our current spending level"
 
- CONSTRUCTION_TOOLTIP: "The proportion of the government's maximum construction spending, depending on the $ECONOMIC_SYSTEM_GC_LINK$"
+ CONSTRUCTION_TOOLTIP: "The proportion of the government's maximum construction spending"
  SPENDING_DESC: "Predicted spending"
 
- concept_construction_spending: "Construction Spending"
+ concept_construction_spending: "Construction Spending Level"
  concept_construction_spending_desc: "How much the government is paying for construction"

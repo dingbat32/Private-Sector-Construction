@@ -9,4 +9,4 @@ arc_welded_construction_good_base_price = 70
 construction_price_weeks = 12
 construction_goods_per_point = 10
 construction_min_demand = 15
-error_accuracy_denominator = 1000000 # error is within 1/this
+error_accuracy_denominator = 10000 # error is within 1/this

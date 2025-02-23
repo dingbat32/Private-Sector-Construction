@@ -18,6 +18,16 @@ calculate_total_construction_spending = {
 	}
 }
 
+calculate_government_construction_spending = {
+	value = var:real_construction_spending
+	#subtract private spending
+	subtract = {
+		value = investment_pool_gross_income
+		subtract = investment_pool_net_income
+	}
+	min = 0
+}
+
 privatisation_spending_percent = {
 	value = var:privatisation_percent_estimate
 	multiply = {
@@ -108,12 +118,6 @@ state_construction_spending_allocation = {
 	}
 }
 
-calculate_national_production = {
-	every_scope_state = {
-		add = var:state_construction_production
-	}
-}
-
 construction_ordering = {
 	value = var:state_construction_production
 	multiply = 100
@@ -145,10 +149,8 @@ sum_construction_types_production = {
 }
 
 calculate_limited_government_construction_spending = {
-	value = 1
-	subtract = modifier:country_private_construction_allocation_mult
-	divide = modifier:country_private_construction_allocation_mult
-	multiply = investment_pool_gross_income
+	value = var:max_government_construction_spending
+	multiply = var:construction_spending_level
 	if = {
 		limit = {
 			OR = {
@@ -161,22 +163,27 @@ calculate_limited_government_construction_spending = {
 }
 
 calculate_max_government_construction_spending = {
-	value = 1
-	subtract = var:corrected_private_allocation
-	divide = var:corrected_private_allocation
-	multiply = investment_pool_gross_income
-}
-
-calculate_government_construction_spending = {
-	value = var:total_construction_spending
-	#subtract private spending
+	value = 4
 	subtract = {
-		value = investment_pool_gross_income
-		subtract = investment_pool_net_income
+		value = var:corrected_private_allocation
+		multiply = 2
 	}
-	min = 0
+	multiply = weekly_net_fixed_income
+	min = { # always able to spend a certain amount on construction
+		value = income
+		multiply = {
+			value = 1
+			subtract = var:corrected_private_allocation
+			divide = 2
+		}
+	}
 }
 
+government_allocation_threshold = {
+	value = investment_pool_gross_income
+	divide = var:corrected_private_allocation
+	subtract = investment_pool_gross_income
+}
 
 private_construction_increase = {
 	value = var:corrected_private_allocation
@@ -185,7 +192,10 @@ private_construction_increase = {
 		add = {
 			value = 1
 			subtract = var:corrected_private_allocation
-			multiply = var:construction_spending_level
+			multiply = {
+				value = var:limited_government_construction_spending
+				divide = government_allocation_threshold
+			}
 		}
 	}
 	subtract = var:corrected_private_allocation
@@ -204,7 +214,10 @@ calculate_corrected_private_allocation = {
 ai_construction_demand = {
 	add = {
 		value = weekly_net_fixed_income
-
+		multiply = {
+			value = 1
+			add = scaled_gold_reserves
+		}
 		min = {
 			value = income
 			subtract = {
@@ -357,8 +370,8 @@ recurse_sqrt1 = {
 					scope:error_relative < -1
 				}
 				OR = {
-					scope:error_absolute > 0.001
-					scope:error_absolute < -0.001
+					scope:error_absolute > 0.1
+					scope:error_absolute < -0.1
 				}
 			}
 		}
