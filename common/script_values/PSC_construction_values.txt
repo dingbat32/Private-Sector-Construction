@@ -149,8 +149,7 @@ sum_construction_types_production = {
 }
 
 calculate_limited_government_construction_spending = {
-	value = var:max_government_construction_spending
-	multiply = var:construction_spending_level
+	value = var:max_government_construction_at_spending_level
 	if = {
 		limit = {
 			OR = {
@@ -163,20 +162,12 @@ calculate_limited_government_construction_spending = {
 }
 
 calculate_max_government_construction_spending = {
-	value = 4
+	value = income
 	subtract = {
-		value = var:corrected_private_allocation
-		multiply = 2
+		value = investment_pool_gross_income
+		subtract = investment_pool_net_income
 	}
-	multiply = weekly_net_fixed_income
-	min = { # always able to spend a certain amount on construction
-		value = income
-		multiply = {
-			value = 1
-			subtract = var:corrected_private_allocation
-			divide = 2
-		}
-	}
+	multiply = var:weekly_income_multiplier
 }
 
 government_allocation_threshold = {

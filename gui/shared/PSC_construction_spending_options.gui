@@ -437,4 +437,107 @@ types construction_spending_options_types {
 			}
 		}
 	}
+
+
+	type construction_frame_percent = container {
+		minimumsize = { @panel_width_minus_10 50 }
+
+		flowcontainer = {
+
+			parentanchor = vcenter
+			direction = vertical
+			margin_top = 3
+			margin_bottom = 3
+
+			textbox = {
+				autoresize = yes
+				fontsize_min = 12
+				max_width = 230
+				multiline = yes
+				block "text_upper" {
+					raw_text = "Upper text" 
+				}
+				parentanchor = left
+				elide = right
+				align = left|nobaseline
+			}
+
+			block "second_line" {
+				textbox = {
+					autoresize = yes
+					block "text_lower" {
+						raw_text = "Lower Text"
+					}
+					using = fontsize_small
+					margin_bottom = 6
+					parentanchor = left
+					elide = right
+					align = left|nobaseline
+				}
+			}
+		}
+
+		block "revenue_controls" {
+			flowcontainer = {
+				position = { 230 0 }
+				parentanchor = vcenter
+				button_icon_round_action = {
+					visible = yes
+					size = { 40 40 }
+					parentanchor = vcenter
+					tooltip = "REDUCE_CONSTRUCTION_SPENDING_TT"
+					using = tooltip_es
+					enabled = "[GetScriptedGui('psc_button_decrease_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					click_modifiers = {
+						ondefault = "[GetScriptedGui('psc_button_decrease_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+						onshift = "[GetScriptedGui('psc_button_decrease_shift_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+						onctrl = "[GetScriptedGui('psc_button_decrease_ctrl_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+					}
+					blockoverride "icon" {
+						texture = "gfx/interface/buttons/button_icons/minus.dds"
+					}
+				}
+
+				textbox = {
+					size = { 78 30 }
+					raw_text = "[GetPlayer.MakeScope.Var('construction_spending_level').GetValue|0%]"
+					parentanchor = vcenter
+					align = center
+					margin = {10 0}
+					tooltip = "CURRENT_CONSTRUCTION_SPENDING_TT"
+					using = fontsize_mega		
+				}
+				
+				button_icon_round_action = {
+					visible = yes
+					size = { 40 40 }
+					parentanchor = vcenter
+					tooltip = "INCREASE_CONSTRUCTION_SPENDING_TT"
+					using = tooltip_es
+					enabled = "[GetScriptedGui('psc_button_increase_sgui').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+					click_modifiers = {
+						ondefault = "[GetScriptedGui('psc_button_increase_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+						onshift = "[GetScriptedGui('psc_button_increase_shift_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+						onctrl = "[GetScriptedGui('psc_button_increase_ctrl_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End )]"
+					}
+					blockoverride "icon" {
+						texture = "gfx/interface/buttons/button_icons/plus.dds"
+					}
+				}
+			}
+		}
+		
+		textbox = {
+			autoresize = yes
+			block "text_money" {
+				raw_text = "@money! 0"
+			}
+			parentanchor = right|vcenter
+			margin_bottom = 6
+		}
+		
+		block "divider" {
+			divider_clean = {}
+		}
+	}
 }

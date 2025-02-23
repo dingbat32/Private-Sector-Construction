@@ -10,3 +10,4 @@ construction_price_weeks = 12
 construction_goods_per_point = 10
 construction_min_demand = 15
 error_accuracy_denominator = 10000 # error is within 1/this
+weekly_income_multiplier_base = 2

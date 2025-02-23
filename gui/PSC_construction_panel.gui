@@ -148,11 +148,20 @@ types construction_panel
 						}
 					}
 					flowcontainer = {
-						direction = vertical
+						direction = horizontal
 						parentanchor = hcenter
 						margin_bottom = 10
-
-						construction_spending_frame = {}
+						construction_frame_percent = {
+							blockoverride "text_upper" {
+								text = [concept_construction_spending]
+							}
+							blockoverride "text_lower" {}
+							blockoverride "text_money" {
+								alpha = "[TransparentIfZero(GetPlayer.GetConstructionGoodsExpenses)]"
+								raw_text = "#N @money!-[GetPlayer.MakeScope.Var('government_construction_spending').GetValue|D-]"
+								using = construction_goods_expense_tooltip_with_graph
+							}
+						}
 					}
 
 

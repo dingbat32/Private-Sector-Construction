@@ -290,10 +290,24 @@ set_construction_point_demand = {
             value = calculate_corrected_private_allocation
         }
         set_variable = {
+            name = weekly_income_multiplier
+            value = {
+                value = weekly_income_multiplier_base
+                subtract = var:corrected_private_allocation
+            }
+        }
+        set_variable = {
             name = max_government_construction_spending
             value = calculate_max_government_construction_spending
         }
         check_construction_spending_level = yes
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
+        }
         set_variable = {
             name = limited_government_construction_spending
             value = calculate_limited_government_construction_spending
@@ -327,11 +341,6 @@ set_construction_point_demand = {
         set_local_variable = {
             name = remaining_construction_spending
             value = var:total_construction_spending
-        }
-
-        set_local_variable = {
-            name = real_construction_spending
-            value = 0
         }
         ordered_scope_state = {
             order_by = construction_ordering

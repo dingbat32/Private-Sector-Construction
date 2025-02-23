@@ -1,15 +1,16 @@
-﻿button_1_sgui = {
+﻿psc_button_decrease_sgui = {
     scope = country
     effect = {
-        set_variable = {
+        change_variable = {
             name = construction_spending_level
-            value = 0.2
+            subtract = 0.01
         }
-        custom_tooltip = {
-            text = VERY_LOW_CONSTRUCTION_USAGE_PROPORTION_TT
-        }
-        custom_tooltip = {
-            text = VERY_LOW_CONSTRUCTION_BUDGET_COST_TT
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
         }
     }
     is_valid = {
@@ -17,25 +18,55 @@
         custom_tooltip = {
             text = CURRENT_DESC
             NOT = {
-                var:construction_spending_level = 0.2
+                var:construction_spending_level = 0
             }
         }
     }
+}
 
+psc_button_increase_sgui = {
+    scope = country
+    effect = {
+        change_variable = {
+            name = construction_spending_level
+            add = 0.01
+        }
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
+        }
+    }
+    is_valid = {
+        has_variable = construction_spending_level
+        custom_tooltip = {
+            text = CURRENT_DESC
+            NOT = {
+                var:construction_spending_level = 1
+            }
+        }
+    }
 }
 
-button_2_sgui = {
+psc_button_decrease_shift_sgui = {
     scope = country
     effect = {
-        set_variable = {
+        change_variable = {
             name = construction_spending_level
-            value = 0.4
+            subtract = 0.05
         }
-        custom_tooltip = {
-            text = LOW_CONSTRUCTION_USAGE_PROPORTION_TT
+        change_variable = {
+            name = construction_spending_level
+            max = 0
         }
-        custom_tooltip = {
-            text = LOW_CONSTRUCTION_BUDGET_COST_TT
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
         }
     }
     is_valid = {
@@ -43,23 +74,29 @@ button_2_sgui = {
         custom_tooltip = {
             text = CURRENT_DESC
             NOT = {
-                var:construction_spending_level = 0.4
+                var:construction_spending_level = 0
             }
         }
     }
 }
-button_3_sgui = {
+
+psc_button_increase_shift_sgui = {
     scope = country
     effect = {
-        set_variable = {
+        change_variable = {
             name = construction_spending_level
-            value = 0.6
+            add = 0.05
         }
-        custom_tooltip = {
-            text = MEDIUM_CONSTRUCTION_USAGE_PROPORTION_TT
+        change_variable = {
+            name = construction_spending_level
+            min = 1
         }
-        custom_tooltip = {
-            text = MEDIUM_CONSTRUCTION_BUDGET_COST_TT
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
         }
     }
     is_valid = {
@@ -67,23 +104,29 @@ button_3_sgui = {
         custom_tooltip = {
             text = CURRENT_DESC
             NOT = {
-                var:construction_spending_level = 0.6
+                var:construction_spending_level = 1
             }
         }
     }
 }
-button_4_sgui = {
+
+psc_button_decrease_ctrl_sgui = {
     scope = country
     effect = {
-        set_variable = {
+        change_variable = {
             name = construction_spending_level
-            value = 0.8
+            subtract = 0.1
         }
-        custom_tooltip = {
-            text = HIGH_CONSTRUCTION_USAGE_PROPORTION_TT
+        change_variable = {
+            name = construction_spending_level
+            max = 0
         }
-        custom_tooltip = {
-            text = HIGH_CONSTRUCTION_BUDGET_COST_TT
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
         }
     }
     is_valid = {
@@ -91,23 +134,29 @@ button_4_sgui = {
         custom_tooltip = {
             text = CURRENT_DESC
             NOT = {
-                var:construction_spending_level = 0.8
+                var:construction_spending_level = 0
             }
         }
     }
 }
-button_5_sgui = {
+
+psc_button_increase_ctrl_sgui = {
     scope = country
     effect = {
-        set_variable = {
+        change_variable = {
             name = construction_spending_level
-            value = 1
+            add = 0.1
         }
-        custom_tooltip = {
-            text = VERY_HIGH_CONSTRUCTION_USAGE_PROPORTION_TT
+        change_variable = {
+            name = construction_spending_level
+            min = 1
         }
-        custom_tooltip = {
-            text = VERY_HIGH_CONSTRUCTION_BUDGET_COST_TT
+        set_variable = {
+            name = max_government_construction_at_spending_level
+            value = {
+                value = var:max_government_construction_spending
+                multiply = var:construction_spending_level
+            }
         }
     }
     is_valid = {
@@ -132,10 +181,22 @@ psc_save_real_construction_cost = {
             name = real_construction_spending
             value = scope:construction_good_expenses
         }
+        if = {
+            limit = {
+                NOT = {
+                    has_variable = last_construction_run
+                }
+            }
+            set_variable = {
+                name = last_construction_run
+                value = game_date
+            }
+        }
         set_variable = {
             name = last_real_construction_check
             value = game_date
         }
+
     }
 }
 
@@ -148,6 +209,9 @@ psc_test_show = {
             OR = {
                 NOT = {
                     has_variable = last_real_construction_check
+                }
+                NOT = {
+                    has_variable = last_construction_run
                 }
                 var:last_construction_run > var:last_real_construction_check
             }
