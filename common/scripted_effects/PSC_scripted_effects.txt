@@ -302,6 +302,13 @@ set_new_point_conversion_method = {
     if = {
         limit = {
             has_active_production_method = pm_wooden_buildings
+            NOT = {
+                state = {
+                    b:building_construction_regulator = {
+                        has_active_production_method = pm_wood_point_conversion
+                    }
+                }
+            }
         }
         state = {
             activate_production_method = {
@@ -313,6 +320,13 @@ set_new_point_conversion_method = {
     else_if = {
         limit = {
             has_active_production_method = pm_iron_frame_buildings
+            NOT = {
+                state = {
+                    b:building_construction_regulator = {
+                        has_active_production_method = pm_iron_point_conversion
+                    }
+                }
+            }
         }
         state = {
             activate_production_method = {
@@ -324,6 +338,14 @@ set_new_point_conversion_method = {
     else_if = {
         limit = {
             has_active_production_method = pm_steel_frame_buildings
+            NOT = {
+                state = {
+                    b:building_construction_regulator = {
+                        has_active_production_method = pm_steel_point_conversion
+                    }
+                }
+
+            }
         }
         state = {
             activate_production_method = {
@@ -332,7 +354,16 @@ set_new_point_conversion_method = {
             }
         }
     }
-    else = {
+    else_if = {
+        limit = {
+            NOT = {
+                state = {
+                    b:building_construction_regulator = {
+                        has_active_production_method = pm_arc_welded_point_conversion
+                    }
+                }
+            }
+        }
         state = {
             activate_production_method = {
                 building_type = building_construction_regulator
@@ -350,8 +381,11 @@ set_point_conversion_method_from_tech = {
         every_scope_state = {
             if = {
                 limit = {
-                    NOT = {
+                    NOR = {
                         has_building = building_construction_sector
+                        b:building_construction_regulator = {
+                            has_active_production_method = pm_arc_welded_point_conversion
+                        }
                     }
                 }
                 activate_production_method = {
@@ -368,8 +402,11 @@ set_point_conversion_method_from_tech = {
         every_scope_state = {
             if = {
                 limit = {
-                    NOT = {
+                    NOR = {
                         has_building = building_construction_sector
+                        b:building_construction_regulator = {
+                            has_active_production_method = pm_steel_point_conversion
+                        }
                     }               
                 }
                 activate_production_method = {
@@ -386,9 +423,12 @@ set_point_conversion_method_from_tech = {
         every_scope_state = {
             if = {
                 limit = {
-                    NOT = {
+                    NOR = {
                         has_building = building_construction_sector
-                    } = 0
+                        b:building_construction_regulator = {
+                            has_active_production_method = pm_iron_point_conversion
+                        }
+                    }
                 }
                 activate_production_method = {
                     building_type = building_construction_regulator
