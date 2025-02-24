@@ -176,17 +176,12 @@ calculate_max_government_construction_spending = {
 	multiply = var:weekly_income_multiplier
 }
 
-government_allocation_threshold = {
-	value = investment_pool_gross_income
-	divide = var:corrected_private_allocation
-	subtract = investment_pool_gross_income
-}
-
 private_construction_increase = {
 	value = investment_pool_gross_income
 	divide = {
 		value = investment_pool_gross_income
 		add = var:limited_government_construction_spending
+		min = 0.01
 	}
 	subtract = var:corrected_private_allocation
 }
