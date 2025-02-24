@@ -9,10 +9,15 @@ calculate_total_construction_spending = {
 		multiply = var:construction_spending_level
 	}
 	else = {
-		value = investment_pool_gross_income
-		multiply = {
-			value = 1
-			subtract = var:privatisation_percent_estimate
+		if = {
+			limit = {
+				num_queued_private_constructions > 0
+			}
+			value = investment_pool_gross_income
+			multiply = {
+				value = 1
+				subtract = var:privatisation_percent_estimate
+			}
 		}
 		add = var:limited_government_construction_spending
 	}
@@ -103,7 +108,8 @@ state_construction_spending_allocation = {
 				b:building_construction_sector = {
 					divide = {
 						value = level
-						min = 1
+						multiply = occupancy
+						min = 0.001
 					}
 				}
 			}
@@ -177,17 +183,10 @@ government_allocation_threshold = {
 }
 
 private_construction_increase = {
-	value = var:corrected_private_allocation
+	value = investment_pool_gross_income
 	divide = {
-		value = var:corrected_private_allocation
-		add = {
-			value = 1
-			subtract = var:corrected_private_allocation
-			multiply = {
-				value = var:limited_government_construction_spending
-				divide = government_allocation_threshold
-			}
-		}
+		value = investment_pool_gross_income
+		add = var:limited_government_construction_spending
 	}
 	subtract = var:corrected_private_allocation
 }
@@ -361,8 +360,8 @@ recurse_sqrt1 = {
 					scope:error_relative < -1
 				}
 				OR = {
-					scope:error_absolute > 0.1
-					scope:error_absolute < -0.1
+					scope:error_absolute > 0.01
+					scope:error_absolute < -0.01
 				}
 			}
 		}
