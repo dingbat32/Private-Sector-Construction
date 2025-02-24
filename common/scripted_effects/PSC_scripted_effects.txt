@@ -344,7 +344,6 @@ set_new_point_conversion_method = {
                         has_active_production_method = pm_steel_point_conversion
                     }
                 }
-
             }
         }
         state = {
@@ -356,6 +355,7 @@ set_new_point_conversion_method = {
     }
     else_if = {
         limit = {
+            has_active_production_method = pm_arc_welded_buildings
             NOT = {
                 state = {
                     b:building_construction_regulator = {
