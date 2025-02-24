@@ -122,3 +122,20 @@ on_acquired_construction_tech = {
         }
     }
 }
+
+on_building_built = {
+    on_actions = {
+        on_construction_sector_built
+    }
+}
+
+on_construction_sector_built = {
+    effect = {
+        if = {
+            limit = {
+                is_building_type = building_construction_sector
+            }
+            set_new_point_conversion_method = yes
+        }
+    }
+}
