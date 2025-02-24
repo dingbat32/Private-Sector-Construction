@@ -1,7 +1,8 @@
 ﻿widget = {
     size = { 0 0}
     alpha = 0
-    visible = yes
+    visible = "[GetMetaPlayer.GetPlayedOrObservedCountry.IsValid]"
+    datacontext = "[GetMetaPlayer.GetPlayedOrObservedCountry]"
     state = {
         trigger_when = "[GetScriptedGui('psc_test_show').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
         on_finish = "[GetScriptedGui('psc_save_real_construction_cost').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('construction_good_expenses', MakeScopeValue(GetPlayer.GetConstructionGoodsExpenses)).End)]"
