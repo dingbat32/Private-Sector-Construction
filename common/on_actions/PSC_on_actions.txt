@@ -40,6 +40,13 @@ set_spending_value = {
     }
 }
 
+set_construction_start = {
+    on_actions = {
+        set_construction_weekly_on_action
+        set_construction
+    }
+}
+
 set_construction_weekly_on_action = {
     effect = {
         set_global_variable = {
@@ -107,6 +114,11 @@ on_acquired_technology = {
 
 on_acquired_construction_tech = {
     effect = {
-        set_point_conversion_method_from_tech = yes
+        if = {
+            limit = {
+                has_variable = last_construction_run
+            }
+            set_point_conversion_method_from_tech = yes
+        }
     }
 }
