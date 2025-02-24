@@ -81,3 +81,32 @@ on_monthly_pulse = {
         set_construction_weekly_on_action
     }
 }
+
+on_production_method_changed = {
+    on_actions = {
+        on_construction_sector_method_changed
+    }
+}
+
+on_construction_sector_method_changed = {
+    effect = {
+        if = {
+            limit = {
+                is_building_type = building_construction_sector
+            }
+            set_new_point_conversion_method = yes
+        }
+    }
+}
+
+on_acquired_technology = {
+    on_actions = {
+        on_acquired_construction_tech
+    }
+}
+
+on_acquired_construction_tech = {
+    effect = {
+        set_point_conversion_method_from_tech = yes
+    }
+}

@@ -41,165 +41,6 @@
     }
 }
 
-change_point_converter_production_method = {
-    if = {
-        limit = {
-            sg:wood_construction = {
-                state_goods_production > 0
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_wood_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_wood_point_conversion
-            }
-        }
-    }
-    else_if = {
-        limit = {
-            sg:iron_construction = {
-                state_goods_production > 0
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_iron_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_iron_point_conversion
-            }
-        }
-    }
-    else_if = {
-        limit = {
-            sg:steel_construction = {
-                state_goods_production > 0
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_steel_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_steel_point_conversion
-            }
-        }
-    }
-    else_if = {
-        limit = {
-            sg:arc_welded_construction = {
-                state_goods_production > 0
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_arc_welded_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_arc_welded_point_conversion
-            }
-        }
-    }
-    #cases when there is no production yet
-    else_if = {
-        limit = {
-            owner = {
-                has_technology_researched = arc_welding
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_arc_welded_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_arc_welded_point_conversion
-            }
-        }
-    }
-    else_if = {
-        limit = {
-            owner = {
-                has_technology_researched = steel_frame_buildings
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_steel_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_steel_point_conversion
-            }
-        }
-    }
-    else_if = {
-        limit = {
-            owner = {
-                has_technology_researched = urban_planning
-            }
-        }
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_iron_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_iron_point_conversion
-            }
-        }
-    }
-    else = {
-        if = {
-            limit = {
-                NOT = {
-                    b:building_construction_regulator = {
-                        has_active_production_method = pm_wood_point_conversion
-                    }
-                }
-            }
-            activate_production_method = {
-                building_type = building_construction_regulator
-                production_method = pm_wood_point_conversion
-            }
-        }
-    }
-}
-
 #Scope: Country
 set_construction_point_demand = {
     if = {
@@ -312,26 +153,21 @@ set_construction_point_demand = {
             name = limited_government_construction_spending
             value = calculate_limited_government_construction_spending
         }
-        if = {
-            limit = {
-                var:limited_government_construction_spending < government_allocation_threshold
-            }
-            set_local_variable = {
-                name = current_construction_increase
-                value = private_construction_increase
-            }
+        set_local_variable = {
+            name = current_construction_increase
+            value = private_construction_increase
+        }
 
-            add_modifier = {
-                name = country_private_construction_allocation_add
-                multiplier = {
-                    value = local_var:current_construction_increase
-                }
-            }
-
-            set_variable = {
-                name = prev_construction_allocation
+        add_modifier = {
+            name = country_private_construction_allocation_add
+            multiplier = {
                 value = local_var:current_construction_increase
             }
+        }
+
+        set_variable = {
+            name = prev_construction_allocation
+            value = local_var:current_construction_increase
         }
 
         set_variable = {
@@ -390,10 +226,7 @@ set_construction_point_demand = {
                     multiplier = local_var:modifier_mult
                 }
             }
-            change_point_converter_production_method = yes
-
         }
-
 
         set_variable = {
             name = prev_estimated_investment_pool
@@ -462,5 +295,106 @@ set_government_construction_spending = {
     set_variable = {
         name = government_construction_spending
         value = calculate_government_construction_spending
+    }
+}
+
+set_new_point_conversion_method = {
+    if = {
+        limit = {
+            has_active_production_method = pm_wooden_buildings
+        }
+        state = {
+            activate_production_method = {
+                building_type = building_construction_regulator
+                production_method = pm_wood_point_conversion
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_iron_frame_buildings
+        }
+        state = {
+            activate_production_method = {
+                building_type = building_construction_regulator
+                production_method = pm_iron_point_conversion
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_active_production_method = pm_steel_frame_buildings
+        }
+        state = {
+            activate_production_method = {
+                building_type = building_construction_regulator
+                production_method = pm_steel_point_conversion
+            }
+        }
+    }
+    else = {
+        state = {
+            activate_production_method = {
+                building_type = building_construction_regulator
+                production_method = pm_arc_welded_point_conversion
+            }
+        }
+    }
+}
+
+set_point_conversion_method_from_tech = {
+    if = {
+        limit = {
+            has_technology_researched = arc_welding
+        }
+        every_scope_state = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_building = building_construction_sector
+                    }
+                }
+                activate_production_method = {
+                    building_type = building_construction_regulator
+                    production_method = pm_arc_welded_point_conversion
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_technology_researched = steel_frame_buildings
+        }
+        every_scope_state = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_building = building_construction_sector
+                    }               
+                }
+                activate_production_method = {
+                    building_type = building_construction_regulator
+                    production_method = pm_steel_point_conversion
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_technology_researched = urban_planning
+        }
+        every_scope_state = {
+            if = {
+                limit = {
+                    NOT = {
+                        has_building = building_construction_sector
+                    } = 0
+                }
+                activate_production_method = {
+                    building_type = building_construction_regulator
+                    production_method = pm_iron_point_conversion
+                }
+            }
+        }
     }
 }

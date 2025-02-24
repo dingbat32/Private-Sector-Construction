@@ -10,7 +10,16 @@
                     level = 1
                     reserves = 1
                 }
+                if = {
+                    limit = {
+                        has_building = building_construction_sector
+                    }
+                    b:building_construction_sector = {
+                        set_new_point_conversion_method = yes
+                    }
+                }
             }
+            set_point_conversion_method_from_tech = yes
         }
     }
 }
