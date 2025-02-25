@@ -178,8 +178,16 @@ calculate_max_government_construction_spending = {
 
 private_construction_increase = {
 	value = investment_pool_gross_income
+	multiply = {
+		value = 1
+		subtract = var:privatisation_percent_estimate
+	}
 	divide = {
 		value = investment_pool_gross_income
+		multiply = {
+			value = 1
+			subtract = var:privatisation_percent_estimate
+		}
 		add = var:limited_government_construction_spending
 		min = 0.01
 	}
