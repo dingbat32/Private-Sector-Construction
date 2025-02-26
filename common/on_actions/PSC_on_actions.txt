@@ -1,5 +1,8 @@
-﻿set_construction = {
+﻿set_construction_start = {
 	effect = {
+        trigger_event = {
+            on_action = set_construction_weekly_on_action
+        }
 		every_country = {
 			trigger_event = {
 				on_action = set_construction_country
@@ -37,13 +40,6 @@ set_spending_value = {
             }
             set_government_construction_spending = yes
         }
-    }
-}
-
-set_construction_start = {
-    on_actions = {
-        set_construction_weekly_on_action
-        set_construction
     }
 }
 

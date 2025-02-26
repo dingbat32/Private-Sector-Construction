@@ -11,7 +11,7 @@
             }
             set_variable = {
                 name = construction_spending_level
-                value = 0.4
+                value = 0.25
             }
         }
     }

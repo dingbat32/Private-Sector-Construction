@@ -1,8 +1,5 @@
 ﻿GLOBAL = {
-    c:GBR = {
-        trigger_event = {
-            on_action = set_construction_start
-            days = 1
-        }
+    trigger_event = {
+        on_action = set_construction_start
     }
 }
