@@ -3,24 +3,15 @@
 calculate_total_construction_spending = {
 	if = {
 		limit = {
-			has_law = law_type:law_command_economy
+			num_queued_private_constructions > 0
 		}
-		value = weekly_net_fixed_income
-		multiply = var:construction_spending_level
-	}
-	else = {
-		if = {
-			limit = {
-				num_queued_private_constructions > 0
-			}
-			value = investment_pool_gross_income
-			multiply = {
-				value = 1
-				subtract = var:privatisation_percent_estimate
-			}
+		value = investment_pool_gross_income
+		multiply = {
+			value = 1
+			subtract = var:privatisation_percent_estimate
 		}
-		add = var:limited_government_construction_spending
 	}
+	add = var:limited_government_construction_spending
 }
 
 calculate_government_construction_spending = {
