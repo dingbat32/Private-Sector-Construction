@@ -353,20 +353,6 @@ types construction_spending_options_types {
 				elide = right
 				align = left|nobaseline
 			}
-
-			block "second_line" {
-				textbox = {
-					autoresize = yes
-					block "text_lower" {
-						raw_text = "Lower Text"
-					}
-					using = fontsize_small
-					margin_bottom = 6
-					parentanchor = left
-					elide = right
-					align = left|nobaseline
-				}
-			}
 		}
 
 		block "revenue_controls" {
