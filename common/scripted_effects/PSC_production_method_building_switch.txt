@@ -1,0 +1,17 @@
+﻿production_method_building_switch = {
+    switch = {
+        trigger = $production_methods$
+        0 = {
+            my_create_building = {type = $type$ level = $level$ production_methods = pm_arc_welded_point_conversion }
+        }
+        1 = {
+            my_create_building = {type = $type$ level = $level$ production_methods = pm_steel_point_conversion }
+        }
+        2 = {
+            my_create_building = {type = $type$ level = $level$ production_methods = pm_iron_point_conversion }
+        }
+        3 = {
+            my_create_building = {type = $type$ level = $level$ production_methods = pm_wood_point_conversion }
+        }
+    }
+}

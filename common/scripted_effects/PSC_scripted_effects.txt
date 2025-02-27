@@ -261,9 +261,15 @@ set_construction_regulator_level = {
                 value < local_var:regulator_level
             }
         }
+        set_new_regulator_point_conversion_method = yes
+        set_local_variable = {
+            name = production_method_chosen
+            value = var:production_method_chosen
+        }
         massive_building_switch = {
             type = building_construction_regulator
             level = local_var:regulator_level
+            production_methods = local_var:production_method_chosen
         }
     }
 }
@@ -298,6 +304,7 @@ set_government_construction_spending = {
     }
 }
 
+#Scope: Building
 set_new_point_conversion_method = {
     if = {
         limit = {
@@ -373,6 +380,99 @@ set_new_point_conversion_method = {
     }
 }
 
+#Scope: State
+set_new_regulator_point_conversion_method = {
+    if = {
+        limit = {
+            has_building = building_construction_sector
+            b:building_construction_sector = {
+                has_active_production_method = pm_wooden_buildings
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 3
+        }
+    }
+    else_if = {
+        limit = {
+            has_building = building_construction_sector
+            b:building_construction_sector = {
+                has_active_production_method = pm_iron_frame_buildings
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 2
+        }
+    }
+    else_if = {
+        limit = {
+            has_building = building_construction_sector
+            b:building_construction_sector = {
+                has_active_production_method = pm_steel_frame_buildings
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 1
+        }
+    }
+    else_if = {
+        limit = {
+            has_building = building_construction_sector
+            b:building_construction_sector = {
+                has_active_production_method = pm_arc_welded_buildings
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 0
+        }
+    }
+    else_if = {
+        limit = {
+            owner = {
+                has_technology_researched = arc_welding
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 3
+        }
+    }
+    else_if = {
+        limit = {
+            owner = {
+                has_technology_researched = steel_frame_buildings
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 2
+        }
+    }
+    else_if = {
+        limit = {
+            owner = {
+                has_technology_researched = urban_planning
+            }
+        }
+        set_variable = {
+            name = production_method_chosen
+            value = 1
+        }
+    }
+    else = {
+        set_variable = {
+            name = production_method_chosen
+            value = 0
+        }
+    }
+}
+
+
+#Scope: Country
 set_point_conversion_method_from_tech = {
     if = {
         limit = {
