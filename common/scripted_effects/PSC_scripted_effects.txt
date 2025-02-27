@@ -438,7 +438,7 @@ set_new_regulator_point_conversion_method = {
         }
         set_variable = {
             name = production_method_chosen
-            value = 3
+            value = 0
         }
     }
     else_if = {
@@ -449,7 +449,7 @@ set_new_regulator_point_conversion_method = {
         }
         set_variable = {
             name = production_method_chosen
-            value = 2
+            value = 1
         }
     }
     else_if = {
@@ -460,13 +460,13 @@ set_new_regulator_point_conversion_method = {
         }
         set_variable = {
             name = production_method_chosen
-            value = 1
+            value = 2
         }
     }
     else = {
         set_variable = {
             name = production_method_chosen
-            value = 0
+            value = 3
         }
     }
 }
