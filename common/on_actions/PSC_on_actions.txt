@@ -22,7 +22,6 @@ set_construction_country = {
                     game_date != var:last_construction_run
                 }
             }
-            save_max_construction_spending_values = yes
 		    set_construction_point_demand = yes
             set_variable = {
                 name = last_construction_run
