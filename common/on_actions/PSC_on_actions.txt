@@ -54,9 +54,13 @@ set_construction_weekly_on_action = {
                 name = event_day
                 value = global_var:added_days
             }
+            set_local_variable = {
+                name = month_length
+                value = calculate_month_length
+            }
             while = {
                 limit = {
-                    local_var:event_day < 31
+                    local_var:event_day < local_var:month_length
                 }
                 delay_event_switch = {
                     on_action_name = set_construction_country
