@@ -56,7 +56,7 @@ set_construction_weekly_on_action = {
             }
             while = {
                 limit = {
-                    local_var:event_day <= 31
+                    local_var:event_day < 31
                 }
                 delay_event_switch = {
                     on_action_name = set_construction_country

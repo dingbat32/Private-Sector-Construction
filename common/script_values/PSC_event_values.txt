@@ -1,14 +1,14 @@
 ﻿calculate_added_days = {
-    value = 7
+    value = 8
     subtract = day_of_the_week
-    modulo = 6
+    modulo = 7
 }
 
 day_of_the_week = {
     # Determining the day of the week:
     value = year
     subtract = 1836 # one day added per year, since v3 has no leap years
-    add = 2 # wednesday start date
+    add = 3 # wednesday start date
 
     # add offset for different months
     if = {
