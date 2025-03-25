@@ -1,0 +1,20 @@
+﻿l_russian:
+ CURRENT_DESC: "Это наш текущий уровень расходов"
+
+ CONSTRUCTION_TOOLTIP: "Доля максимальных государственных расходов на строительство"
+ SPENDING_DESC: "Прогнозируемые расходы"
+
+ concept_construction_spending: "Уровень расходов на строительство"
+ concept_construction_spending_desc: "Сколько государство готово платить за строительство в процентах от #tooltippable #tooltip:[GetRawTextTooltipTag('MAXIMUM_CONSTRUCTION_SPENDING_TT')] максимальных расходов на строительство#!#!#!"
+
+ REDUCE_CONSTRUCTION_SPENDING_TT: "Снизить [concept_construction_spending]\n\n$DECREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS$"
+ INCREASE_CONSTRUCTION_SPENDING_TT: "Увеличить [concept_construction_spending]\n\n$INCREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS$"
+ CURRENT_CONSTRUCTION_SPENDING_TT: "Процент от максимальных расходов\n\n Текущие ограниченные расходы: @money!#n -[GetPlayer.MakeScope.Var('max_government_construction_at_spending_level').GetValue|1*]#!\n #tooltippable #tooltip:[GetRawTextTooltipTag('MAXIMUM_CONSTRUCTION_SPENDING_TT')] Максимальные расходы на строительство:#!#!#! #tooltippable #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_SPENDING_CALCULATION')] @money!#n -[GetPlayer.MakeScope.Var('max_government_construction_spending').GetValue|1*]#!#!#!"
+ INCREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS: "#instruction Нажмите#!, чтобы #v увеличить на 1%#!, #i $SHORTCUT_KEY_MOD_shift$Нажмите#!, чтобы #v увеличить на 5%#!, #i $SHORTCUT_KEY_MOD_ctrl$Нажмите#!, чтобы #v увеличить на 10%#!\n"
+ DECREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS: "#instruction Нажмите#!, чтобы #v уменьшить на 1%#!, #i $SHORTCUT_KEY_MOD_shift$Нажмите#!, чтобы #v уменьшить на 5%#!, #i $SHORTCUT_KEY_MOD_ctrl$Нажмите#!, чтобы #v уменьшить на 10%#!\n"
+
+ MAXIMUM_CONSTRUCTION_SPENDING_TT: "Максимальная сумма, которую государство может потратить на строительство\n\nОпределяется $NATIONAL_REVENUE$ и множителем, зависящим от $ECONOMIC_SYSTEM_LINK$ страны."
+ CONSTRUCTION_SPENDING_CALCULATION: "#bold Максимальные расходы на строительство: #!#V #tooltippable #tooltip:[GetRawTextTooltipTag('TAX_INCOME_BREAKDOWN')] @money![GetPlayer.PredictWeeklyFixedIncome|D]#!#! × #tooltippable #tooltip:[GetRawTextTooltipTag('WEEKLY_INCOME_MULTIPLIER')] [GetPlayer.MakeScope.Var('weekly_income_multiplier').GetValue]#!#!#!"
+ WEEKLY_INCOME_MULTIPLIER: "#bold Недельный множитель дохода: #! #tooltippable #tooltip:WEEKLY_INCOME_MULTIPLIER_MATHS_TT #V [GetPlayer.MakeScope.Var('weekly_income_multiplier').GetValue]#!#!#!"
+ WEEKLY_INCOME_MULTIPLIER_MATHS_TT: "#bold Недельный множитель дохода: #! #V 2 - #tooltip:CORRECTED_PRIVATE_ALLOCATION #tooltippable [GetPlayer.MakeScope.Var('corrected_private_allocation').GetValue]#!#!#!"
+ CORRECTED_PRIVATE_ALLOCATION: "#yellow #tooltip:[GetPlayer.GetTooltipTag],CONSTRUCTION_PRIVATE_ALLOCATION_DESC $country_private_construction_allocation_mult$#!#! из $ECONOMIC_SYSTEM_LINK$: #V  #tooltip:[GetPlayer.GetTooltipTag],CONSTRUCTION_PRIVATE_ALLOCATION_TOOLTIP #tooltippable [GetPlayer.MakeScope.Var('corrected_private_allocation').GetValue] #!#!#!"

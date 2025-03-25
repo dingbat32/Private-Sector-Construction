@@ -1,0 +1,7 @@
+﻿l_russian:
+ pmg_construction_regulator:0 "$pm_base$"
+ pm_point_conversion:0 "Базовое преобразование очков"
+ pm_wood_point_conversion:0 "Базовый надзор"
+ pm_iron_point_conversion:0 "Базовый надзор"
+ pm_steel_point_conversion:0 "Базовый надзор"
+ pm_arc_welded_point_conversion:0 "Базовый надзор"
