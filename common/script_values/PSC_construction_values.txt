@@ -193,6 +193,9 @@ calculate_corrected_private_allocation = {
 		}
 		subtract = var:prev_construction_allocation
 	}
+	# bound to safe range
+	min = 0
+	max = 1
 }
 
 ai_construction_demand = {
