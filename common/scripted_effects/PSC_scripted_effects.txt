@@ -266,8 +266,7 @@ set_construction_regulator_level = {
             name = production_method_chosen
             value = var:production_method_chosen
         }
-        massive_building_switch = {
-            type = building_construction_regulator
+        production_method_building_switch = {
             level = local_var:regulator_level
             production_methods = local_var:production_method_chosen
         }

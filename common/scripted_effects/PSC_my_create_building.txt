@@ -1,8 +1,0 @@
-﻿my_create_building = {
-    create_building = {
-        building = $type$
-        level = $level$
-        reserves = 1
-        activate_production_methods = { $production_methods$ }
-    }
-}
