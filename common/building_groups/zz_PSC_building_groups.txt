@@ -1,17 +1,13 @@
 ﻿bg_construction = {
-	category = development
-
 	infrastructure_usage_per_level = 2
 
-	lens = light_industry
+	parent_group = bg_private_infrastructure
 
 	can_use_slaves = yes
-	
+	subsidized = no
 	always_possible = yes
 
-	urbanization = 5
 	economy_of_scale = yes
-	cash_reserves_max = 25000
 
 	should_auto_expand = { 
 		default_auto_expand_rule = yes
@@ -22,32 +18,16 @@
 }
 
 bg_construction_regulator = {	
-	category = development
-	
-
-	always_possible = yes	
-	
-	is_government_funded = yes
-	always_self_owning = yes
+	parent_group = bg_public_infrastructure
 		
 	min_hiring_rate = 1.0
 	max_hiring_rate = 1.0
-	
-	ignores_productivity_when_hiring = yes
-	
-	proportionality_limit = 1.0
-	
-	economy_of_scale = no
 		
-	cash_reserves_max = 0	
-	
+	proportionality_limit = 1.0
+
 	urbanization = 0
 	
 	infrastructure_usage_per_level = 0
 	
-	fired_pops_become_radical = no
-	
-	should_auto_expand = {
-		always = no
-	}
+	stateregion_max_level = no
 }
