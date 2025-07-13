@@ -6,8 +6,8 @@
 	building_modifiers = {
 		workforce_scaled = {
 			#input goods
-			goods_input_fabric_add = 25 # x20 = 100
-			goods_input_wood_add = 75 # x20 = 300
+			goods_input_fabric_add = 25 # x20 = 500
+			goods_input_wood_add = 75 # x20 = 1500
 
 			#output goods
 			goods_output_wood_construction_add = 20
@@ -15,9 +15,9 @@
 
 		level_scaled = {
 			#500
-			building_employment_engineers_add = 200 
-			building_employment_clerks_add = 500      #500
-			building_employment_laborers_add = 4300   #4000
+			building_employment_engineers_add = 40 
+			building_employment_clerks_add = 100      #500
+			building_employment_laborers_add = 860   #4000
 		}
 		unscaled = {
 			building_laborers_mortality_mult = 0.1
@@ -35,10 +35,10 @@ pm_iron_frame_buildings = {
 	building_modifiers = {
 		workforce_scaled = {
 			#input goods
-			goods_input_wood_add = 40 # x20 = 400
-			goods_input_fabric_add = 20 # x20 = 200
-			goods_input_iron_add = 50 # x40 = 1000
-			goods_input_tools_add = 10 # x40 = 200
+			goods_input_wood_add = 40 # x20 = 800
+			goods_input_fabric_add = 20 # x20 = 400
+			goods_input_iron_add = 50 # x40 = 2000
+			goods_input_tools_add = 10 # x40 = 400
 
 			#output goods
 			goods_output_iron_construction_add = 50
@@ -46,10 +46,10 @@ pm_iron_frame_buildings = {
 
 		level_scaled = {
 			#500
-			building_employment_engineers_add = 300 
-			building_employment_clerks_add = 500     #500
-			building_employment_machinists_add = 200 #250
-			building_employment_laborers_add = 4000  #3750
+			building_employment_engineers_add = 60 
+			building_employment_clerks_add = 100     #500
+			building_employment_machinists_add = 40 #250
+			building_employment_laborers_add = 800  #3750
 		}
 		unscaled = {
 			building_laborers_mortality_mult = 0.1
@@ -67,10 +67,10 @@ pm_steel_frame_buildings = {
 	building_modifiers = {
 		workforce_scaled = {
 			#input goods
-			goods_input_steel_add = 50 # x50 = 1250
-			goods_input_glass_add = 40 # x40 = 800
-			goods_input_explosives_add = 10 # x50 = 250
-			goods_input_tools_add = 20 # x40 = 400
+			goods_input_steel_add = 50 # x50 = 2500
+			goods_input_glass_add = 40 # x40 = 1600
+			goods_input_explosives_add = 10 # x50 = 500
+			goods_input_tools_add = 20 # x40 = 800
 
 			#output goods
 			goods_output_steel_construction_add = 100
@@ -78,10 +78,10 @@ pm_steel_frame_buildings = {
 
 		level_scaled = {
 			#500
-			building_employment_engineers_add = 400   
-			building_employment_clerks_add = 500     #500
-			building_employment_machinists_add = 800 #750
-			building_employment_laborers_add = 3300  #3250
+			building_employment_engineers_add = 80   
+			building_employment_clerks_add = 100     #500
+			building_employment_machinists_add = 160 #750
+			building_employment_laborers_add = 660  #3250
 		}
 		unscaled = {
 			building_laborers_mortality_mult = 0.1
@@ -99,11 +99,11 @@ pm_arc_welded_buildings = {
 	building_modifiers = {
 		workforce_scaled = {
 			#input goods
-			goods_input_steel_add = 50 # x50 = 1250
-			goods_input_glass_add = 40 # x40 = 800
-			goods_input_explosives_add = 50 # x50 = 1250
-			goods_input_tools_add = 40  # x40 = 800
-			goods_input_electricity_add = 30 #x30 = 450
+			goods_input_steel_add = 50 # x50 = 2500
+			goods_input_glass_add = 40 # x40 = 1600
+			goods_input_explosives_add = 20 # x50 = 1000
+			goods_input_tools_add = 40  # x40 = 1600
+			goods_input_electricity_add = 40 #x30 = 1200
 
 			#output goods
 			goods_output_arc_welded_construction_add = 150
@@ -112,10 +112,10 @@ pm_arc_welded_buildings = {
 		level_scaled = {
 			
 			#500 
-			building_employment_engineers_add = 700   #250
-			building_employment_clerks_add = 500      #500
-			building_employment_machinists_add = 800  #750
-			building_employment_laborers_add = 3000   #3000
+			building_employment_engineers_add = 140   #250
+			building_employment_clerks_add = 100      #500
+			building_employment_machinists_add = 160  #750
+			building_employment_laborers_add = 600   #3000
 		}
 		unscaled = {
 			building_laborers_mortality_mult = 0.1
@@ -141,7 +141,7 @@ pm_wood_point_conversion = {
 			goods_input_wood_construction_add = 10
 		}
 		level_scaled = {
-			building_employment_bureaucrats_add = 100
+			building_employment_bureaucrats_add = 20
 		}
 	}
 	unlocking_production_methods = {
@@ -164,7 +164,7 @@ pm_iron_point_conversion = {
 			goods_input_iron_construction_add = 10
 		}
 		level_scaled = {
-			building_employment_bureaucrats_add = 100
+			building_employment_bureaucrats_add = 20
 		}
 	}
 
@@ -188,7 +188,7 @@ pm_steel_point_conversion = {
 			goods_input_steel_construction_add = 10
 		}
 		level_scaled = {
-			building_employment_bureaucrats_add = 100
+			building_employment_bureaucrats_add = 20
 		}
 	}
 
@@ -212,7 +212,7 @@ pm_arc_welded_point_conversion = {
 			goods_input_arc_welded_construction_add = 10
 		}
 		level_scaled = {
-			building_employment_bureaucrats_add = 100
+			building_employment_bureaucrats_add = 20
 		}
 	}
 
