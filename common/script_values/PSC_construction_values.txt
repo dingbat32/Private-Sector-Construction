@@ -61,11 +61,10 @@ state_construction_spending_allocation = {
 	}
 	owner = {
 		divide = {
-			value = var:national_production
+			value = var:weighted_total
 			min = 0.1
 		}
 	}
-
 	if = {
 		#in a case of no production, demand half the remaining demand to get construction to build
 		limit = {
@@ -87,6 +86,7 @@ state_construction_spending_allocation = {
 	}
 	else = {
 		multiply = var:state_construction_production
+		divide = local_var:state_construction_base_price
 
 		# demand only a limited amount more than is possible in this state
 		max = {

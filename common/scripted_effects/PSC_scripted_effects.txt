@@ -107,11 +107,18 @@ set_construction_point_demand = {
             name = national_production
             value = 0
         }
-
+        set_variable = {
+            name = weighted_total
+            value = 0
+        }
         every_scope_state = {
             save_temporary_scope_value_as = {
                 name = temp_production
                 value = sum_construction_types_production
+            }
+            save_temporary_scope_value_as = {
+                name = state_base_price
+                value = calculate_state_construction_base_price
             }
             set_variable = {
                 name = state_construction_production
@@ -121,6 +128,15 @@ set_construction_point_demand = {
                 change_variable = {
                     name = national_production
                     add = scope:temp_production
+                }
+            }
+            owner = {
+                change_variable = {
+                    name = weighted_total
+                    add = {
+                        value = scope:temp_production
+                        divide = scope:state_base_price
+                    }
                 }
             }
         }
