@@ -2,10 +2,10 @@
 oversupply_limit = 1.5
 state_oversupply_limit = 1.05
 privatisation_percent_weeks = 24 #number of weeks to estimate over
-wood_construction_good_base_price = 130
-iron_construction_good_base_price = 92
-steel_construction_good_base_price = 70
-arc_welded_construction_good_base_price = 70
+wood_construction_good_base_price = 100
+iron_construction_good_base_price = 75
+steel_construction_good_base_price = 60
+arc_welded_construction_good_base_price = 60
 construction_price_weeks = 12
 construction_goods_per_point = 10
 construction_min_demand = 15

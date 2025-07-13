@@ -247,12 +247,32 @@ set_construction_regulator_level = {
     }
     if = {
         limit = {
-            state_has_building_type_levels = {
-                target = bt:building_construction_regulator
-                value > local_var:regulator_level
+                state_has_building_type_levels = {
+                    target = bt:building_construction_regulator
+                    value > local_var:regulator_level
+                }
+        }
+        if = {
+            limit = {
+                OR = {
+                    NOT = {
+                        has_variable = week_count
+                    }
+                    var:week_count >= 4  
+                }
+            }
+            remove_building = "building_construction_regulator"
+            set_variable = {
+                name = week_count
+                value = 0
             }
         }
-        remove_building = "building_construction_regulator"
+        else = {
+            change_variable = {
+                name = week_count
+                add = 1
+            }
+        }
     }
     if = {
         limit = {
