@@ -24,7 +24,8 @@ bg_construction_regulator = {
 	max_hiring_rate = 1.0
 		
 	proportionality_limit = 1.0
-
+	ignores_productivity_when_hiring = yes
+	fired_pops_become_radical = no
 	urbanization = 0
 	
 	infrastructure_usage_per_level = 0
