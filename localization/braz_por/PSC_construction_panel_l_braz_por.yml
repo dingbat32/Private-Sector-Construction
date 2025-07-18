@@ -1,0 +1,20 @@
+﻿l_braz_por: 
+ CURRENT_DESC: "Este é o nosso nível de gastos atual"
+
+ CONSTRUCTION_TOOLTIP: "A proporção dos gastos máximos de construção do governo"
+ SPENDING_DESC: "Gastos previstos"
+
+ concept_construction_spending: "Nível de Gastos com Construção"
+ concept_construction_spending_desc: "Quanto o governo está disposto a pagar pela construção, como uma porcentagem do #tooltippable #tooltip:[GetRawTextTooltipTag('MAXIMUM_CONSTRUCTION_SPENDING_TT')] gasto máximo com construção#!#!#!"
+
+ REDUCE_CONSTRUCTION_SPENDING_TT: "Reduzir [concept_construction_spending]\n\n$DECREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS$"
+ INCREASE_CONSTRUCTION_SPENDING_TT: "Aumentar [concept_construction_spending]\n\n$INCREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS$"
+ CURRENT_CONSTRUCTION_SPENDING_TT: "Porcentagem do gasto máximo a ser usada\n\n Gastos limitados atuais: @money!#n -[GetPlayer.MakeScope.Var('max_government_construction_at_spending_level').GetValue|1*]#!\n #tooltippable #tooltip:[GetRawTextTooltipTag('MAXIMUM_CONSTRUCTION_SPENDING_TT')] Gasto máximo com construção:#!#!#! #tooltippable #tooltip:[GetRawTextTooltipTag('CONSTRUCTION_SPENDING_CALCULATION')] @money!#n -[GetPlayer.MakeScope.Var('max_government_construction_spending').GetValue|1*]#!#!#!"
+ INCREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS: "#instruction Click#! para #v aumentar 1%#!, #i $SHORTCUT_KEY_MOD_shift$Click#! para #v 5%#!, #i $SHORTCUT_KEY_MOD_ctrl$Click#! para #v 10%#!\n"
+ DECREASE_CONSTRUCTION_SPENDING_INSTRUCTIONS: "#instruction Click#! para #v diminuir 1%#!, #i $SHORTCUT_KEY_MOD_shift$Click#! para #v 5%#!, #i $SHORTCUT_KEY_MOD_ctrl$Click#! para #v 10%#!\n"
+
+ MAXIMUM_CONSTRUCTION_SPENDING_TT: "A quantia máxima de dinheiro que o governo pode gastar em construção\n\nDeterminado por $NATIONAL_REVENUE$ e um múltiplo influenciado pelo $ECONOMIC_SYSTEM_LINK$ do país."
+ CONSTRUCTION_SPENDING_CALCULATION: "#bold Gasto Máximo com Construção: #!#V #tooltippable #tooltip:[GetRawTextTooltipTag('TAX_INCOME_BREAKDOWN')] @money![GetPlayer.PredictWeeklyFixedIncome|D]#!#! × #tooltippable #tooltip:[GetRawTextTooltipTag('WEEKLY_INCOME_MULTIPLIER')] [GetPlayer.MakeScope.Var('weekly_income_multiplier').GetValue]#!#!#!"
+ WEEKLY_INCOME_MULTIPLIER: "#bold Multiplicador de Renda Semanal: #! #tooltippable #tooltip:WEEKLY_INCOME_MULTIPLIER_MATHS_TT #V [GetPlayer.MakeScope.Var('weekly_income_multiplier').GetValue]#!#!#!"
+ WEEKLY_INCOME_MULTIPLIER_MATHS_TT: "#bold Multiplicador de Renda Semanal: #! #V 2 - #tooltip:CORRECTED_PRIVATE_ALLOCATION #tooltippable [GetPlayer.MakeScope.Var('corrected_private_allocation').GetValue]#!#!#!"
+ CORRECTED_PRIVATE_ALLOCATION: "#yellow #tooltip:[GetPlayer.GetTooltipTag],CONSTRUCTION_PRIVATE_ALLOCATION_DESC $country_private_construction_allocation_mult$#!#! de $ECONOMIC_SYSTEM_LINK$: #V #tooltip:[GetPlayer.GetTooltipTag],CONSTRUCTION_PRIVATE_ALLOCATION_TOOLTIP #tooltippable [GetPlayer.MakeScope.Var('corrected_private_allocation').GetValue] #!#!#!"

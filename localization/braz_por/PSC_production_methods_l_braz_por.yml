@@ -1,0 +1,7 @@
+﻿l_braz_por: 
+ pmg_construction_regulator:0 "$pm_base$"
+ pm_point_conversion:0 "Conversão de Ponto Básica"
+ pm_wood_point_conversion:0 "Supervisão Básica"
+ pm_iron_point_conversion:0 "Supervisão Básica"
+ pm_steel_point_conversion:0 "Supervisão Básica"
+ pm_arc_welded_point_conversion:0 "Supervisão Básica"
