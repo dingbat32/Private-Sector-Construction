@@ -1,7 +1,0 @@
-﻿l_simp_chinese:
- pmg_construction_regulator:0 "$pm_base$"
- pm_point_conversion:0 "Basic Point Conversion"
- pm_wood_point_conversion:0 "Basic Oversight"
- pm_iron_point_conversion:0 "Basic Oversight"
- pm_steel_point_conversion:0 "Basic Oversight"
- pm_arc_welded_point_conversion:0 "Basic Oversight"
