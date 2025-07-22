@@ -35,6 +35,7 @@ privatisation_spending_percent = {
 		value = privatisation_spending_percent_weekly
 		divide = privatisation_percent_weeks
 	}
+	max = 1
 }
 
 privatisation_spending_percent_weekly = {
