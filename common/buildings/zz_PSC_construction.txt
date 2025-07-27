@@ -17,7 +17,7 @@ building_construction_sector = {
 	# Credit: KuromiAK for this construction sector weighting
 	# Construction sector should generally be preferred over other equal-priority spending items
 	ai_value = {
-		value = 2000
+		value = 2500
 		
 		# KAI: Prefer states with iron
 		if = {
@@ -26,6 +26,20 @@ building_construction_sector = {
 			}
 			add = 500
 		}
+		#encourage first sector
+		if = {
+			limit = {
+				NOT = {
+					has_building = building_construction_sector
+				}
+			}
+			add = 1000
+			add = {
+				value = gdp
+				divide = 3000
+			}
+		}
+		
 	}
 	required_construction = construction_cost_very_low
 	ownership_type = self
