@@ -1,27 +1,27 @@
 ﻿wood_construction = {
 	texture = "gfx/interface/icons/goods_icons/wood_construction.dds"
-	cost = 100
+	cost = 130
 	category = industrial
 	local = yes
 	prestige_factor = 10
 }
 iron_construction = {
 	texture = "gfx/interface/icons/goods_icons/iron_construction.dds"
-	cost = 75
+	cost = 92
 	category = industrial
 	local = yes
 	prestige_factor = 10
 }
 steel_construction = {
 	texture = "gfx/interface/icons/goods_icons/steel_construction.dds"
-	cost = 60
+	cost = 70
 	category = industrial
 	local = yes
 	prestige_factor = 10
 }
 arc_welded_construction = {
 	texture = "gfx/interface/icons/goods_icons/arc_welded_construction.dds"
-	cost = 60
+	cost = 70
 	category = industrial
 	local = yes
 	prestige_factor = 10
