@@ -1,4 +1,4 @@
-﻿insufficient_construction_for_investment = {
+﻿REPLACE:insufficient_construction_for_investment = {
 	texture = "gfx/interface/icons/alert_icons/wasted_construction.dds"
 	script_context = player_country
 

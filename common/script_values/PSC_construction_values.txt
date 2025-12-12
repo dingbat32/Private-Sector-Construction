@@ -201,7 +201,7 @@ calculate_corrected_private_allocation = {
 
 ai_construction_demand = {
 	add = {
-		value = weekly_net_fixed_income
+		value = net_fixed_income
 		multiply = {
 			value = 1
 			add = scaled_gold_reserves

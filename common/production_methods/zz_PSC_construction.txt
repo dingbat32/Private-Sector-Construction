@@ -1,4 +1,4 @@
-﻿pm_wooden_buildings = {
+﻿REPLACE:pm_wooden_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/wooden_buildings.dds"
 	
 	is_default = yes
@@ -25,7 +25,7 @@
 	}
 }
 
-pm_iron_frame_buildings = {
+REPLACE:pm_iron_frame_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/iron_frame_buildings.dds"
 	
 	unlocking_technologies = {
@@ -57,7 +57,7 @@ pm_iron_frame_buildings = {
 	}
 }
 
-pm_steel_frame_buildings = {
+REPLACE:pm_steel_frame_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/steel_frame_buildings.dds"
 
 	unlocking_technologies = {
@@ -89,7 +89,7 @@ pm_steel_frame_buildings = {
 	}
 }
 
-pm_arc_welded_buildings = {
+REPLACE:pm_arc_welded_buildings = {
 	texture = "gfx/interface/icons/production_method_icons/arc_welded_buildings.dds"
 
 	unlocking_technologies = {
@@ -125,7 +125,7 @@ pm_arc_welded_buildings = {
 	required_input_goods = electricity
 }
 
-pm_wood_point_conversion = {
+REPLACE_OR_CREATE:pm_wood_point_conversion = {
 	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 	is_default = yes
 	is_hidden_when_unavailable = yes
@@ -149,7 +149,7 @@ pm_wood_point_conversion = {
 	}
 }
 
-pm_iron_point_conversion = {
+REPLACE_OR_CREATE:pm_iron_point_conversion = {
 	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 	is_hidden_when_unavailable = yes
 
@@ -173,7 +173,7 @@ pm_iron_point_conversion = {
 	}
 }
 
-pm_steel_point_conversion = {
+REPLACE_OR_CREATE:pm_steel_point_conversion = {
 	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 	is_hidden_when_unavailable = yes
 
@@ -197,7 +197,7 @@ pm_steel_point_conversion = {
 	}
 }
 
-pm_arc_welded_point_conversion = {
+REPLACE_OR_CREATE:pm_arc_welded_point_conversion = {
 	texture = "gfx/interface/icons/production_method_icons/construction_bureaucrats.dds"
 	is_hidden_when_unavailable = yes
 

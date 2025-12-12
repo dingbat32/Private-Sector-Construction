@@ -1,4 +1,4 @@
-﻿bg_construction = {
+﻿REPLACE:bg_construction = {
 	infrastructure_usage_per_level = 2
 
 	parent_group = bg_private_infrastructure
@@ -17,7 +17,7 @@
 	foreign_investment_ai_factor = 0.75
 }
 
-bg_construction_regulator = {	
+REPLACE_OR_CREATE:bg_construction_regulator = {	
 	parent_group = bg_public_infrastructure
 		
 	min_hiring_rate = 1.0
