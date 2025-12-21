@@ -1,13 +1,51 @@
-﻿command_economy_spending_mult = 1.5 #allow more spending than income, but not too much. TODO: test and choose a better value
-oversupply_limit = 1.5
-state_oversupply_limit = 1.05
-privatisation_percent_weeks = 24 #number of weeks to estimate over
-wood_construction_good_base_price = 130
-iron_construction_good_base_price = 92
-steel_construction_good_base_price = 70
-arc_welded_construction_good_base_price = 70
-construction_price_weeks = 12
-construction_goods_per_point = 10
-construction_min_demand = 15
-error_accuracy_denominator = 10000 # error is within 1/this
-weekly_income_multiplier_base = 2
+﻿command_economy_spending_mult = {
+    value = 1.5 # allow more spending than income, but not too much. TODO: test and choose a better value
+}
+
+oversupply_limit = {
+    value = 1.5
+}
+
+state_oversupply_limit = {
+    value = 1.05
+}
+
+privatisation_percent_weeks = {
+    value = 24 # number of weeks to estimate over
+}
+
+wood_construction_good_base_price = {
+    value = 130
+}
+
+iron_construction_good_base_price = {
+    value = 92
+}
+
+steel_construction_good_base_price = {
+    value = 70
+}
+
+arc_welded_construction_good_base_price = {
+    value = 70
+}
+
+construction_price_weeks = {
+    value = 12
+}
+
+construction_goods_per_point = {
+    value = 10
+}
+
+construction_min_demand = {
+    value = 15
+}
+
+error_accuracy_denominator = {
+    value = 10000 # error is within 1/this
+}
+
+weekly_income_multiplier_base = {
+    value = 2
+}
