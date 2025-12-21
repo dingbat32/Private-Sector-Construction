@@ -12,6 +12,10 @@ calculate_total_construction_spending = {
 		}
 	}
 	add = var:limited_government_construction_spending
+	divide = {
+		value = 1
+		add = modifier:country_construction_goods_cost_mult
+	}
 }
 
 calculate_government_construction_spending = {
@@ -180,7 +184,12 @@ private_construction_increase = {
 			value = 1
 			subtract = var:privatisation_percent_estimate
 		}
+
 		add = var:limited_government_construction_spending
+		multiply = {
+			value = 1 
+			subtract = modifier:country_construction_goods_cost_mult
+		}
 		min = 0.01
 	}
 	subtract = var:corrected_private_allocation
