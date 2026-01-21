@@ -450,22 +450,22 @@ goods_efficiency_per_level = {
 			limit = {
 				has_active_production_method = pm_wooden_buildings
 			}
-			value = 0.001
+			value = 0.02
 		}
 		else_if = {
 			limit = {
 				has_active_production_method = pm_iron_frame_buildings
 			}
-			value = 0.002
+			value = 0.035
 		}
 		else_if = {
 			limit = {
 				has_active_production_method = pm_steel_frame_buildings
 			}
-			value = 0.0035
+			value = 0.007
 		}
 		else = {
-			value = 0.005
+			value = 0.01
 		}
 	}
 }
@@ -541,6 +541,90 @@ construction_sector_efficiency_multiplier = {
 			scope:modified_max_level = 30
 		}
 		value = 5.4772
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 35
+		}
+		value = 5.9161
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 40
+		}
+		value = 6.3246
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 45
+		}
+		value = 6.7082
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 50
+		}
+		value = 7.0711
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 55
+		}
+		value = 7.4162
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 60
+		}
+		value = 7.746
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 65
+		}
+		value = 8.0622
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 70
+		}
+		value = 8.3667
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 75
+		}
+		value = 8.6603
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 80
+		}
+		value = 8.9443
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 85
+		}
+		value = 9.2195
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 90
+		}
+		value = 9.4869
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 95
+		}
+		value = 9.7468
+	}
+	else_if = {
+		limit = {
+			scope:modified_max_level = 100
+		}
+		value = 10
 	}
 }
 
