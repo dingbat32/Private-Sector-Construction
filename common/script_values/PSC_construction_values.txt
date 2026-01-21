@@ -261,12 +261,10 @@ calculate_state_construction_efficiency = {
 		value = level
 		multiply = occupancy
 	}
-	save_temporary_value_as = num_to_sqrt
-	value = calculate_sqrt
-	multiply = goods_efficiency_per_level
 	owner = {
-		multiply = construction_sector_efficiency_multiplier
+		max = calculate_construction_sector_max_level
 	}
+	multiply = goods_efficiency_per_level
 }
 
 # Scope: Any

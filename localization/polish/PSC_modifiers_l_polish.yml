@@ -1,6 +1,6 @@
 ﻿l_polish:
  state_building_construction_sector_max_level_add:1 "$building_construction_sector$ $state_construction_mult$ Cap"
- state_building_construction_sector_max_level_add_desc:1 "A bonus or penalty to the $state_construction_mult$ Soft Cap of $building_construction_sector$ buildings."
+ state_building_construction_sector_max_level_add_desc:1 "A bonus or penalty to the $state_construction_mult$ Cap of $building_construction_sector$ buildings."
  country_private_construction_allocation_add: "Private Construction Allocation Real Usage Adjustment"
  country_private_construction_allocation_add_desc: "Adjusts the construction queue to allocate points in proportion to spending amounts"
  construction_throughput_mult: "State Construction Demand Multiplier"
