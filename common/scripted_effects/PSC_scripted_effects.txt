@@ -235,6 +235,7 @@ set_construction_point_demand = {
                             min = 1
                         }
                         subtract = 1
+                        subtract = modifier:building_throughput_add
                     }
                 }
                 add_modifier = {

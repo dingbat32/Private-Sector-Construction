@@ -49,3 +49,6 @@ error_accuracy_denominator = {
 weekly_income_multiplier_base = {
     value = 2
 }
+integer_max_safety_limit = 100000
+sqrt_scale = 100
+sqrt_scale_sq = 10000
